@@ -14,7 +14,7 @@ const Navbar = () => {
   
   
     return (
-      <nav className='navbar'>
+      <nav className='navbar colorGradient'>
         <div className='navbar-logo'>
           <img src={Logo} alt="logo" />
         </div>
