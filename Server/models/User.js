@@ -22,6 +22,11 @@ const UserSchema = new mongoose.Schema(
   state: String,
   country: String,
   phoneNumber: String,
+  instituteName:{
+    type: String,
+    required: true,
+    min: 2
+  }
 },
 { timestamps: true }
 );
