@@ -5,48 +5,49 @@ import './Navbar.scss'
 import { Logo } from '../../assets';
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom'
+import { Link } from "react-router-dom"
 
 
 
 const Navbar = () => {
 
-    const [toggle, setToggle ] = useState(false)
-  
-  
-    return (
-      <nav className='navbar colorGradient'>
-        <div className='navbar-logo'>
-          <img src={Logo} alt="logo" />
-        </div>
-        <ul className='navbar-links'>
-          {['Home', 'Recipes', 'About'].map((items) =>
+  const [toggle, setToggle] = useState(false)
+
+
+  return (
+    <nav className='navbar colorGradient'>
+      <div className='navbar-logo'>
+        <Link to="/"><img src={Logo} alt="logo" className='opacity-90' /></Link>
+      </div>
+      <ul className='navbar-links'>
+        {['Home', 'Recipes', 'About'].map((items) =>
           <li className='app__center' key={`link-${items}`}>
             <div />
             <NavLink to={`/${items}`} > {items} </NavLink>
           </li>
-          )}
-        </ul>
-  
-        <div className='navbar-menu'>
-         <HiMenuAlt4 onClick={()=>setToggle(true)} />
-         {toggle &&(
-          <motion.div 
-          whileInView={{x: [300,0]}}
-          transition={{duration: 1, ease:'easeOut'}}
+        )}
+      </ul>
+
+      <div className='navbar-menu'>
+        <HiMenuAlt4 onClick={() => setToggle(true)} />
+        {toggle && (
+          <motion.div
+            whileInView={{ x: [300, 0] }}
+            transition={{ duration: 1, ease: 'easeOut' }}
           >
-            <HiX onClick={()=>setToggle(false)} />
+            <HiX onClick={() => setToggle(false)} />
             <ul>
-            {['Home', 'Recipes', 'About'].map((items) =>
-          <li key={items}>
-            <NavLink to={`/${items}`} onClick={()=>setToggle(false)}  > {items} </NavLink>
-          </li>
-          )}
-          </ul>
+              {['Home', 'Recipes', 'About'].map((items) =>
+                <li key={items}>
+                  <NavLink to={`/${items}`} onClick={() => setToggle(false)}  > {items} </NavLink>
+                </li>
+              )}
+            </ul>
           </motion.div>
-          )}
-        </div>
-      </nav>
-    )
-  }
-  
-  export default Navbar
+        )}
+      </div>
+    </nav>
+  )
+}
+
+export default Navbar

@@ -7,6 +7,7 @@ import Home from './pages/Home/Home';
 import Login from './components/Login';
 import Signup from './components/Signup';
 
+
 function App() {
   return (
     <>
@@ -14,6 +15,7 @@ function App() {
      <ScrollToTop/>
      <Navbar />
      <Routes>
+      <Route path='/' element={ <Home />} />
       <Route path='/' element={ <Home />} />
       <Route path='/login' element={ <Login />} />
       <Route path='/signup' element={ <Signup />} />
