@@ -10,21 +10,23 @@ $Lexend_Peta: 'Lexend Peta', sans-serif;
     // margin-bottom: 10px;
 }
 
-.colorGradient{
-        background: linear-gradient(300deg, #eeaeca, #94bbe9) !important;
+.colorGradient {
+    background: linear-gradient(300deg, #eeaeca, #94bbe9) !important;
     background-size: 180% 180%;
     animation: gradient-animation 18s ease infinite;
 }
 
 @keyframes colorGradient {
     0% {
-      background-position: 0% 50%;
+        background-position: 0% 50%;
     }
+
     50% {
-      background-position: 100% 50%;
+        background-position: 100% 50%;
     }
+
     100% {
-      background-position: 0% 50%;
+        background-position: 0% 50%;
     }
 
 }
@@ -36,10 +38,10 @@ $Lexend_Peta: 'Lexend Peta', sans-serif;
 
     img {
         width: 100px;
-        height: 90px;
+        height: 75px;
         margin-left: 10rem;
         // padding-top: 1rem;
-        
+
         @media screen and (max-width: 1279px) {
             padding-left: .5rem;
         }

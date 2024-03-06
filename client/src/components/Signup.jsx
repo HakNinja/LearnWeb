@@ -50,7 +50,7 @@ const Signup = () => {
     const handleSubmit = async (e) => {
         e.preventDefault()
         const data = { name, email, password, cpassword, city, state, country, phoneNumber, instituteName }
-        if (password != cpassword){
+        if (password !== cpassword) {
             toast.error('Password and confirm password must be same', {
                 position: "bottom-left",
                 autoClose: 5000,
@@ -61,38 +61,51 @@ const Signup = () => {
                 progress: undefined,
                 theme: "light",
             });
+            return
         } else {
             const res = await fetch(`http://127.0.0.1:5001/user/adduser`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(data),
-        })
-        let response = await res.json();
-        // console.log(data)
-        // let response = { "success": true }
-        setemail("")
-        setname("")
-        setpassword("")
-        setcpassword("")
-        if (response.success) {
-            toast.success('Your account have been created', {
-                position: "bottom-left",
-                autoClose: 5000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-                theme: "light",
-            });
-            setTimeout(() => {
-                navigate(`/login`)
-            }, 800);
-    }   
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
+            })
+            let response = await res.json();
+            // console.log(data)
+            // let response = { "success": true }
+
+            if (response.success) {
+                toast.success('Your account have been created', {
+                    position: "bottom-left",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                });
+                setemail("")
+                setname("")
+                setpassword("")
+                setcpassword("")
+                setTimeout(() => {
+                    navigate(`/login`)
+                }, 800);
+            } else {
+                toast.error(response.message, {
+                    position: "bottom-left",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                });
+            }
+        }
     }
-}
     return (
         <div>
             <ToastContainer
