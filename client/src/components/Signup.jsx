@@ -50,7 +50,7 @@ const Signup = () => {
     const handleSubmit = async (e) => {
         e.preventDefault()
         const data = { name, email, password, cpassword, city, state, country, phoneNumber, instituteName }
-        if (password != cpassword){
+        if (password !== cpassword){
             toast.error('Password and confirm password must be same', {
                 position: "bottom-left",
                 autoClose: 5000,

@@ -4,6 +4,7 @@ import {default as avatar} from './avatar.jpeg'
 import {default as banner} from './banner.png'
 import {default as error} from './error.jpeg'
 import {default as cover} from './cover.jpg'
+import {default as LWLogo} from './LWLogo.png'
 
 export {
     Logo,
@@ -12,4 +13,5 @@ export {
     banner,
     error,
     cover,
+    LWLogo,
 }
