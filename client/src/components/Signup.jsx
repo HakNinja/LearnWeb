@@ -10,6 +10,7 @@ const Signup = () => {
     const [name, setname] = useState("")
     const [email, setemail] = useState("")
     const [password, setpassword] = useState("")
+    const [cpassword, setcpassword] = useState("")
     const [city, setCity] = useState("")
     const [state, setState] = useState("")
     const [country, setCountry] = useState("")
@@ -28,6 +29,9 @@ const Signup = () => {
         else if (e.target.name === 'password') {
             setpassword(e.target.value)
         }
+        else if (e.target.name === 'cpassword') {
+            setcpassword(e.target.value)
+        }
         else if (e.target.name === 'city') {
             setCity(e.target.value)
         }
@@ -45,8 +49,20 @@ const Signup = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-        const data = { name, email, password, city, state, country, phoneNumber, instituteName }
-        const res = await fetch(`http://127.0.0.1:5001/user/adduser`, {
+        const data = { name, email, password, cpassword, city, state, country, phoneNumber, instituteName }
+        if (password != cpassword){
+            toast.error('Password and confirm password must be same', {
+                position: "bottom-left",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+            });
+        } else {
+            const res = await fetch(`http://127.0.0.1:5001/user/adduser`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -59,6 +75,7 @@ const Signup = () => {
         setemail("")
         setname("")
         setpassword("")
+        setcpassword("")
         if (response.success) {
             toast.success('Your account have been created', {
                 position: "bottom-left",
@@ -73,8 +90,9 @@ const Signup = () => {
             setTimeout(() => {
                 navigate(`/login`)
             }, 800);
-        }
+    }   
     }
+}
     return (
         <div>
             <ToastContainer
@@ -155,6 +173,27 @@ const Signup = () => {
                                     placeholder="Password"
                                 />
                             </div>
+
+
+
+                            <div>
+                                <label htmlFor="password" className="sr-only">
+                                    Confirm Password
+                                </label>
+                                <input
+                                    onChange={handleChange}
+                                    value={cpassword}
+                                    id="cpassword"
+                                    name="cpassword"
+                                    type="password"
+                                    autoComplete="current-password"
+                                    required
+                                    className="relative block w-full appearance-none rounded-none rounded-b-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-pink-500 focus:outline-none focus:ring-pink-500 sm:text-sm"
+                                    placeholder="Confirm Password"
+                                />
+                            </div>
+
+
                             <div className="mx-auto flex">
                                 <div className=" w-1/2">
 
@@ -163,7 +202,7 @@ const Signup = () => {
                                         onChange={handleChange}
                                         value={city}
                                         placeholder='City'
-                                        className="w-full bg-white rounded border border-gray-300 focus:border-pink-500 focus:ring-2 focus:ring-pink-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
+                                        className="relative block w-full appearance-none rounded-none rounded-b-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-pink-500 focus:outline-none focus:ring-pink-500 sm:text-sm" />
                                 </div>
                                 <div className=" w-1/2">
 
@@ -172,7 +211,7 @@ const Signup = () => {
                                         onChange={handleChange}
                                         value={state}
                                         placeholder="State"
-                                        className="w-full bg-white rounded border border-gray-300 focus:border-pink-500 focus:ring-2 focus:ring-pink-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
+                                        className="relative block w-full appearance-none rounded-none rounded-b-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-pink-500 focus:outline-none focus:ring-pink-500 sm:text-sm" />
                                 </div>
                             </div>
                             <div className="mx-auto flex">
@@ -182,8 +221,8 @@ const Signup = () => {
                                         id="country" name="country"
                                         onChange={handleChange}
                                         value={country}
-                                        placeholder='country'
-                                        className="w-full bg-white rounded border border-gray-300 focus:border-pink-500 focus:ring-2 focus:ring-pink-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
+                                        placeholder='Country'
+                                        className="relative block w-full appearance-none rounded-none rounded-b-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-pink-500 focus:outline-none focus:ring-pink-500 sm:text-sm" />
                                 </div>
                                 <div className=" w-1/2">
 
@@ -191,8 +230,8 @@ const Signup = () => {
                                         id="phoneNumber" name="phoneNumber"
                                         onChange={handleChange}
                                         value={phoneNumber}
-                                        placeholder="phoneNumber"
-                                        className="w-full bg-white rounded border border-gray-300 focus:border-pink-500 focus:ring-2 focus:ring-pink-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
+                                        placeholder="Phone Number"
+                                        className="relative block w-full appearance-none rounded-none rounded-b-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-pink-500 focus:outline-none focus:ring-pink-500 sm:text-sm" />
                                 </div>
                             </div>
                             <div>
