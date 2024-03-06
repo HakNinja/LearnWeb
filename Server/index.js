@@ -6,6 +6,7 @@ import helmet from 'helmet'
 import dotenv from 'dotenv'
 
 import userRoutes from './routes/user.js'
+import userData from './routes/data.js'
 
 dotenv.config()
 const app = express()
@@ -18,7 +19,7 @@ app.use(cors())
 
 
 app.use('/user',userRoutes)
-
+app.use('/data',userData)
 
 const PORT=process.env.PORT || 9000
 mongoose.connect(process.env.MONGO_URL,{

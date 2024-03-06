@@ -34,8 +34,8 @@ const Home = () => {
             </div>
             <div>
               <h3 class="fs-2">TEACHER EDUCATION
-                PROGRAM.</h3>
-              <p>Building capacity of Pre-service and In-service teachers .</p>
+                PROGRAM</h3>
+              <p>Building capacity of Pre-service and In-service teachers</p>
             </div>
           </div>
           <div class="col d-flex align-items-start">
@@ -51,8 +51,8 @@ const Home = () => {
             </div>
             <div>
               <h3 class="fs-2"> DATA ANALYTICS
-                SUPPORT PROGRAM.</h3>
-              <p>Empowering education officials to make informed decisions, driven by data.</p>
+                SUPPORT PROGRAM</h3>
+              <p>Empowering education officials to make informed decisions, driven by data</p>
             </div>
           </div>
           <div class="col d-flex align-items-start">
@@ -66,8 +66,8 @@ const Home = () => {
             </div>
             <div>
               <h3 class="fs-2">COMMUNITY
-                EMPOWERMENT PROGRAM.</h3>
-              <p>Empowering the parents to become active stakeholders in child’s learning journey.</p>
+                EMPOWERMENT PROGRAM</h3>
+              <p>Empowering the parents to become active stakeholders in child’s learning journey</p>
             </div>
           </div>
         </div>
@@ -75,9 +75,9 @@ const Home = () => {
 
       <div class="container" style={{}}>
         <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
-          <h2 class="display-4 fw-normal">Top Category Cources</h2>
+          <h2 class="display-4 fw-normal">Top Category Courses</h2>
           <p class="fs-5 text-body-secondary text-center"> LearnWeb is a Section 8 non-profit organization with the aim to
-            enhance the quality of education in India.</p>
+            enhance the quality of education in India</p>
         </div>
         <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
           <div class="col">
@@ -89,7 +89,7 @@ const Home = () => {
               <div class="card-body">
                 {/* <video controls> */}
                 <video src="video1.mp4" type="video/mp4">
-                  Your browser does not support the video tag.
+                  Your browser does not support the video tag
                 </video>
                 <button type="button" class="w-100 btn btn-lg btn-outline-dark">Sign up for free</button>
               </div>
@@ -106,7 +106,7 @@ const Home = () => {
               <div class="card-body">
 
                 <video src="video1.mp4" type="video/mp4">
-                  Your browser does not support the video tag.
+                  Your browser does not support the video tag
                 </video>
                 <button type="button" class="w-100 btn btn-lg btn-outline-dark">0%Get started</button>
               </div>
@@ -121,7 +121,7 @@ const Home = () => {
               <div class="card-body">
                 {/* <video controls> */}
                 <video src="video1.mp4" type="video/mp4">
-                  Your browser does not support the video tag.
+                  Your browser does not support the video tag
                 </video>
                 <button type="button" class="w-100 btn btn-lg btn-outline-dark">$19</button>
               </div>
