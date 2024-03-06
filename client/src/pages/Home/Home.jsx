@@ -12,8 +12,8 @@ const Home = () => {
           <div class="col-lg-6">
             <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3" style={{ marginLeft: "10rem", marginBottom: "5rem" }}>You Learn Today And Earn Tomorrow.</h1>
             <div class="d-grid gap-2 d-md-flex justify-content-md-start" style={{ marginLeft: "10rem", marginBottom: "5rem" }}>
-              <button class=" btn btn-light"><a class="nav-link" href="logIn.html">Login</a></button>
-              <button class=" btn btn-light"><a class="nav-link" href="SignIn.html">SignUp</a></button>
+              <button class=" btn btn-light"><a class="nav-link" href="/login">Login</a></button>
+              <button class=" btn btn-light"><a class="nav-link" href="/signup">SignUp</a></button>
             </div>
           </div>
         </div>

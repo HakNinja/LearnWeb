@@ -6,6 +6,12 @@ import { Link, useNavigate } from "react-router-dom"
 import { useAuth0 } from "@auth0/auth0-react";
 import { FaGoogle } from "react-icons/fa";
 
+
+import {Icon} from 'react-icons-kit';
+import {eyeOff} from 'react-icons-kit/feather/eyeOff';
+import {eye} from 'react-icons-kit/feather/eye'
+
+
 const Signup = () => {
     const [name, setname] = useState("")
     const [email, setemail] = useState("")
@@ -18,6 +24,35 @@ const Signup = () => {
     const [instituteName, setInstituteName] = useState("")
     const navigate = useNavigate()
     const { loginWithRedirect } = useAuth0()
+
+
+// const [password, setPassword] = useState("");
+const [type, setType] = useState('password');
+const [icon, setIcon] = useState(eyeOff);
+
+const [type1, setType1] = useState('password');
+const [icon1, setIcon1] = useState(eyeOff);
+
+
+    const handleToggle2 = () => {
+        if (type1==='password'){
+           setIcon1(eye);
+           setType1('text')
+        } else {
+           setIcon1(eyeOff)
+           setType1('password')
+        }
+     }
+
+     const handleToggle = () => {
+        if (type==='password'){
+           setIcon(eye);
+           setType('text')
+        } else {
+           setIcon(eyeOff)
+           setType('password')
+        }
+     }
 
     const handleChange = (e) => {
         if (e.target.name === 'name') {
@@ -41,7 +76,7 @@ const Signup = () => {
         else if (e.target.name === 'country') {
             setCountry(e.target.value)
         } else if (e.target.name === 'phoneNumber') {
-            setphoneNumber(e.target.value)
+            setphoneNumber(e.target.value.replace(/\D/g, ''))
         } else if (e.target.name === 'instituteName') {
             setInstituteName(e.target.value)
         }
@@ -50,11 +85,9 @@ const Signup = () => {
     const handleSubmit = async (e) => {
         e.preventDefault()
         const data = { name, email, password, cpassword, city, state, country, phoneNumber, instituteName }
-<<<<<<< HEAD
+
+
         if (password !== cpassword){
-=======
-        if (password !== cpassword) {
->>>>>>> 990fd91fbc3a9470e9f9879c230cafbcae6e4f14
             toast.error('Password and confirm password must be same', {
                 position: "bottom-left",
                 autoClose: 5000,
@@ -183,12 +216,15 @@ const Signup = () => {
                                     value={password}
                                     id="password"
                                     name="password"
-                                    type="password"
+                                    type={type}
                                     autoComplete="current-password"
                                     required
                                     className="relative block w-full appearance-none rounded-none rounded-b-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-pink-500 focus:outline-none focus:ring-pink-500 sm:text-sm"
                                     placeholder="Password"
                                 />
+            <span className="flex justify-around items-center" onClick={handleToggle}>
+                  <Icon className="absolute mr-10" icon={icon} size={24} style={{marginTop:"-37px", marginRight:"-400px"}}/>
+              </span>
                             </div>
 
 
@@ -202,12 +238,15 @@ const Signup = () => {
                                     value={cpassword}
                                     id="cpassword"
                                     name="cpassword"
-                                    type="password"
+                                    type={type1}
                                     autoComplete="current-password"
                                     required
                                     className="relative block w-full appearance-none rounded-none rounded-b-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-pink-500 focus:outline-none focus:ring-pink-500 sm:text-sm"
                                     placeholder="Confirm Password"
                                 />
+                                           <span className="flex justify-around items-center relative" onClick={handleToggle2}>
+                  <Icon className="absolute mr-10" icon={icon1} size={24} style={{marginTop:"-37px", marginRight:"-400px"}}/>
+              </span>
                             </div>
 
 
