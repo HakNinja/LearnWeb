@@ -23,7 +23,8 @@ const Navbar = () => {
         {['Home', 'Courses', 'Roadmap', 'About us'].map((items) =>
           <li className='app__center' key={`link-${items}`}>
             <div />
-            <NavLink to={`/${items}`} > {items} </NavLink>
+            <NavLink to={`/${items}`} className={({ isActive }) =>
+              isActive ? 'bg-red-500 font-bold' : ''}> {items} </NavLink>
           </li>
         )}
       </ul>
