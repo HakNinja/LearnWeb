@@ -3,8 +3,12 @@ import { AiOutlineLock } from 'react-icons/ai';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Link, useNavigate } from "react-router-dom"
+import { useAuth0 } from "@auth0/auth0-react";
+import { FaGoogle } from "react-icons/fa";
 
 const Login = () => {
+    const { loginWithRedirect } = useAuth0()
+    // console.log(user)
     const [email, setemail] = useState("")
     const [password, setpassword] = useState("")
     const navigate = useNavigate()
@@ -148,6 +152,17 @@ const Login = () => {
                             </button>
                         </div>
                     </form>
+                    <div>
+                        <button
+                            onClick={(e) => loginWithRedirect()}
+                            className="group relative flex w-full justify-center rounded-md border border-transparent bg-pink-600 py-2 px-4 text-sm font-medium text-white hover:bg-pink-700 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2"
+                        >
+                            <span className="absolute inset-y-0 left-0 flex items-center pl-3">
+                                <FaGoogle className="h-5 w-5 text-white group-hover:text-pink-400" />
+                            </span>
+                            Login with Redirect
+                        </button>
+                    </div>
                 </div>
             </div>
         </>
