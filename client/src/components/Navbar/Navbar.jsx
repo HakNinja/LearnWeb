@@ -6,11 +6,13 @@ import { LWLogo } from '../../assets';
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom'
 import { Link } from "react-router-dom"
+import { useAuth0 } from "@auth0/auth0-react";
 
 
 
 const Navbar = () => {
 
+  const { user, logout } = useAuth0()
   const [toggle, setToggle] = useState(false)
 
 
@@ -24,9 +26,13 @@ const Navbar = () => {
           <li className='app__center' key={`link-${items}`}>
             <div />
             <NavLink to={`/${items}`} className={({ isActive }) =>
-              isActive ? 'bg-red-500 font-bold' : ''}> {items} </NavLink>
+              isActive ? ' font-bold border-b-4 border-red-500' : ''} > {items} </NavLink>
           </li>
         )}
+        <div class="d-grid gap-2 d-md-flex justify-content-md-start" style={{ marginLeft: "10rem", marginBottom: "5rem" }}>
+          {user ? <button onClick={(e) => logout()} class=" btn btn-light"><Link class="nav-link" to="/">Logout</Link></button> : (<><button class=" btn btn-light"><Link class="nav-link" to="/login">Login</Link></button>
+            <button class=" btn btn-light"><Link class="nav-link" to="/signup">SignUp</Link></button></>)}
+        </div>
       </ul>
 
       <div className='navbar-menu'>
@@ -38,7 +44,7 @@ const Navbar = () => {
           >
             <HiX onClick={() => setToggle(false)} />
             <ul>
-              {['Home', 'Recipes', 'About'].map((items) =>
+              {['Home', 'Courses', 'Roadmap', 'About us'].map((items) =>
                 <li key={items}>
                   <NavLink to={`/${items}`} onClick={() => setToggle(false)}  > {items} </NavLink>
                 </li>
