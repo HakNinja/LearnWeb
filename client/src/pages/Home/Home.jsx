@@ -1,7 +1,12 @@
 import React from 'react'
 import { cover } from '../../assets'
+import { useAuth0 } from "@auth0/auth0-react";
+import { Link } from "react-router-dom"
 
 const Home = () => {
+  const { user, logout } = useAuth0()
+  // onClick={(e) => loginWithRedirect()}
+  console.log(user)
   return (
     <>
       <div class="container col-xxl-8 px-4 pt-5" className='colorGradient'>
@@ -12,8 +17,8 @@ const Home = () => {
           <div class="col-lg-6">
             <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3" style={{ marginLeft: "10rem", marginBottom: "5rem" }}>You Learn Today And Earn Tomorrow.</h1>
             <div class="d-grid gap-2 d-md-flex justify-content-md-start" style={{ marginLeft: "10rem", marginBottom: "5rem" }}>
-              <button class=" btn btn-light"><a class="nav-link" href="/login">Login</a></button>
-              <button class=" btn btn-light"><a class="nav-link" href="/signup">SignUp</a></button>
+              {user ? <button onClick={(e) => logout()} class=" btn btn-light"><Link class="nav-link" to="/">Logout</Link></button> : (<><button class=" btn btn-light"><a class="nav-link" href="/login">Login</a></button>
+                <button class=" btn btn-light"><a class="nav-link" href="/signup">SignUp</a></button></>)}
             </div>
           </div>
         </div>
