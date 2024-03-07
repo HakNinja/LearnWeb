@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes} from 'react-router-dom';
+import { BrowserRouter ,Route, Routes} from 'react-router-dom';
 import './App.css';
 import ScrollToTop from './components/ScrollToTop.ScrollToTop';
 import 'bootstrap/dist/css/bootstrap.min.css'
@@ -8,7 +8,8 @@ import Login from './components/Login';
 import Signup from './components/Signup';
 import Footer from './components/Footer';
 import PersonData from './components/PersonData';
-
+import Error from './components/Error';
+// import Dashboard from './pages/Dashboard'
 
 function App() {
   return (
@@ -17,11 +18,14 @@ function App() {
      <ScrollToTop/>
      <Navbar />
      <Routes>
-      <Route path='/' element={ <Home />} />
-      <Route path='/Home' element={ <Home />} />
-      <Route path='/login' element={ <Login />} />
-      <Route path='/signup' element={ <Signup />} />
-      <Route path='/persondata' element={ <PersonData />} />
+      <Route exact path='/' element={ <Home />} />
+      <Route exact path='/Home' element={ <Home />} />
+      <Route exact path='/login' element={ <Login />} />
+      <Route exact path='/signup' element={ <Signup />} />
+      <Route exact path='/persondata' element={ <PersonData />} />
+      <Route path ='*' element={<Error/>}/>
+      {/* <Route path='/dashboard' element={ <Dashboard />} /> */}
+     
      </Routes>
      <Footer/>
      </BrowserRouter>

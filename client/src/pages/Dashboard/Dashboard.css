@@ -1,0 +1,33 @@
+.App {
+    text-align: center;
+  }
+  
+  .App-header {
+    background-color: #282c34;
+    min-height: 10vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+  }
+  
+  .dashboard {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 50px;
+  }
+  
+  .widget {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    width: 200px;
+    text-align: center;
+  }
+  
+  .widget p {
+    margin-top: 10px;
+  }
+  

@@ -34,6 +34,17 @@ const [type1, setType1] = useState('password');
 const [icon1, setIcon1] = useState(eyeOff);
 
 
+const [messages, setMessages] = useState({
+    number: false,
+    specialChar: false,
+    uppercase: false,
+    lowercase: false
+  });
+
+
+
+
+
     const handleToggle2 = () => {
         if (type1==='password'){
            setIcon1(eye);
@@ -62,7 +73,25 @@ const [icon1, setIcon1] = useState(eyeOff);
             setemail(e.target.value)
         }
         else if (e.target.name === 'password') {
+
+
+            const inputValue = e.target.value;
             setpassword(e.target.value)
+        
+            const containsNumber = /\d/.test(inputValue);
+            const containsSpecialChar = /[!@#$%^&*(),.?":{}|<>]/.test(inputValue);
+            const containsUppercase = /[A-Z]/.test(inputValue);
+            const containsLowercase = /[a-z]/.test(inputValue);
+        
+            setMessages({
+              number: !containsNumber,
+              specialChar: !containsSpecialChar,
+              uppercase: !containsUppercase,
+              lowercase: !containsLowercase
+            });
+
+
+
         }
         else if (e.target.name === 'cpassword') {
             setcpassword(e.target.value)
@@ -76,7 +105,7 @@ const [icon1, setIcon1] = useState(eyeOff);
         else if (e.target.name === 'country') {
             setCountry(e.target.value)
         } else if (e.target.name === 'phoneNumber') {
-            setphoneNumber(e.target.value.replace(/\D/g, ''))
+        setphoneNumber(e.target.value.replace(/\D/g, '')) 
         } else if (e.target.name === 'instituteName') {
             setInstituteName(e.target.value)
         }
@@ -87,7 +116,70 @@ const [icon1, setIcon1] = useState(eyeOff);
         const data = { name, email, password, cpassword, city, state, country, phoneNumber, instituteName }
 
 
-        if (password !== cpassword){
+
+
+
+        function isValidEmail(email) {
+            var valid_email = [
+                "@gmail.com", "@yahoo.com", "@hotmail.com", "@aol.com", "@hotmail.co.uk", "@hotmail.fr", "@msn.com", "@yahoo.fr", "@wanadoo.f", "@orange.fr",
+                "@comcast.net", "@yahoo.co.uk", "@yahoo.com.br", "@yahoo.co.i", "@live.com", "@rediffmail.com", "@free.fr", "@gmx.de", "@web.de",
+                "@yandex.ru", "@ymail.com", "@libero.it", "@outlook.com", "@uol.com.br", "@bol.com.br", "@mail.ru", "@cox.net", "@hotmail.it", "@sbcglobal.net",
+                "@sfr.fr", "@live.fr", "@verizon.net", "@live.co.uk", "@googlemail.co", "@yahoo.e", "@ig.com.br", "@live.nl", "@bigpond.com", "@terra.com.br",
+                "@yahoo.it", "@neuf.fr", "@yahoo.de", "@alice.it", "@rocketmail.com", "@att.net", "@laposte.net", "@facebook.com", "@bellsouth.net", "@yahoo.in",
+                "@hotmail.es", "@charter.net", "@yahoo.ca", "@yahoo.com.au", "@rambler.ru", "@hotmail.de", "@tiscali.i", "@shaw.ca", "@yahoo.co.j", "@sky.com",
+                "@earthlink.net", "@optonline.net", "@freenet.de", "@t-online.de", "@aliceadsl.fr", "@virgilio.it", "@home.nl", "@qq.com", "@telenet.be",
+                "@me.com", "@yahoo.com.ar", "@tiscali.co.uk", "@yahoo.com.mx", "@voila.fr", "@gmx.net", "@mail.com", "@planet.nl", "@tin.it", "@live.it",
+                "@ntlworld.com", "@arcor.de", "@yahoo.co.id", "@frontiernet.net", "@hetnet.nl", "@live.com.au", "@yahoo.com.sg", "@zonnet.nl",
+                "@club-internet.fr", "@juno.com", "@optusnet.com.au", "@blueyonder.co.uk", "@bluewin.ch", "@skynet.be", "@sympatico.ca", "@windstream.net",
+                "@mac.com", "@centurytel.net", "@chello.nl", "@live.ca", "@aim.com", "@bigpond.net.au"
+            ];
+        
+            for (var i = 0; i < valid_email.length; i++) {
+                if (email.includes(valid_email[i])) {
+                    return true; // The email contains a valid domain
+                }
+            }
+            return false; // The email does not contain any valid domain
+        }
+        
+        function isValidPassword(password) {
+            // Regular expression to match passwords with at least one special character, one number, one capital letter, and one lowercase letter
+            var regex = /^(?=.*[!@#$%^&*])(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+        
+            return regex.test(password);
+        }
+
+        if (!isValidEmail(email)) {
+            toast.error('Invalid Email', {
+                position: "bottom-left",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+            });
+            return
+        }
+
+else if (!isValidPassword(password)) {
+    toast.error('Invalid Password', {
+        position: "bottom-left",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+    });
+    return
+}
+
+
+
+        else if (password !== cpassword){
             toast.error('Password and confirm password must be same', {
                 position: "bottom-left",
                 autoClose: 5000,
@@ -99,7 +191,23 @@ const [icon1, setIcon1] = useState(eyeOff);
                 theme: "light",
             });
             return
-        } else {
+        } 
+        
+        else if (phoneNumber.length !== 10){
+            toast.error('Invalid Phone Number', {
+                position: "bottom-left",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+            });
+            return
+        }
+        
+        else {
             const res = await fetch(`http://127.0.0.1:5001/user/adduser`, {
                 method: 'POST',
                 headers: {
@@ -225,6 +333,22 @@ const [icon1, setIcon1] = useState(eyeOff);
             <span className="flex justify-around items-center" onClick={handleToggle}>
                   <Icon className="absolute mr-10" icon={icon} size={24} style={{marginTop:"-37px", marginRight:"-400px"}}/>
               </span>
+
+
+
+              {messages.number && (
+        <p style={{ color: 'red' }}>Password should contain at least one number.</p>
+      )}
+      {messages.specialChar && (
+        <p style={{ color: 'red' }}>Password should contain at least one special character.</p>
+      )}
+      {messages.uppercase && (
+        <p style={{ color: 'red' }}>Password should contain at least one uppercase letter.</p>
+      )}
+      {messages.lowercase && (
+        <p style={{ color: 'red' }}>Password should contain at least one lowercase letter.</p>
+      )}
+
                             </div>
 
 
