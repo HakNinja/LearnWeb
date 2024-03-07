@@ -9,9 +9,13 @@
     const B = pinData.filter((pin)=>{
        return pin.pincode==A
     })
+    // console.log(B)
     // console.log(Object.keys(B[0]).length)
-    if(Object.keys(B[0]).length < 5){
-      res.status(200).json({message:"Pincode not found try again with different pincode"})
+    // console.log(B)
+    if(B.length === 0){
+      const C = {}
+      C.Success=false
+      res.status(200).json({"Response":C,"message":"Pincode not found try again with different pincode"})
     }else{
      const C = B[0]
      C.Success=true

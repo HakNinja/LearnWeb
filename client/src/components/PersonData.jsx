@@ -52,8 +52,8 @@ const PersonData = () => {
         let data = pin
         let pins = await fetch(`http://127.0.0.1:5001/data/pinData?pincode=${data}`)
         let response = await pins.json()
-        console.log(response.Response.Success)
-        if (response.Response.Success) {
+        // console.log(response.Response.Success)
+        if (response.Response.Success === true) {
             setCity(response.Response.taluk)
             setDistrict(response.Response.districtName)
             setStateName(response.Response.stateName)

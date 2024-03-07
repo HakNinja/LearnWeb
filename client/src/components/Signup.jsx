@@ -38,7 +38,8 @@ const [messages, setMessages] = useState({
     number: false,
     specialChar: false,
     uppercase: false,
-    lowercase: false
+    lowercase: false,
+    length: false
   });
 
 
@@ -82,12 +83,14 @@ const [messages, setMessages] = useState({
             const containsSpecialChar = /[!@#$%^&*(),.?":{}|<>]/.test(inputValue);
             const containsUppercase = /[A-Z]/.test(inputValue);
             const containsLowercase = /[a-z]/.test(inputValue);
-        
+            const containsLength = inputValue.length>=8;
+
             setMessages({
               number: !containsNumber,
               specialChar: !containsSpecialChar,
               uppercase: !containsUppercase,
-              lowercase: !containsLowercase
+              lowercase: !containsLowercase,
+              length: !containsLength
             });
 
 
@@ -347,6 +350,9 @@ else if (!isValidPassword(password)) {
       )}
       {messages.lowercase && (
         <p style={{ color: 'red' }}>Password should contain at least one lowercase letter.</p>
+      )}
+            {messages.length && (
+        <p style={{ color: 'red' }}>Password should contain at least eight character.</p>
       )}
 
                             </div>
