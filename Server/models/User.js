@@ -15,7 +15,6 @@ const UserSchema = new mongoose.Schema(
   },
   password: {
     type: String,
-    required: true,
     min: 5,
   },
   city: String,
@@ -24,8 +23,11 @@ const UserSchema = new mongoose.Schema(
   phoneNumber: String,
   instituteName:{
     type: String,
-    required: true,
     min: 2
+  },
+  role:{
+    type:String,
+    default:2
   }
 },
 { timestamps: true }

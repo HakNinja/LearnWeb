@@ -2,11 +2,11 @@ import express from "express";
 import {
   addTeacher,
   Login
-} from "../controllers/user.js";
+} from "../controllers/teacher.js"
 
 const router = express.Router();
 
-router.post("/adduser", addTeacher);
+router.post("/addteacher", addTeacher);
 router.post("/login", Login);
 
 

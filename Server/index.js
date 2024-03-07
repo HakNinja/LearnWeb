@@ -6,6 +6,7 @@ import helmet from 'helmet'
 import dotenv from 'dotenv'
 
 import userRoutes from './routes/user.js'
+import teacherRoutes from "./routes/teacher.js"
 import userData from './routes/data.js'
 
 dotenv.config()
@@ -19,6 +20,7 @@ app.use(cors())
 
 
 app.use('/user',userRoutes)
+app.use('/teacher',teacherRoutes)
 app.use('/data',userData)
 
 const PORT=process.env.PORT || 9000

@@ -15,7 +15,6 @@ const TeacherSchema = new mongoose.Schema(
   },
   password: {
     type: String,
-    required: true,
     min: 5,
   },
   city: String,
@@ -24,12 +23,15 @@ const TeacherSchema = new mongoose.Schema(
   phoneNumber: String,
   instituteName:{
     type: String,
-    required: true,
     min: 2
+  },
+  role:{
+    type:String,
+    default:1
   }
 },
 { timestamps: true }
 );
 
-const Teacher = mongoose.model("teacher", TeacherSchema);
-export default User;
+const Teacher = mongoose.model("Teacher", TeacherSchema);
+export default Teacher;
