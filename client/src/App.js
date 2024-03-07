@@ -9,6 +9,7 @@ import Signup from './components/Signup';
 import Footer from './components/Footer';
 import PersonData from './components/PersonData';
 import Error from './components/Error';
+import LoginNew from './components/Login/LoginNew';
 // import Dashboard from './pages/Dashboard'
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
       <Route exact path='/login' element={ <Login />} />
       <Route exact path='/signup' element={ <Signup />} />
       <Route exact path='/persondata' element={ <PersonData />} />
+      <Route exact path='/loginnew' element={< LoginNew />}/>
       <Route path ='*' element={<Error/>}/>
       {/* <Route path='/dashboard' element={ <Dashboard />} /> */}
      

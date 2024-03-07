@@ -1,0 +1,61 @@
+.login-Container{
+    display: flex;
+    justify-content: space-evenly;
+    margin: auto;
+    width: 100%;
+    margin-top: 5rem;
+}
+
+
+.instructor-login{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+
+    h2{
+        color: aqua;
+    }
+
+    button{
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: white;
+        background-color: green;
+        border: 2px solid green;
+        border-radius: 10px;
+        padding: 10px 30px;
+    }
+}
+
+
+.learner-login{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    
+    h2{
+        color: blueviolet;
+    }
+
+    button{
+        font-size: 1.2rem;
+        font-weight: 600;
+        border: 1px solid black;
+        border-radius: 10px;
+        padding: 10px 30px;
+    }
+
+}
+
+.test{
+      width: 500px; 
+      margin-top: 2rem; 
+
+      p{
+        text-align: center;
+      }
+}
