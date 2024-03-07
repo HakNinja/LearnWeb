@@ -4,7 +4,7 @@
  export const pincodeDataAutomation = async (req, res) => {
     try {
     //  console.log(pinData)
-    //  const A = req.query.pincode
+     const A = req.query.pincode
      console.log(A)
     const B = pinData.filter((pin)=>{
        return pin.pincode==A
