@@ -4,23 +4,28 @@ const Error = () => {
 
   return (
 
-    <div class="gradient text-white min-h-screen flex items-center">
-      <div class="container mx-auto p-4 flex flex-wrap items-center">
-        <div class="w-full md:w-5/12 text-center p-4">
-          <img src="https://themichailov.com/img/not-found.svg" alt="Not Found" />
-        </div>
-        <div class="w-full md:w-7/12 text-center md:text-left p-4">
-          <div class="text-6xl font-medium">404</div>
-          <div class="text-xl md:text-3xl font-medium mb-4">
-            Oops. This page has gone missing.
-          </div>
-          <div class="text-lg mb-8">
-            You may have mistyped the address or the page may have moved.
-          </div>
-          <a href="#" class="border border-white rounded p-4">Go Home</a>
-        </div>
-      </div>
-    </div>
+    <>
+
+
+    <div className="grid h-screen place-content-center bg-white px-4">
+  <div className="text-center">
+    <h1 className="text-9xl font-black text-gray-200">404</h1>
+
+    <p className="text-2xl font-bold tracking-tight text-gray-900 sm:text-4xl">Uh-oh!</p>
+
+    <p className="mt-4 text-gray-500">We can't find that page.</p>
+
+    <a
+      href="/"
+      className="mt-6 inline-block rounded bg-indigo-600 px-5 py-3 text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring"
+    >
+      Go Back Home
+    </a>
+  </div>
+</div>
+
+
+    </>
   )
 }
 

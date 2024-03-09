@@ -6,6 +6,13 @@ import { Link, useNavigate, useParams } from "react-router-dom"
 import { useAuth0 } from "@auth0/auth0-react";
 import { FaGoogle } from "react-icons/fa";
 
+
+
+import {Icon} from 'react-icons-kit';
+import {eyeOff} from 'react-icons-kit/feather/eyeOff';
+import {eye} from 'react-icons-kit/feather/eye'
+
+
 const Login = () => {
     const { loginWithRedirect } = useAuth0()
     // console.log(user)
@@ -15,6 +22,12 @@ const Login = () => {
     const params = useParams()
     const { role } = params
     console.log(role)
+    
+    
+    const [type, setType] = useState('password');
+    const [icon, setIcon] = useState(eyeOff);
+    
+    
     const handleChange = (e) => {
 
         if (e.target.name === 'email') {
@@ -24,6 +37,21 @@ const Login = () => {
             setpassword(e.target.value)
         }
     }
+
+
+
+
+    const handleToggle = () => {
+        if (type==='password'){
+           setIcon(eye);
+           setType('text')
+        } else {
+           setIcon(eyeOff)
+           setType('password')
+        }
+     }
+
+
 
     const handleSubmit = async (e) => {
         e.preventDefault()
@@ -124,13 +152,20 @@ const Login = () => {
                                     id="password"
                                     value={password}
                                     name="password"
-                                    type="password"
+                                    // type="password"
                                     autoComplete="current-password"
                                     required
+                                    type={type}
+
                                     className="relative block w-full appearance-none rounded-none rounded-b-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-pink-500 focus:outline-none focus:ring-pink-500 sm:text-sm"
                                     placeholder="Password"
                                 />
                             </div>
+
+                            <span className="flex justify-around items-center" onClick={handleToggle}>
+                  <Icon className="absolute mr-10" icon={icon} size={24} style={{marginTop:"-37px", marginRight:"-400px"}}/>
+              </span>
+
                         </div>
 
                         <div className="flex items-center justify-between">
