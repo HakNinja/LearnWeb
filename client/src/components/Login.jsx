@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { AiOutlineLock } from 'react-icons/ai';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { Link, useNavigate } from "react-router-dom"
+import { Link, useNavigate, useParams } from "react-router-dom"
 import { useAuth0 } from "@auth0/auth0-react";
 import { FaGoogle } from "react-icons/fa";
 
@@ -12,6 +12,9 @@ const Login = () => {
     const [email, setemail] = useState("")
     const [password, setpassword] = useState("")
     const navigate = useNavigate()
+    const params = useParams()
+    const { role } = params
+    console.log(role)
     const handleChange = (e) => {
 
         if (e.target.name === 'email') {

@@ -60,6 +60,16 @@ const PersonData = () => {
 
         }
         else {
+            toast.error(response.message, {
+                position: "bottom-left",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+            });
             setCity('')
             setDistrict('')
             setStateName('')

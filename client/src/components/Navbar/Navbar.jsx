@@ -31,8 +31,8 @@ const Navbar = () => {
           </li>
         )}
         <div class="d-grid gap-2 d-md-flex justify-content-md-start" style={{ marginLeft: "10rem", marginBottom: "5rem" }}>
-          {user ? <button onClick={(e) => logout()} class=" btn btn-light"><Link class="nav-link" to="/">Logout</Link></button> : (<><button class=" btn btn-light"><Link class="nav-link" to="/login">Login</Link></button>
-            <button class=" btn btn-light"><Link class="nav-link" to="/signup">SignUp</Link></button></>)}
+          {user ? <button onClick={(e) => logout()} class=" btn btn-light"><Link class="nav-link" to="/">Logout</Link></button> : <button class=" btn btn-light"><Link class="nav-link" to="/loginnew">Login</Link></button>
+          }
         </div>
       </ul>
 
