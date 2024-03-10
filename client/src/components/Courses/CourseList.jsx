@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 import courses from './courses.json';
-import CourseDetail from './CourseDetail';
-import './CourseList.css';
 
 const CourseList = () => {
   const [selectedCourse, setSelectedCourse] = useState(null);
@@ -33,11 +31,6 @@ const CourseList = () => {
           </li>
         ))}
       </ul>
-      {isBoxVisible && (
-        <div className="box">
-          <CourseDetail steps={selectedCourse.steps} course={selectedCourse} onClose={handleClose} />
-        </div>
-      )}
     </div>
   );
 };
