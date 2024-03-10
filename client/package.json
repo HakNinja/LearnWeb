@@ -27,6 +27,7 @@
     "react-scripts": "5.0.1",
     "react-timeline-animation": "^1.2.3",
     "react-toastify": "^10.0.4",
+    "react-vertical-timeline-component": "^3.6.0",
     "sass": "^1.71.1",
     "web-vitals": "^2.1.4"
   },
