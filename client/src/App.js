@@ -11,6 +11,10 @@ import PersonData from './components/PersonData';
 import Error from './components/Error';
 import LoginNew from './components/Login/LoginNew';
 import Roadmap from './components/Roadmap';
+
+import CourseList from './components/Courses/CourseList';
+// import CourseDetails from './components/Courses/CourseDetails';
+
 // import Dashboard from './pages/Dashboard'
 
 function App() {
@@ -27,6 +31,11 @@ function App() {
       <Route exact path='/persondata' element={ <PersonData />} />
       <Route exact path='/loginnew' element={< LoginNew />}/>
       <Route exact path='/roadmap' element={< Roadmap />}/>
+      
+      <Route path="/courses" element={<CourseList />} />
+      {/* <Route path="/courses/:courseId" element={<CourseDetails />} /> */}
+      
+      
       <Route path ='*' element={<Error/>}/>
       {/* <Route path='/dashboard' element={ <Dashboard />} /> */}
      
