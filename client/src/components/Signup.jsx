@@ -16,11 +16,7 @@ const Signup = () => {
     const [email, setemail] = useState("")
     const [password, setpassword] = useState("")
     const [cpassword, setcpassword] = useState("")
-    const [city, setCity] = useState("")
-    const [state, setState] = useState("")
-    const [country, setCountry] = useState("")
     const [phoneNumber, setphoneNumber] = useState("")
-    const [instituteName, setInstituteName] = useState("")
     const navigate = useNavigate()
 
     const params = useParams()
@@ -101,24 +97,14 @@ const Signup = () => {
         else if (e.target.name === 'cpassword') {
             setcpassword(e.target.value)
         }
-        else if (e.target.name === 'city') {
-            setCity(e.target.value)
-        }
-        else if (e.target.name === 'state') {
-            setState(e.target.value)
-        }
-        else if (e.target.name === 'country') {
-            setCountry(e.target.value)
-        } else if (e.target.name === 'phoneNumber') {
+        else if (e.target.name === 'phoneNumber') {
             setphoneNumber(e.target.value.replace(/\D/g, ''))
-        } else if (e.target.name === 'instituteName') {
-            setInstituteName(e.target.value)
         }
     }
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-        const data = { name, email, password, cpassword, city, state, country, phoneNumber, instituteName }
+        const data = { name, email, password, cpassword, phoneNumber }
 
 
 
@@ -427,58 +413,19 @@ const Signup = () => {
                             </div>
 
 
-                            <div className="mx-auto flex">
-                                <div className=" w-1/2">
 
-                                    <input type="text"
-                                        id="city" name="city"
-                                        onChange={handleChange}
-                                        value={city}
-                                        placeholder='City'
-                                        className="relative block w-full appearance-none rounded-none rounded-b-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-pink-500 focus:outline-none focus:ring-pink-500 sm:text-sm" />
-                                </div>
-                                <div className=" w-1/2">
-
-                                    <input type="text"
-                                        id="state" name="state"
-                                        onChange={handleChange}
-                                        value={state}
-                                        placeholder="State"
-                                        className="relative block w-full appearance-none rounded-none rounded-b-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-pink-500 focus:outline-none focus:ring-pink-500 sm:text-sm" />
-                                </div>
-                            </div>
-                            <div className="mx-auto flex">
-                                <div className=" w-1/2">
-
-                                    <input type="text"
-                                        id="country" name="country"
-                                        onChange={handleChange}
-                                        value={country}
-                                        placeholder='Country'
-                                        className="relative block w-full appearance-none rounded-none rounded-b-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-pink-500 focus:outline-none focus:ring-pink-500 sm:text-sm" />
-                                </div>
-                                <div className=" w-1/2">
-
-                                    <input type="text"
-                                        id="phoneNumber" name="phoneNumber"
-                                        onChange={handleChange}
-                                        value={phoneNumber}
-                                        placeholder="Phone Number"
-                                        className="relative block w-full appearance-none rounded-none rounded-b-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-pink-500 focus:outline-none focus:ring-pink-500 sm:text-sm" />
-                                </div>
-                            </div>
                             <div>
-                                <label htmlFor="Institute" className="sr-only">
-                                    Institute Name
+                                <label htmlFor="phoneNumber" className="sr-only">
+                                    Phone Number
                                 </label>
                                 <input
                                     onChange={handleChange}
-                                    value={instituteName}
-                                    id="instituteName"
-                                    name="instituteName"
+                                    value={phoneNumber}
+                                    id="phoneNumber"
+                                    name="phoneNumber"
                                     type="text"
                                     className="relative block w-full appearance-none rounded-none rounded-b-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-pink-500 focus:outline-none focus:ring-pink-500 sm:text-sm"
-                                    placeholder="Institute Name"
+                                    placeholder="Phone Number"
                                 />
                             </div>
                         </div>

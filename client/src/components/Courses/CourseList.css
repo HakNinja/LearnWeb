@@ -1,3 +1,8 @@
 .coursesListli  {
     list-style-type: circle;
   }
+
+  .padding{
+    padding: 60px;
+    padding-left: 200px;
+  }

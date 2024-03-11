@@ -16,7 +16,7 @@ import CourseList from './components/Courses/CourseList';
 import Contact from './components/Contact Us/Contact';
 // import CourseDetails from './components/Courses/CourseDetails';
 
-// import Dashboard from './pages/Dashboard'
+import StudentDashboard from './pages/Dashboard/StudentDashboard'
 
 function App() {
   return (
@@ -29,13 +29,13 @@ function App() {
       <Route exact path='/Home' element={ <Home />} />
       <Route exact path='/login/:role' element={ <Login />} />
       <Route exact path='/signup/:role' element={ <Signup />} />
-      <Route exact path='/persondata' element={ <PersonData />} />
+      <Route exact path='/persondata/:role' element={ <PersonData />} />
       <Route exact path='/loginnew' element={< LoginNew />}/>
       <Route exact path='/roadmap' element={< Roadmap />}/>
       <Route path='/contactus' element={<Contact/>} />
       
       <Route path="/courses" element={<CourseList />} />
-      {/* <Route path="/courses/:courseId" element={<CourseDetails />} /> */}
+      <Route path="/StudentDashboard" element={<StudentDashboard />} />
       
       
       <Route path ='*' element={<Error/>}/>
