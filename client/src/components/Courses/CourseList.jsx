@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import coursesData from './courses.json';
-import CourseListRoadmap from './CourseListRoadmap';
 import './CourseList.css'
+import Confetti from 'react-dom-confetti';
+import CourseListRoadmap from './CourseListRoadmap'
 
 function CourseList() {
   const [selectedCourse, setSelectedCourse] = useState(null);
@@ -21,9 +22,17 @@ function CourseList() {
           </div>
         ))}
       </div>
-      {selectedCourse && <CourseListRoadmap course={selectedCourse} />}
+      {selectedCourse && 
+      <div className="course-roadmap" >
+      <h2>{selectedCourse.course_name} Roadmap</h2>
+      <ul>
+        {selectedCourse.steps.map((step, stepIndex) => (
+          <li key={stepIndex}>{step}</li>
+        ))}
+      </ul>
+      </div>
+      }
     </div>
-  );
-}
+  )}
 
-export default CourseList;
+  export default CourseList;
