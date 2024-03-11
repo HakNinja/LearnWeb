@@ -15,14 +15,15 @@ const InstructorDashboard = () => {
           <div className="instructor-dashboard__nav-item instructor-dashboard__nav-item--active">
             Overview
           </div>
-          <div className="instructor-dashboard__nav-item">Courses</div>
-          <div className="instructor-dashboard__nav-item">Lessons</div>
-          <div className="instructor-dashboard__nav-item">Topics</div>
-          <div className="instructor-dashboard__nav-item">Quizzes</div>
-          <div className="instructor-dashboard__nav-item">Questions</div>
-          <div className="instructor-dashboard__nav-item">Certificates</div>
-          <div className="instructor-dashboard__nav-item">Token Earnings</div>
           <div className="instructor-dashboard__nav-item">Profile</div>
+          <div className="instructor-dashboard__nav-item">My Courses</div>
+          {/* <div className="instructor-dashboard__nav-item">Lessons</div> */}
+          {/* <div className="instructor-dashboard__nav-item">Topics</div> */}
+          <div className="instructor-dashboard__nav-item">Quizzes</div>
+          <div className="instructor-dashboard__nav-item">Doubts</div>
+          <div className="instructor-dashboard__nav-item">Certificates</div>
+          {/* <div className="instructor-dashboard__nav-item">Community</div> */}
+          <div className="instructor-dashboard__nav-item">Token Earnings</div>
         </div>
       </div>
     </div>
