@@ -1,33 +1,55 @@
-import React from 'react';
-import './InstructorDashboard.css';
+import React, { useState } from 'react';
+import './StudentDashboard.css';
 
-const InstructorDashboard = () => {
-  
+const StudentDashboard = () => {
+  const [activePage, setActivePage] = useState('Overview');
+
+  const handlePageChange = (page) => {
+    setActivePage(page);
+  };
+
+  const renderPageContent = () => {
+    switch (activePage) {
+      case 'Overview':
+        return <div>Overview Page</div>;
+      case 'Profile':
+        return <div>Profile Page</div>;
+      case 'My Courses':
+        return <div>My Courses Page</div>;
+      case 'Quizzes':
+        return <div>Quizzes Page</div>;
+      case 'Doubts':
+        return <div>Doubts Page</div>;
+      case 'Certificates':
+        return <div>Certificates Page</div>;
+      default:
+        return <div>Overview Page</div>;
+    }
+  };
+
   return (
-    <div className="instructor-dashboard">
-      <div className="instructor-dashboard__header">
-        <div className="instructor-dashboard__logo" />
-        <div className="instructor-dashboard__title">Student Dashboard</div>
-        {/* <div className="instructor-dashboard__logout">Logout</div> */}
+    <div className="student-dashboard">
+      <div className="student-dashboard__header">
+        <div className="student-dashboard__logo" />
+        <div className="student-dashboard__title">Student Dashboard</div>
+        {/* <div className="student-dashboard__logout">Logout</div> */}
       </div>
-      <div className="instructor-dashboard__content">
-        <div className="instructor-dashboard__nav">
-          <div className="instructor-dashboard__nav-item instructor-dashboard__nav-item--active">
-            Overview
-          </div>
-          <div className="instructor-dashboard__nav-item">Profile</div>
-          <div className="instructor-dashboard__nav-item">My Courses</div>
-          {/* <div className="instructor-dashboard__nav-item">Lessons</div> */}
-          {/* <div className="instructor-dashboard__nav-item">Topics</div> */}
-          <div className="instructor-dashboard__nav-item">Quizzes</div>
-          <div className="instructor-dashboard__nav-item">Doubts</div>
-          <div className="instructor-dashboard__nav-item">Certificates</div>
-          {/* <div className="instructor-dashboard__nav-item">Community</div> */}
-          <div className="instructor-dashboard__nav-item">Token Earnings</div>
+      <div className="student-dashboard__content">
+        <div className="student-dashboard__nav">
+          {['Overview', 'Profile', 'My Courses', 'Quizzes', 'Doubts', 'Certificates'].map((page) => (
+            <div
+              key={page}
+              className={`student-dashboard__nav-item ${activePage === page ? 'student-dashboard__nav-item--active' : ''}`}
+              onClick={() => handlePageChange(page)}
+            >
+              {page}
+            </div>
+          ))}
         </div>
+        {renderPageContent()}
       </div>
     </div>
   );
 };
-  
-export default InstructorDashboard;
+
+export default StudentDashboard;
