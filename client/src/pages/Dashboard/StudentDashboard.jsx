@@ -29,11 +29,7 @@ const StudentDashboard = () => {
 
   return (
     <div className="student-dashboard">
-      <div className="student-dashboard__header">
-        <div className="student-dashboard__logo" />
-        <div className="student-dashboard__title">Student Dashboard</div>
-        {/* <div className="student-dashboard__logout">Logout</div> */}
-      </div>
+      
       <div className="student-dashboard__content">
         <div className="student-dashboard__nav">
           {['Overview', 'Profile', 'My Courses', 'Quizzes', 'Doubts', 'Certificates'].map((page) => (
