@@ -30,7 +30,7 @@ const Navbar = () => {
               isActive ? ' font-bold border-b-4 border-red-500' : ''} > {items} </NavLink>
           </li>
         )}
-        <div class="d-grid gap-2 d-md-flex justify-content-md-start" style={{ marginLeft: "10rem", marginBottom: "5rem" }}>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-start" style={{ marginLeft: "10rem", marginBottom: "0rem" }}>
           {user ? <button onClick={(e) => logout()} class=" btn btn-light"><Link class="nav-link" to="/">Logout</Link></button> : <button class=" btn btn-light"><Link class="nav-link" to="/loginnew">Login</Link></button>
           }
         </div>
