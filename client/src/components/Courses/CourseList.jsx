@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
 import courses from './courses.json';
-import './CourseList.css'
+import './CourseList.css';
 
 const CourseList = () => {
   const [selectedCourse, setSelectedCourse] = useState(null);
@@ -14,9 +14,9 @@ const CourseList = () => {
   };
 
   return (
-    <div>
+    <div className='padding'>
       <h1>Courses Available : </h1>
-      <VerticalTimeline>
+      {/* <VerticalTimeline> */}
         {courses.courses.map((course) => (
           <VerticalTimelineElement
             key={course.id}
@@ -37,7 +37,7 @@ const CourseList = () => {
             )}
           </VerticalTimelineElement>
         ))}
-      </VerticalTimeline>
+      {/* </VerticalTimeline> */}
     </div>
   );
 };
