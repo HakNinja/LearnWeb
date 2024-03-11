@@ -15,7 +15,7 @@ import Roadmap from './components/Roadmap';
 import CourseList from './components/Courses/CourseList';
 // import CourseDetails from './components/Courses/CourseDetails';
 
-// import Dashboard from './pages/Dashboard'
+import StudentDashboard from './pages/Dashboard/StudentDashboard'
 
 function App() {
   return (
@@ -33,7 +33,7 @@ function App() {
       <Route exact path='/roadmap' element={< Roadmap />}/>
       
       <Route path="/courses" element={<CourseList />} />
-      {/* <Route path="/courses/:courseId" element={<CourseDetails />} /> */}
+      <Route path="/StudentDashboard" element={<StudentDashboard />} />
       
       
       <Route path ='*' element={<Error/>}/>
