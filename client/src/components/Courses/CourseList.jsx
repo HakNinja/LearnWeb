@@ -31,7 +31,7 @@ const CourseList = () => {
             {selectedCourse === course && (
               <ul>
                 {course.steps.map((step) => (
-                  <li key={step.id}>{step.title}</li>
+                  <li className="coursesListli" key={step.id}>{step.title}</li>
                 ))}
               </ul>
             )}
