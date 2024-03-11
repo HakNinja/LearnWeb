@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './StudentDashboard.css';
+import './Dashboard.css';
 
 import Certificates from './Certificates'
 import Doubts from './Doubts'

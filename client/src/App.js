@@ -16,7 +16,7 @@ import CourseList from './components/Courses/CourseList';
 import Contact from './components/Contact Us/Contact';
 // import CourseDetails from './components/Courses/CourseDetails';
 
-import StudentDashboard from './pages/Dashboard/StudentDashboard/StudentDashboard'
+import StudentDashboard from './pages/Dashboard/Dashboard/Dashboard'
 
 function App() {
   return (
@@ -35,11 +35,10 @@ function App() {
       <Route path='/contactus' element={<Contact/>} />
       
       <Route path="/courses" element={<CourseList />} />
-      <Route path="/StudentDashboard" element={<StudentDashboard />} />
+      <Route path="/dashboard" element={<StudentDashboard />} />
       
       
       <Route path ='*' element={<Error/>}/>
-      {/* <Route path='/dashboard' element={ <Dashboard />} /> */}
      
      </Routes>
      <Footer/>
