@@ -1,6 +1,14 @@
 import React, { useState } from 'react';
 import './StudentDashboard.css';
 
+import Certificates from './Certificates'
+import Doubts from './Doubts'
+import Overview from './Overview'
+import MyCoursePage from './MyCoursePage'
+import Profile from './Profile'
+import Quizzes from './Quizzes'
+
+
 const StudentDashboard = () => {
   const [activePage, setActivePage] = useState('Overview');
 
@@ -11,25 +19,26 @@ const StudentDashboard = () => {
   const renderPageContent = () => {
     switch (activePage) {
       case 'Overview':
-        return <div>Overview Page</div>;
+        return <Overview />
       case 'Profile':
-        return <div>Profile Page</div>;
+        return <Profile />
       case 'My Courses':
-        return <div>My Courses Page</div>;
+        return <MyCoursePage />
       case 'Quizzes':
-        return <div>Quizzes Page</div>;
+        return <Quizzes />
       case 'Doubts':
-        return <div>Doubts Page</div>;
+        return <Doubts />
       case 'Certificates':
-        return <div>Certificates Page</div>;
+        return <Certificates />
       default:
-        return <div>Overview Page</div>;
+        return <Overview />
+
     }
-  };
+  }
 
   return (
     <div className="student-dashboard">
-      
+
       <div className="student-dashboard__content">
         <div className="student-dashboard__nav">
           {['Overview', 'Profile', 'My Courses', 'Quizzes', 'Doubts', 'Certificates'].map((page) => (
