@@ -9,7 +9,7 @@
   }
   
   .student-dashboard {
-    display: grid;
+    /* display: grid; */
     grid-template-rows: 100px 1fr;
     width: 100%;
     /* max-width: 1200px; */
@@ -18,34 +18,7 @@
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
-  
-  .student-dashboard__header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
-    background-color: #333;
-    color: #fff;
-  }
-  
-  .student-dashboard__logo {
-    width: 50px;
-    height: 50px;
-    background-color: #fff;
-    border-radius: 50%;
-  }
-  
-  .student-dashboard__title {
-    font-size: 24px;
-    font-weight: bold;
-  }
-  
-  .student-dashboard__logout {
-    padding: 10px 20px;
-    border-radius: 5px;
-    background-color: #444;
-    cursor: pointer;
-  }
+    
   
   .student-dashboard__content {
     display: grid;
