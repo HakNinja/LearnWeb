@@ -8,7 +8,7 @@
     align-items: center;
   }
   
-  .instructor-dashboard {
+  .student-dashboard {
     display: grid;
     grid-template-rows: 100px 1fr;
     width: 100%;
@@ -19,7 +19,7 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
   
-  .instructor-dashboard__header {
+  .student-dashboard__header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -28,37 +28,37 @@
     color: #fff;
   }
   
-  .instructor-dashboard__logo {
+  .student-dashboard__logo {
     width: 50px;
     height: 50px;
     background-color: #fff;
     border-radius: 50%;
   }
   
-  .instructor-dashboard__title {
+  .student-dashboard__title {
     font-size: 24px;
     font-weight: bold;
   }
   
-  .instructor-dashboard__logout {
+  .student-dashboard__logout {
     padding: 10px 20px;
     border-radius: 5px;
     background-color: #444;
     cursor: pointer;
   }
   
-  .instructor-dashboard__content {
+  .student-dashboard__content {
     display: grid;
     grid-template-columns: 200px 1fr;
     padding: 20px;
   }
   
-  .instructor-dashboard__nav {
+  .student-dashboard__nav {
     display: flex;
     flex-direction: column;
   }
   
-  .instructor-dashboard__nav-item {
+  .student-dashboard__nav-item {
     padding: 10px 20px;
     border-radius: 5px;
     background-color: #ddd;
@@ -66,54 +66,54 @@
     cursor: pointer;
   }
   
-  .instructor-dashboard__nav-item--active {
+  .student-dashboard__nav-item--active {
     background-color: #444;
     color: #fff;
   }
   
-  .instructor-dashboard__main {
+  .student-dashboard__main {
     display: flex;
     flex-direction: column;
   }
   
-  .instructor-dashboard__main-section {
+  .student-dashboard__main-section {
     margin-bottom: 20px;
   }
   
-  .instructor-dashboard__section-title {
+  .student-dashboard__section-title {
     font-size: 20px;
     font-weight: bold;
     margin-bottom: 10px;
   }
   
-  .instructor-dashboard__courses,
-  .instructor-dashboard__lessons {
+  .student-dashboard__courses,
+  .student-dashboard__lessons {
     display: flex;
     flex-direction: column;
   }
   
-  .instructor-dashboard__course,
-  .instructor-dashboard__lesson {
+  .student-dashboard__course,
+  .student-dashboard__lesson {
     padding: 10px 20px;
     border-radius: 5px;
     background-color: #fff;
     margin-bottom: 5px;
   }
   
-  .instructor-dashboard__course-title,
-  .instructor-dashboard__lesson-title {
+  .student-dashboard__course-title,
+  .student-dashboard__lesson-title {
     font-size: 16px;
     font-weight: bold;
   }
   
-  .instructor-dashboard__course-points,
-  .instructor-dashboard__course-submissions,
-  .instructor-dashboard__lesson-students {
+  .student-dashboard__course-points,
+  .student-dashboard__course-submissions,
+  .student-dashboard__lesson-students {
     font-size: 14px;
     color: #666;
   }
 
 
-  .instructor-dashboard__content{
+  .student-dashboard__content{
     width: 100%;
   }
