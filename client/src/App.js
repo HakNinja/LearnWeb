@@ -16,7 +16,7 @@ import CourseList from './components/Courses/CourseList';
 import Contact from './components/Contact Us/Contact';
 // import CourseDetails from './components/Courses/CourseDetails';
 
-import StudentDashboard from './pages/Dashboard/StudentDashboard'
+import StudentDashboard from './pages/Dashboard/StudentDashboard/StudentDashboard'
 
 function App() {
   return (
