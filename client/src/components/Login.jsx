@@ -78,11 +78,15 @@ const Login = () => {
                     progress: undefined,
                     theme: "light",
                 });
+                // console.log(response.user)
+                const A = JSON.stringify(response.user)
+                localStorage.setItem("User", A)
                 setTimeout(() => {
-                    navigate("/")
+
+                    window.location.href = "http://localhost:3000/"
                 }, 800);
             } else {
-                toast.error(response.error, {
+                toast.error(response.message, {
                     position: "bottom-left",
                     autoClose: 5000,
                     hideProgressBar: false,
@@ -103,7 +107,6 @@ const Login = () => {
                 body: JSON.stringify(data),
             })
             let response = await res.json();
-
             setpassword("")
             if (response.success) {
                 toast.success('Your are successfully logged in', {
@@ -116,11 +119,14 @@ const Login = () => {
                     progress: undefined,
                     theme: "light",
                 });
+                const A = JSON.stringify(response.user)
+                localStorage.setItem("User", A)
                 setTimeout(() => {
-                    navigate("/")
+
+                    window.location.href = "http://localhost:3000/"
                 }, 800);
             } else {
-                toast.error(response.error, {
+                toast.error(response.message, {
                     position: "bottom-left",
                     autoClose: 5000,
                     hideProgressBar: false,

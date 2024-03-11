@@ -3,7 +3,7 @@ import { HiMenuAlt4, HiX } from 'react-icons/hi';
 import { motion } from 'framer-motion';
 import './Navbar.scss'
 import { Logo } from '../../assets';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom'
 import { Link } from "react-router-dom"
 import { useAuth0 } from "@auth0/auth0-react";
@@ -15,6 +15,22 @@ const Navbar = () => {
 
   const { user, logout } = useAuth0()
   const [toggle, setToggle] = useState(false)
+  const [User, setUser] = useState()
+  // console.log(user)
+  useEffect(() => {
+    const myuser = JSON.parse(localStorage.getItem("User"));
+    if (myuser !== null && myuser !== undefined) {
+      setUser(myuser);
+      console.log(myuser);
+    }
+  }, []);
+
+  const handleLogout = (e) => {
+    console.log("logout")
+    localStorage.removeItem("User")
+    setUser("")
+  }
+
 
 
   return (
@@ -31,7 +47,7 @@ const Navbar = () => {
           </li>
         )}
         <div class="d-grid gap-2 d-md-flex justify-content-md-start" style={{ marginLeft: "10rem", marginBottom: "0rem" }}>
-          {user ? <button onClick={(e) => logout()} class=" btn btn-light"><Link class="nav-link" to="/">Logout</Link></button> : <button class=" btn btn-light"><Link class="nav-link" to="/loginnew">Login</Link></button>
+          {user ? <button onClick={(e) => { logout() }} class=" btn btn-light"><Link class="nav-link" to="/">Logout</Link></button> : User ? <button onClick={handleLogout} class=" btn btn-light"><Link class="nav-link" to="/loginnew">Logout</Link></button> : <button class=" btn btn-light"><Link class="nav-link" to="/loginnew">Login</Link></button>
           }
         </div>
       </ul>

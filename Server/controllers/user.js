@@ -21,7 +21,10 @@ export const addUser = async (req, res) => {
       
      const {email,password} = req.body
      const B = await User.findOne({"email": email})
-     if(password===B.password){
+     if(!B){
+      res.status(200).json({ message: "User not exist" });
+     }
+    else if(password===B.password){
       res.status(200).json({ "success": true, "user":B });
      }
      else{
@@ -29,7 +32,7 @@ export const addUser = async (req, res) => {
      }
       
     } catch (error) {
-      res.status(404).json({ message: error.message });
+      res.status(404).json({ message: 'User name or password not match' });
     }
   }
 
