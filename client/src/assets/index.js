@@ -5,6 +5,8 @@ import {default as banner} from './banner.png'
 import {default as error} from './error.jpeg'
 import {default as cover} from './cover.jpg'
 import {default as LWLogo} from './LWLogo.png'
+import {default as mail} from './mail.png'
+import {default as mobile} from './mobile.png'
 
 export {
     Logo,
@@ -14,4 +16,6 @@ export {
     error,
     cover,
     LWLogo,
+    mail,
+    mobile,
 }

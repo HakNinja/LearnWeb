@@ -13,6 +13,7 @@ import LoginNew from './components/Login/LoginNew';
 import Roadmap from './components/Roadmap';
 
 import CourseList from './components/Courses/CourseList';
+import Contact from './components/Contact Us/Contact';
 // import CourseDetails from './components/Courses/CourseDetails';
 
 // import Dashboard from './pages/Dashboard'
@@ -31,6 +32,7 @@ function App() {
       <Route exact path='/persondata' element={ <PersonData />} />
       <Route exact path='/loginnew' element={< LoginNew />}/>
       <Route exact path='/roadmap' element={< Roadmap />}/>
+      <Route path='/contactus' element={<Contact/>} />
       
       <Route path="/courses" element={<CourseList />} />
       {/* <Route path="/courses/:courseId" element={<CourseDetails />} /> */}
