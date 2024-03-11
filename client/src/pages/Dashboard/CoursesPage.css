@@ -1,0 +1,48 @@
+.CoursesPage {
+    font-family: Arial, sans-serif;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+  
+  .CoursesPage h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .CoursesPage h2 {
+    font-size: 2rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .CoursesPage h3 {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .CoursesPage h4 {
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .CoursesPage h5 {
+    font-size: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .CoursesPage li {
+    margin-bottom: 1rem;
+  }
+  
+  .CoursesPage a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .CoursesPage a:hover {
+    text-decoration: underline;
+  }

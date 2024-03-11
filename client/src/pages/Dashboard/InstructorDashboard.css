@@ -1,0 +1,114 @@
+.app {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .instructor-dashboard {
+    display: grid;
+    grid-template-rows: 100px 1fr;
+    width: 100%;
+    max-width: 1200px;
+    height: 100%;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .instructor-dashboard__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    background-color: #333;
+    color: #fff;
+  }
+  
+  .instructor-dashboard__logo {
+    width: 50px;
+    height: 50px;
+    background-color: #fff;
+    border-radius: 50%;
+  }
+  
+  .instructor-dashboard__title {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .instructor-dashboard__logout {
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #444;
+    cursor: pointer;
+  }
+  
+  .instructor-dashboard__content {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    padding: 20px;
+  }
+  
+  .instructor-dashboard__nav {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .instructor-dashboard__nav-item {
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #ddd;
+    margin-bottom: 5px;
+    cursor: pointer;
+  }
+  
+  .instructor-dashboard__nav-item--active {
+    background-color: #444;
+    color: #fff;
+  }
+  
+  .instructor-dashboard__main {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .instructor-dashboard__main-section {
+    margin-bottom: 20px;
+  }
+  
+  .instructor-dashboard__section-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .instructor-dashboard__courses,
+  .instructor-dashboard__lessons {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .instructor-dashboard__course,
+  .instructor-dashboard__lesson {
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #fff;
+    margin-bottom: 5px;
+  }
+  
+  .instructor-dashboard__course-title,
+  .instructor-dashboard__lesson-title {
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  .instructor-dashboard__course-points,
+  .instructor-dashboard__course-submissions,
+  .instructor-dashboard__lesson-students {
+    font-size: 14px;
+    color: #666;
+  }
