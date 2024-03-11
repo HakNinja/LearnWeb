@@ -2,14 +2,13 @@ import React, { useState } from 'react'
 import { AiOutlineLock } from 'react-icons/ai';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { Link, useNavigate } from "react-router-dom"
-import { useAuth0 } from "@auth0/auth0-react";
-import { FaGoogle } from "react-icons/fa";
+import { Link, useNavigate, useParams } from "react-router-dom"
 
 
-import {Icon} from 'react-icons-kit';
-import {eyeOff} from 'react-icons-kit/feather/eyeOff';
-import {eye} from 'react-icons-kit/feather/eye'
+
+import { Icon } from 'react-icons-kit';
+import { eyeOff } from 'react-icons-kit/feather/eyeOff';
+import { eye } from 'react-icons-kit/feather/eye'
 
 
 const Signup = () => {
@@ -23,48 +22,51 @@ const Signup = () => {
     const [phoneNumber, setphoneNumber] = useState("")
     const [instituteName, setInstituteName] = useState("")
     const navigate = useNavigate()
-    const { loginWithRedirect } = useAuth0()
+
+    const params = useParams()
+    const { role } = params
+    console.log(typeof (role))
 
 
-// const [password, setPassword] = useState("");
-const [type, setType] = useState('password');
-const [icon, setIcon] = useState(eyeOff);
+    // const [password, setPassword] = useState("");
+    const [type, setType] = useState('password');
+    const [icon, setIcon] = useState(eyeOff);
 
-const [type1, setType1] = useState('password');
-const [icon1, setIcon1] = useState(eyeOff);
+    const [type1, setType1] = useState('password');
+    const [icon1, setIcon1] = useState(eyeOff);
 
 
-const [messages, setMessages] = useState({
-    number: false,
-    specialChar: false,
-    uppercase: false,
-    lowercase: false,
-    length: false
-  });
+    const [messages, setMessages] = useState({
+        number: false,
+        specialChar: false,
+        uppercase: false,
+        lowercase: false,
+        length: false
+    });
 
 
 
 
 
     const handleToggle2 = () => {
-        if (type1==='password'){
-           setIcon1(eye);
-           setType1('text')
+        if (type1 === 'password') {
+            setIcon1(eye);
+            setType1('text')
         } else {
-           setIcon1(eyeOff)
-           setType1('password')
+            setIcon1(eyeOff)
+            setType1('password')
         }
-     }
+    }
 
-     const handleToggle = () => {
-        if (type==='password'){
-           setIcon(eye);
-           setType('text')
+    const handleToggle = () => {
+        if (type === 'password') {
+            setIcon(eye);
+            setType('text')
         } else {
-           setIcon(eyeOff)
-           setType('password')
+            setIcon(eyeOff)
+            setType('password')
         }
-     }
+    }
 
     const handleChange = (e) => {
         if (e.target.name === 'name') {
@@ -78,19 +80,19 @@ const [messages, setMessages] = useState({
 
             const inputValue = e.target.value;
             setpassword(e.target.value)
-        
+
             const containsNumber = /\d/.test(inputValue);
             const containsSpecialChar = /[!@#$%^&*(),.?":{}|<>]/.test(inputValue);
             const containsUppercase = /[A-Z]/.test(inputValue);
             const containsLowercase = /[a-z]/.test(inputValue);
-            const containsLength = inputValue.length>=8;
+            const containsLength = inputValue.length >= 8;
 
             setMessages({
-              number: !containsNumber,
-              specialChar: !containsSpecialChar,
-              uppercase: !containsUppercase,
-              lowercase: !containsLowercase,
-              length: !containsLength
+                number: !containsNumber,
+                specialChar: !containsSpecialChar,
+                uppercase: !containsUppercase,
+                lowercase: !containsLowercase,
+                length: !containsLength
             });
 
 
@@ -108,7 +110,7 @@ const [messages, setMessages] = useState({
         else if (e.target.name === 'country') {
             setCountry(e.target.value)
         } else if (e.target.name === 'phoneNumber') {
-        setphoneNumber(e.target.value.replace(/\D/g, '')) 
+            setphoneNumber(e.target.value.replace(/\D/g, ''))
         } else if (e.target.name === 'instituteName') {
             setInstituteName(e.target.value)
         }
@@ -121,18 +123,18 @@ const [messages, setMessages] = useState({
 
 
         function isValidEmail(email) {
-        
+
 
             const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             return emailPattern.test(email)
 
             // return false; // The email does not contain any valid domain
         }
-        
+
         function isValidPassword(password) {
             // Regular expression to match passwords with at least one special character, one number, one capital letter, and one lowercase letter
             var regex = /^(?=.*[!@#$%^&*])(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
-        
+
             return regex.test(password);
         }
 
@@ -150,23 +152,23 @@ const [messages, setMessages] = useState({
             return
         }
 
-else if (!isValidPassword(password)) {
-    toast.error('Invalid Password', {
-        position: "bottom-left",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "light",
-    });
-    return
-}
+        else if (!isValidPassword(password)) {
+            toast.error('Invalid Password', {
+                position: "bottom-left",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+            });
+            return
+        }
 
 
 
-        else if (password !== cpassword){
+        else if (password !== cpassword) {
             toast.error('Password and confirm password must be same', {
                 position: "bottom-left",
                 autoClose: 5000,
@@ -178,9 +180,9 @@ else if (!isValidPassword(password)) {
                 theme: "light",
             });
             return
-        } 
-        
-        else if (phoneNumber.length !== 10){
+        }
+
+        else if (phoneNumber.length !== 10) {
             toast.error('Invalid Phone Number', {
                 position: "bottom-left",
                 autoClose: 5000,
@@ -193,41 +195,99 @@ else if (!isValidPassword(password)) {
             });
             return
         }
-        
-        else {
-            const res = await fetch(`http://127.0.0.1:5001/user/adduser`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(data),
-            })
-            let response = await res.json();
-            // console.log(data)
-            // let response = { "success": true }
 
-            if (response.success) {
-                toast.success('Your account have been created', {
-                    position: "bottom-left",
-                    autoClose: 5000,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: true,
-                    draggable: true,
-                    progress: undefined,
-                    theme: "light",
-                });
-                setemail("")
-                setname("")
-                setpassword("")
-                setcpassword("")
-                setTimeout(() => {
-                    navigate(`/login`)
-                }, 800);
+        else {
+            if (role === '2') {
+                const res = await fetch(`http://127.0.0.1:5001/user/adduser`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data),
+                })
+                let response = await res.json();
+                // console.log(data)
+                // let response = { "success": true }
+
+                if (response.success) {
+                    toast.success('Your account have been created', {
+                        position: "bottom-left",
+                        autoClose: 5000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                        theme: "light",
+                    });
+                    setemail("")
+                    setname("")
+                    setpassword("")
+                    setcpassword("")
+                    setTimeout(() => {
+                        navigate(`/login/${role}`)
+                    }, 800);
+
+                } else {
+                    toast.error(response.message, {
+                        position: "bottom-left",
+                        autoClose: 5000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                        theme: "light",
+                    });
+                }
+            }
+            else if (role === '1') {
+                const res = await fetch(`http://127.0.0.1:5001/teacher/addteacher`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data),
+                })
+                let response = await res.json();
+                // console.log(data)
+                // let response = { "success": true }
+
+                if (response.success) {
+                    toast.success('Your account have been created', {
+                        position: "bottom-left",
+                        autoClose: 5000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                        theme: "light",
+                    });
+                    setemail("")
+                    setname("")
+                    setpassword("")
+                    setcpassword("")
+                    setTimeout(() => {
+                        navigate(`/login/${role}`)
+                    }, 800);
+
+                } else {
+                    toast.error(response.message, {
+                        position: "bottom-left",
+                        autoClose: 5000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                        theme: "light",
+                    });
+                }
             } else {
-                toast.error(response.message, {
+                toast.error("invalid Signup", {
                     position: "bottom-left",
-                    autoClose: 5000,
+                    autoClose: 799,
                     hideProgressBar: false,
                     closeOnClick: true,
                     pauseOnHover: true,
@@ -235,6 +295,9 @@ else if (!isValidPassword(password)) {
                     progress: undefined,
                     theme: "light",
                 });
+                setTimeout(() => {
+                    navigate(`/loginnew`)
+                }, 800);
             }
         }
     }
@@ -261,7 +324,7 @@ else if (!isValidPassword(password)) {
                         </h2>
                         <p className="mt-2 text-center text-sm text-gray-600">
                             Or{' '}
-                            <Link to="/Login" className="font-medium text-pink-600 hover:text-pink-500">
+                            <Link to={`/Login/${role}`} className="font-medium text-pink-600 hover:text-pink-500">
                                 Login
                             </Link>
                         </p>
@@ -317,27 +380,27 @@ else if (!isValidPassword(password)) {
                                     className="relative block w-full appearance-none rounded-none rounded-b-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-pink-500 focus:outline-none focus:ring-pink-500 sm:text-sm"
                                     placeholder="Password"
                                 />
-            <span className="flex justify-around items-center" onClick={handleToggle}>
-                  <Icon className="absolute mr-10" icon={icon} size={24} style={{marginTop:"-37px", marginRight:"-400px"}}/>
-              </span>
+                                <span className="flex justify-around items-center" onClick={handleToggle}>
+                                    <Icon className="absolute mr-10" icon={icon} size={24} style={{ marginTop: "-37px", marginRight: "-400px" }} />
+                                </span>
 
 
 
-              {messages.number && (
-        <p style={{ color: 'red' }}>Password should contain at least one number.</p>
-      )}
-      {messages.specialChar && (
-        <p style={{ color: 'red' }}>Password should contain at least one special character.</p>
-      )}
-      {messages.uppercase && (
-        <p style={{ color: 'red' }}>Password should contain at least one uppercase letter.</p>
-      )}
-      {messages.lowercase && (
-        <p style={{ color: 'red' }}>Password should contain at least one lowercase letter.</p>
-      )}
-            {messages.length && (
-        <p style={{ color: 'red' }}>Password should contain at least eight character.</p>
-      )}
+                                {messages.number && (
+                                    <p style={{ color: 'red' }}>Password should contain at least one number.</p>
+                                )}
+                                {messages.specialChar && (
+                                    <p style={{ color: 'red' }}>Password should contain at least one special character.</p>
+                                )}
+                                {messages.uppercase && (
+                                    <p style={{ color: 'red' }}>Password should contain at least one uppercase letter.</p>
+                                )}
+                                {messages.lowercase && (
+                                    <p style={{ color: 'red' }}>Password should contain at least one lowercase letter.</p>
+                                )}
+                                {messages.length && (
+                                    <p style={{ color: 'red' }}>Password should contain at least eight character.</p>
+                                )}
 
                             </div>
 
@@ -358,9 +421,9 @@ else if (!isValidPassword(password)) {
                                     className="relative block w-full appearance-none rounded-none rounded-b-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-pink-500 focus:outline-none focus:ring-pink-500 sm:text-sm"
                                     placeholder="Confirm Password"
                                 />
-                                           <span className="flex justify-around items-center relative" onClick={handleToggle2}>
-                  <Icon className="absolute mr-10" icon={icon1} size={24} style={{marginTop:"-37px", marginRight:"-400px"}}/>
-              </span>
+                                <span className="flex justify-around items-center relative" onClick={handleToggle2}>
+                                    <Icon className="absolute mr-10" icon={icon1} size={24} style={{ marginTop: "-37px", marginRight: "-400px" }} />
+                                </span>
                             </div>
 
 
@@ -436,17 +499,7 @@ else if (!isValidPassword(password)) {
                             </button>
                         </div>
                     </form>
-                    <div>
-                        <button
-                            onClick={(e) => loginWithRedirect()}
-                            className="group relative flex w-full justify-center rounded-md border border-transparent bg-pink-600 py-2 px-4 text-sm font-medium text-white hover:bg-pink-700 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-offset-2"
-                        >
-                            <span className="absolute inset-y-0 left-0 flex items-center pl-3">
-                                <FaGoogle className="h-5 w-5 text-white group-hover:text-pink-400" />
-                            </span>
-                            Login with Redirect
-                        </button>
-                    </div>
+
                 </div>
             </div>
 

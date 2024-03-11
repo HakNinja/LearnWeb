@@ -8,9 +8,9 @@ import { FaGoogle } from "react-icons/fa";
 
 
 
-import {Icon} from 'react-icons-kit';
-import {eyeOff} from 'react-icons-kit/feather/eyeOff';
-import {eye} from 'react-icons-kit/feather/eye'
+import { Icon } from 'react-icons-kit';
+import { eyeOff } from 'react-icons-kit/feather/eyeOff';
+import { eye } from 'react-icons-kit/feather/eye'
 
 
 const Login = () => {
@@ -21,13 +21,13 @@ const Login = () => {
     const navigate = useNavigate()
     const params = useParams()
     const { role } = params
-    console.log(role)
-    
-    
+
+
+
     const [type, setType] = useState('password');
     const [icon, setIcon] = useState(eyeOff);
-    
-    
+
+
     const handleChange = (e) => {
 
         if (e.target.name === 'email') {
@@ -42,34 +42,99 @@ const Login = () => {
 
 
     const handleToggle = () => {
-        if (type==='password'){
-           setIcon(eye);
-           setType('text')
+        if (type === 'password') {
+            setIcon(eye);
+            setType('text')
         } else {
-           setIcon(eyeOff)
-           setType('password')
+            setIcon(eyeOff)
+            setType('password')
         }
-     }
+    }
 
 
 
     const handleSubmit = async (e) => {
         e.preventDefault()
         const data = { email, password }
-        const res = await fetch("http://127.0.0.1:5001/user/login", {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(data),
-        })
-        let response = await res.json();
-        setemail("")
-        setpassword("")
-        if (response.success) {
-            toast.success('Your are successfully logged in', {
+        if (role === '2') {
+            const res = await fetch("http://127.0.0.1:5001/user/login", {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
+            })
+            let response = await res.json();
+
+            setpassword("")
+            if (response.success) {
+                toast.success('Your are successfully logged in', {
+                    position: "bottom-left",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                });
+                setTimeout(() => {
+                    navigate("/")
+                }, 800);
+            } else {
+                toast.error(response.error, {
+                    position: "bottom-left",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                });
+            }
+        }
+        else if (role === '1') {
+            const res = await fetch("http://127.0.0.1:5001/teacher/login", {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
+            })
+            let response = await res.json();
+
+            setpassword("")
+            if (response.success) {
+                toast.success('Your are successfully logged in', {
+                    position: "bottom-left",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                });
+                setTimeout(() => {
+                    navigate("/")
+                }, 800);
+            } else {
+                toast.error(response.error, {
+                    position: "bottom-left",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                });
+            }
+        } else {
+            toast.error("invalid login", {
                 position: "bottom-left",
-                autoClose: 5000,
+                autoClose: 799,
                 hideProgressBar: false,
                 closeOnClick: true,
                 pauseOnHover: true,
@@ -78,19 +143,8 @@ const Login = () => {
                 theme: "light",
             });
             setTimeout(() => {
-                navigate("/")
+                navigate(`/loginnew`)
             }, 800);
-        } else {
-            toast.error(response.error, {
-                position: "bottom-left",
-                autoClose: 5000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-                theme: "light",
-            });
         }
 
     }
@@ -119,7 +173,7 @@ const Login = () => {
                         </h2>
                         <p className="mt-2 text-center text-sm text-gray-600">
                             Or{' '}
-                            <Link to="/signup" className="font-medium text-pink-700 hover:text-pink-500">
+                            <Link to={`/signup/${role}`} className="font-medium text-pink-700 hover:text-pink-500">
                                 SignUp
                             </Link>
                         </p>
@@ -163,8 +217,8 @@ const Login = () => {
                             </div>
 
                             <span className="flex justify-around items-center" onClick={handleToggle}>
-                  <Icon className="absolute mr-10" icon={icon} size={24} style={{marginTop:"-37px", marginRight:"-400px"}}/>
-              </span>
+                                <Icon className="absolute mr-10" icon={icon} size={24} style={{ marginTop: "-37px", marginRight: "-400px" }} />
+                            </span>
 
                         </div>
 

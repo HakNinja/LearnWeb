@@ -24,7 +24,9 @@ export const addUser = async (req, res) => {
      if(password===B.password){
       res.status(200).json({ "success": true, "user":B });
      }
-     
+     else{
+      res.status(200).json({ message: "User name or password not match" });
+     }
       
     } catch (error) {
       res.status(404).json({ message: error.message });

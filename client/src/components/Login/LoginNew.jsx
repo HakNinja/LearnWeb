@@ -13,14 +13,14 @@ const LoginNew = () => {
                     <button class=" btn btn-light"><Link class="nav-link" to="/login/1">Login</Link></button>
 
                     <div className='test'>  <p>Don't have an account? <br />
-                        Sign up.</p> </div>
+                        <button class=" btn btn-light"><Link Link class="nav-link" to="/signup/1">SignUp</Link></button></p> </div>
                 </div>
                 <div className="learner-login">
                     <h2>For Learner</h2>
                     <div className='test'>  <p>Join over 21 million developers, practice coding skills, prepare for interviews, and get hired.</p> </div>
-                    <button>Login</button>
+                    <button class=" btn btn-light"><Link class="nav-link" to="/login/2">Login</Link></button>
                     <div className='test'>  <p>Don't have an account? <br />
-                        Contact sales or Get free trial.</p> </div>
+                        <button class=" btn btn-light"><Link class="nav-link" to="/signup/2">SignUp</Link></button></p> </div>
                 </div>
             </div>
         </>
