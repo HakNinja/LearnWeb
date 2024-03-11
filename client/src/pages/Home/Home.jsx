@@ -14,7 +14,7 @@ const Home = () => {
             <img src={cover} alt="cover" className='d-block mx-lg-auto img-fluid' loading='lazy' />
           </div>
           <div class="col-lg-6">
-            <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3" style={{ marginLeft: "10rem", marginBottom: "5rem" }}>You Learn Today And Earn Tomorrow.</h1>
+            <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3" style={{ marginLeft: "10rem", marginBottom: "5rem" }}>You Learn Today And Earn Tomorrow</h1>
 
           </div>
         </div>
