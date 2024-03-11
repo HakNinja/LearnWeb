@@ -37,11 +37,10 @@ function App() {
       <Route path='/test' element={<CV />} />
       
       <Route path="/courses" element={<CourseList />} />
-      <Route path="/StudentDashboard" element={<StudentDashboard />} />
+      <Route path="/dashboard" element={<StudentDashboard />} />
       
       
       <Route path ='*' element={<Error/>}/>
-      {/* <Route path='/dashboard' element={ <Dashboard />} /> */}
      
      </Routes>
      <Footer/>

@@ -1,62 +1,60 @@
-import * as React from 'react';
-import Timeline from '@mui/lab/Timeline';
-import TimelineItem from '@mui/lab/TimelineItem';
-import TimelineSeparator from '@mui/lab/TimelineSeparator';
-import TimelineConnector from '@mui/lab/TimelineConnector';
-import TimelineContent from '@mui/lab/TimelineContent';
-import TimelineDot from '@mui/lab/TimelineDot';
+import React, { useState } from 'react';
+import './Dashboard.css';
 
-export default function OutlinedTimeline() {
+import Certificates from './Certificates'
+import Doubts from './Doubts'
+import Overview from './Overview'
+import MyCoursePage from './MyCoursePage'
+import Profile from './Profile'
+import Quizzes from './Quizzes'
+
+
+const StudentDashboard = () => {
+  const [activePage, setActivePage] = useState('Overview');
+
+  const handlePageChange = (page) => {
+    setActivePage(page);
+  };
+
+  const renderPageContent = () => {
+    switch (activePage) {
+      case 'Overview':
+        return <Overview />
+      case 'Profile':
+        return <Profile />
+      case 'My Courses':
+        return <MyCoursePage />
+      case 'Quizzes':
+        return <Quizzes />
+      case 'Doubts':
+        return <Doubts />
+      case 'Certificates':
+        return <Certificates />
+      default:
+        return <Overview />
+
+    }
+  }
+
   return (
-    <Timeline position="alternate">
-      <TimelineItem>
-        <TimelineSeparator>
-          <TimelineDot variant="outlined" />
-          <TimelineConnector />
-        </TimelineSeparator>
-        <TimelineContent>Web design</TimelineContent>
-      </TimelineItem>
-      <TimelineItem>
-        <TimelineSeparator>
-          <TimelineDot variant="outlined" color="primary" />
-          <TimelineConnector />
-        </TimelineSeparator>
-        <TimelineContent>Code</TimelineContent>
-      </TimelineItem>
-      <TimelineItem>
-        <TimelineSeparator>
-          <TimelineDot variant="outlined" color="secondary" />
-          <TimelineConnector />
-        </TimelineSeparator>
-        <TimelineContent>Sleep</TimelineContent>
-      </TimelineItem>
-      <TimelineItem>
-        <TimelineSeparator>
-          <TimelineDot variant="outlined" />
-          <TimelineConnector />
-        </TimelineSeparator>
-        <TimelineContent>Web design</TimelineContent>
-      </TimelineItem>
-      <TimelineItem>
-        <TimelineSeparator>
-          <TimelineDot variant="outlined" color="primary" />
-          <TimelineConnector />
-        </TimelineSeparator>
-        <TimelineContent>Code</TimelineContent>
-      </TimelineItem>
-      <TimelineItem>
-        <TimelineSeparator>
-          <TimelineDot variant="outlined" color="secondary" />
-          <TimelineConnector />
-        </TimelineSeparator>
-        <TimelineContent>Sleep</TimelineContent>
-      </TimelineItem>
-      <TimelineItem>
-        <TimelineSeparator>
-          <TimelineDot variant="outlined" color="primary" />
-        </TimelineSeparator>
-        <TimelineContent>Sleep</TimelineContent>
-      </TimelineItem>
-    </Timeline>
+    <div className="student-dashboard">
+
+      <div className="student-dashboard__content">
+        <div className="student-dashboard__nav">
+          {['Overview', 'Profile', 'My Courses', 'Quizzes', 'Doubts', 'Certificates'].map((page) => (
+            <div
+              key={page}
+              className={`student-dashboard__nav-item ${activePage === page ? 'student-dashboard__nav-item--active' : ''}`}
+              onClick={() => handlePageChange(page)}
+            >
+              {page}
+            </div>
+          ))}
+        </div>
+        {renderPageContent()}
+      </div>
+    </div>
   );
-}
+};
+
+export default StudentDashboard;
