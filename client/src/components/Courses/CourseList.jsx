@@ -1,45 +1,29 @@
-import React, { useState, useEffect } from 'react';
-import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
-import 'react-vertical-timeline-component/style.min.css';
-import courses from './courses.json';
-import './CourseList.css';
+import React, { useState } from 'react';
+import coursesData from './courses.json';
+import CourseListRoadmap from './CourseListRoadmap';
+import './CourseList.css'
 
-const CourseList = () => {
+function CourseList() {
   const [selectedCourse, setSelectedCourse] = useState(null);
-  const [isBoxVisible, setIsBoxVisible] = useState(false);
 
-  const handleClick = (course) => {
+  const handleCourseClick = (course) => {
     setSelectedCourse(course);
-    setIsBoxVisible(true);
   };
 
   return (
-    <div className='padding'>
-      <h1>Courses Available : </h1>
-      {/* <VerticalTimeline> */}
-        {courses.courses.map((course) => (
-          <VerticalTimelineElement
-            key={course.id}
-            date={course.date} // Add the date of the course here
-            iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }} // Customize icon style if needed
-            // contentStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }} // Customize content style if needed
-            // icon={<Icon />} // You can add custom icons if needed
-          >
-            <h3 className="vertical-timeline-element-title" onClick={() => handleClick(course)}>
-              {course.title}
-            </h3>
-            {selectedCourse === course && (
-              <ul>
-                {course.steps.map((step) => (
-                  <li className="coursesListli" key={step.id}>{step.title}</li>
-                ))}
-              </ul>
-            )}
-          </VerticalTimelineElement>
+    <div className="App">
+      <h1>Free Courses</h1>
+      <div className="course-container">
+        {coursesData.courses.map((course, index) => (
+          <div className="course" key={index} onClick={() => handleCourseClick(course)}>
+            <p>{course.course_name}</p>
+            <p>{course.description}</p>
+          </div>
         ))}
-      {/* </VerticalTimeline> */}
+      </div>
+      {selectedCourse && <CourseListRoadmap course={selectedCourse} />}
     </div>
   );
-};
+}
 
 export default CourseList;

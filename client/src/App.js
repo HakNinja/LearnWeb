@@ -16,7 +16,7 @@ import CourseList from './components/Courses/CourseList';
 import Contact from './components/Contact Us/Contact';
 // import CourseDetails from './components/Courses/CourseDetails';
 
-import StudentDashboard from './pages/Dashboard/StudentDashboard/StudentDashboard'
+import Dashboard from './pages/Dashboard/Dashboard'
 import CV from './pages/CV';
 
 function App() {
@@ -37,7 +37,7 @@ function App() {
       <Route path='/test' element={<CV />} />
       
       <Route path="/courses" element={<CourseList />} />
-      <Route path="/dashboard" element={<StudentDashboard />} />
+      <Route path="/dashboard" element={<Dashboard />} />
       
       
       <Route path ='*' element={<Error/>}/>
