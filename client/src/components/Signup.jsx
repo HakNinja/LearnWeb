@@ -41,8 +41,8 @@ const Signup = () => {
     });
 
     useEffect(() => {
-        if (document.getElementById('mymsg').innerText === ""){
-            document.getElementById('mymsg').style.display="None"
+        if (document.getElementById('mymsg').innerText === "") {
+            document.getElementById('mymsg').style.display = "None"
         }
     });
 
@@ -94,8 +94,8 @@ const Signup = () => {
                 length: !containsLength
             });
 
-            if (document.getElementById('mymsg').innerText === ""){
-                document.getElementById('mymsg').style.display="Block"
+            if (document.getElementById('mymsg').innerText === "") {
+                document.getElementById('mymsg').style.display = "Block"
             }
 
         }
@@ -378,19 +378,19 @@ const Signup = () => {
 
                                 <div className='compare showpasswd compareleft' id='mymsg'>
                                     {messages.number && (
-                                        <p style={{ color: 'red' }}>Password should contain at least one number.</p>
+                                        <p style={{ color: '#444' }}>Password should contain at least one number.</p>
                                     )}
                                     {messages.specialChar && (
-                                        <p style={{ color: 'red' }}>Password should contain at least one special character.</p>
+                                        <p style={{ color: '#444' }}>Password should contain at least one special character.</p>
                                     )}
                                     {messages.uppercase && (
-                                        <p style={{ color: 'red' }}>Password should contain at least one uppercase letter.</p>
+                                        <p style={{ color: '#444' }}>Password should contain at least one uppercase letter.</p>
                                     )}
                                     {messages.lowercase && (
-                                        <p style={{ color: 'red' }}>Password should contain at least one lowercase letter.</p>
+                                        <p style={{ color: '#444' }}>Password should contain at least one lowercase letter.</p>
                                     )}
                                     {messages.length && (
-                                        <p style={{ color: 'red' }}>Password should contain at least eight character.</p>
+                                        <p style={{ color: '#444' }}>Password should contain at least eight character.</p>
                                     )}
 
                                 </div>
@@ -444,7 +444,7 @@ const Signup = () => {
                         <div>
                             <button
                                 type="submit"
-                                className="group relative flex w-full justify-center rounded-md border border-transparent bg-pink-600 py-2 px-4 text-sm font-medium text-white hover:bg-pink-700 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-offset-2"
+                                className="group relative flex w-full justify-center rounded-md border border-transparent  py-2 px-4 text-sm font-medium text-white hover:bg-pink-700 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-offset-2" style={{ background: "#df4adf" }}
                             >
                                 <span className="absolute inset-y-0 left-0 flex items-center pl-3">
                                     <AiOutlineLock className="h-5 w-5 text-white group-hover:text-pink-400" />

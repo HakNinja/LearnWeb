@@ -14,14 +14,14 @@
 
 .showpasswd {
   padding: 20px 30px;
-  background-color: rgb(255, 209, 209);
+  background-color: rgb(255, 255, 255);
   position: relative;
   border-radius: 6px;
 }
 
 .compare {
 
-  background-color: pink;
+  background-image: linear-gradient(315deg, #eeaeca, #94bbe9);
   padding: 10px;
   border-radius: 5px;
   position: absolute;

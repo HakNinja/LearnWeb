@@ -2,9 +2,10 @@ import React, { useState } from 'react'
 import { AiOutlineLock } from 'react-icons/ai';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { Link, useNavigate, useParams } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import { useAuth0 } from "@auth0/auth0-react";
 import { FaGoogle } from "react-icons/fa";
+import { useAuth } from '../context/Context'
 
 
 
@@ -15,12 +16,12 @@ import { eye } from 'react-icons-kit/feather/eye'
 
 const Login = () => {
     const { loginWithRedirect } = useAuth0()
+    const { role } = useAuth()
     // console.log(user)
     const [email, setemail] = useState("")
     const [password, setpassword] = useState("")
     const navigate = useNavigate()
-    const params = useParams()
-    const { role } = params
+
 
 
 
@@ -83,7 +84,7 @@ const Login = () => {
                 localStorage.setItem("User", A)
                 setTimeout(() => {
 
-                    window.location.href = "http://localhost:3000/:2"
+                    window.location.href = "http://localhost:3000/"
                 }, 800);
             } else {
                 toast.error(response.message, {
@@ -123,7 +124,7 @@ const Login = () => {
                 localStorage.setItem("User", A)
                 setTimeout(() => {
 
-                    window.location.href = "http://localhost:3000/:1"
+                    window.location.href = "http://localhost:3000/"
                 }, 800);
             } else {
                 toast.error(response.message, {
@@ -179,7 +180,7 @@ const Login = () => {
                         </h2>
                         <p className="mt-2 text-center text-sm text-gray-600">
                             Or{' '}
-                            <Link to={`/signup/${role}`} className="font-medium text-pink-700 hover:text-pink-500">
+                            <Link to={`/signup/`} className="font-medium text-pink-700 hover:text-pink-500">
                                 SignUp
                             </Link>
                         </p>
