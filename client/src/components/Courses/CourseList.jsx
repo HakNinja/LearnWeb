@@ -29,7 +29,7 @@ function CourseList() {
       <div className="products-container">
         {coursesData.courses.map((course, index) => (
           <article className="product-card" key={index} onClick={() => handleCourseClick(course)}>
-                <img src={mail} alt={course.course_name} width={300} height={300} className='product-image'/>
+                <img src={course.c_image} alt={course.course_name} width={300} height={300} className='product-image'/>
             <p className="product-name">{course.course_name}</p>
             <p className="product-name1">{course.description}</p>
           </article>

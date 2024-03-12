@@ -2,6 +2,7 @@
   "courses": [
     {
       "course_name": "Introduction to Python Programming",
+      "c_image": "https://media.licdn.com/dms/image/D5612AQF7GSp3l4pztQ/article-cover_image-shrink_720_1280/0/1686548640655?e=2147483647&v=beta&t=OM9KysTUVtwR6R_8MgIUiZE4VXr1tHGUyaJW3vPicpk",
       "description": "This course provides a comprehensive introduction to Python programming language.",
       "steps": [
         "Install Python on your computer",
@@ -31,6 +32,7 @@
     },
     {
       "course_name": "Introduction to Machine Learning",
+      "c_image": "https://www.freecodecamp.org/news/content/images/size/w2000/2022/01/machine-learning-banner-2.png",
       "description": "This course provides an introduction to the fundamentals of machine learning.",
       "steps": [
         "Understand the basics of machine learning and its applications",
@@ -57,6 +59,7 @@
     },
     {
       "course_name": "Web Development with JavaScript",
+      "c_image": "https://bairesdev.mo.cloudinary.net/blog/2023/08/What-Is-JavaScript-Used-For.jpg",
       "description": "This course teaches the fundamentals of web development using JavaScript.",
       "steps": [
         "Understand the basics of HTML and CSS",
@@ -87,6 +90,7 @@
     },
     {
       "course_name": "Data Science Fundamentals",
+      "c_image": "https://d1m75rqqgidzqn.cloudfront.net/wp-data/2019/09/11134058/What-is-data-science-2.jpg",
       "description": "This course covers the foundational concepts and techniques of data science.",
       "steps": [
         "Understand the role of data science in decision making",
@@ -116,6 +120,7 @@
     },
     {
       "course_name": "Cybersecurity Essentials",
+      "c_image": "https://www.freecodecamp.org/news/content/images/size/w2000/2022/01/machine-learning-banner-2.png",
       "description": "This course provides an introduction to the fundamentals of cybersecurity.",
       "steps": [
         "Understand the importance of cybersecurity",
@@ -147,6 +152,7 @@
     },
     {
       "course_name": "Financial Literacy",
+      "c_image": "https://www.kreditbee.in/blog/content/images/2023/12/shutterstock_2195605515-min.jpg",
       "description": "This course aims to educate individuals on financial management and planning.",
       "steps": [
         "Understand the basics of personal finance",
@@ -172,34 +178,6 @@
         "Explore real-life financial scenarios and case studies",
         "Practice financial planning and decision making",
         "Stay updated with the latest financial news and trends"
-      ]
-    },
-    {
-      "course_name": "Artificial Intelligence Ethics",
-      "description": "This course explores the ethical implications of artificial intelligence (AI) and machine learning technologies.",
-      "steps": [
-        "Understand the basics of artificial intelligence and machine learning",
-        "Learn about the societal impacts of AI and automation",
-        "Explore the concept of algorithmic bias and fairness",
-        "Understand the ethical considerations in data collection and usage",
-        "Learn about privacy concerns in the age of AI",
-        "Explore the role of AI in surveillance and social control",
-        "Understand the implications of AI on employment and workforce",
-        "Learn about the ethics of AI in healthcare and medicine",
-        "Explore the potential risks of autonomous weapons and military AI",
-        "Understand the concept of explainability and transparency in AI algorithms",
-        "Learn about AI accountability and responsibility",
-        "Explore the ethical dilemmas of AI decision making",
-        "Understand the role of ethics committees and regulatory bodies in AI",
-        "Learn about international perspectives on AI ethics",
-        "Explore ethical frameworks and guidelines for AI development and deployment",
-        "Understand the importance of diversity and inclusion in AI",
-        "Learn about the role of AI in shaping societal norms and values",
-        "Explore real-world case studies of AI ethics issues",
-        "Understand the need for interdisciplinary approaches to AI ethics",
-        "Learn about public engagement and participatory approaches in AI governance",
-        "Explore the future of AI ethics and potential challenges",
-        "Stay updated with the latest developments in AI ethics"
       ]
     }
   ]
