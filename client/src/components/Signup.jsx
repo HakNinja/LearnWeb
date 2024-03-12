@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { AiOutlineLock } from 'react-icons/ai';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -40,8 +40,11 @@ const Signup = () => {
         length: false
     });
 
-
-
+    useEffect(() => {
+        if (document.getElementById('mymsg').innerText === ""){
+            document.getElementById('mymsg').style.display="None"
+        }
+    });
 
 
     const handleToggle2 = () => {
@@ -91,7 +94,9 @@ const Signup = () => {
                 length: !containsLength
             });
 
-
+            if (document.getElementById('mymsg').innerText === ""){
+                document.getElementById('mymsg').style.display="Block"
+            }
 
         }
         else if (e.target.name === 'cpassword') {
@@ -371,7 +376,7 @@ const Signup = () => {
                                 </span>
 
 
-                                <div className='compare showpasswd compareleft'>
+                                <div className='compare showpasswd compareleft' id='mymsg'>
                                     {messages.number && (
                                         <p style={{ color: 'red' }}>Password should contain at least one number.</p>
                                     )}
