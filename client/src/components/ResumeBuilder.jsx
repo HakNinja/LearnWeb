@@ -1,29 +1,103 @@
 import React, { useState, useEffect } from 'react';
 import './ResumeBuilder.css';
-import { Document, Page, Text, View, StyleSheet, PDFViewer } from '@react-pdf/renderer';
+import { Document, Page, Text, View, StyleSheet, PDFViewer, Image } from '@react-pdf/renderer';
+import { pf } from '../assets';
 
 // Define loader component
 const Loader = () => <div>Loading...</div>;
 
 const styles = StyleSheet.create({
-  page: {
-    flexDirection: 'column',
-    padding: 10,
+  rcontainer: {
+    display:"flex",
+    flexDirection:"row",
+    margin:"auto 0",
+    justifyContent:"center",
   },
-  section: {
-    margin: 10,
-    padding: 10,
-    flexGrow: 1,
-  },
-  heading: {
-    fontSize: 20,
-    fontWeight: 'bold',
-    marginBottom: 10,
-  },
-  content: {
-    fontSize: 12,
-    marginBottom: 5,
-  },
+ sectionl: {
+  width: "40%",
+  display:"flex",
+  paddingTop:"30",
+  paddingLeft:"50",
+  flexDirection:"column",
+  justifyContent:"flex-start",
+  backgroundColor:"#323B4C",
+  color:"white"
+ },
+ rimage: {
+  width:"130px",
+  height:"130px",
+  borderRadius:"50%",
+ },
+ heading: {
+  marginTop:"25px",
+  marginBottom:"15px",
+  fontSize:"20px",
+  borderBottom:"2px solid white",
+  paddingBottom:"5px",
+  fontWeight:"bold",
+  textTransform:"uppercase"
+ },
+ sheading:{
+  marginTop:"15px",
+  fontSize:"16px",
+  textTransform:"capitalize"
+ },
+ ltext: {
+  fontSize:"12px",
+  textTransform:"capitalize"
+ },
+ ltext1: {
+  fontSize:"12px",
+  marginBottom:"10px",
+  textTransform:"capitalize"
+ },
+ ytext:{
+  fontSize:"12px",
+  fontWeight:"bold",
+ },
+ sectionr: {
+  width:"60%",
+  display:"flex",
+  paddingTop:"30",
+  paddingLeft:"20",
+  paddingRight:"20",
+  flexDirection:"column",
+  justifyContent:"flex-start",
+ },
+ nheading: {
+  fontSize:"50px",
+  color:"#323B4C",
+ },
+ nheading1: {
+  fontSize:"50px",
+  color:"#737373",
+ },
+ profession:{
+  fontSize:"20px",
+  color:"#1F3A68",
+  marginTop:"5px"
+ },
+ about: {
+  fontSize:"12px",
+  textAlign:"justify",
+  color:"#737373",
+  marginTop:"6px"
+ },
+ pheading:{
+  marginTop:"25px",
+  marginBottom:"15px",
+  fontSize:"20px",
+  borderBottom:"2px solid #1F3A68",
+  paddingBottom:"5px",
+  color:"#1F3A68",
+  fontWeight:"bold",
+  textTransform:"uppercase"
+ },
+ ptext:{
+  fontSize:"15px",
+  color:"#27384C",
+  marginTop:"3px",
+ },
 });
 
 const ResumeBuilder = () => {
@@ -72,7 +146,7 @@ const ResumeBuilder = () => {
 
   return (
     <div className='flex'>
-      <div className='inputValueResume'>
+      <div className='inputValueResume' style={{marginTop:"3rem"}}>
         <div className="input-container">
           <label className="label">Name:</label>
           <input
@@ -110,8 +184,8 @@ const ResumeBuilder = () => {
           />
         </div>
 
-        <div>
-          <h2>Projects</h2>
+        <div className='p-container'>
+          <h2 className='p-head'>Projects</h2>
           {projects.map((project, index) => (
             <div key={index}>
               <input
@@ -131,11 +205,11 @@ const ResumeBuilder = () => {
               />
             </div>
           ))}
-          <button onClick={handleAddProject}>Add Project</button>
+          <button onClick={handleAddProject} className='p-button'>Add Project</button>
         </div>
 
-        <div>
-          <h2>Education</h2>
+        <div className='p-container'>
+          <h2 className='p-head'>Education</h2>
           {education.map((edu, index) => (
             <div key={index}>
               <input
@@ -164,35 +238,44 @@ const ResumeBuilder = () => {
               />
             </div>
           ))}
-          <button onClick={handleAddEducation}>Add Education</button>
+          <button onClick={handleAddEducation} className='p-button'>Add Education</button>
         </div>
       </div>
 
       {isLoading ? ( // Render loader if loading
         <Loader />
       ) : (
-        <PDFViewer width="1000" height="600">
+        <PDFViewer width="1000" height="600" style={{marginTop:"3rem"}}>
           <Document>
-            <Page size="A4" style={styles.page}>
-              <View style={styles.section}>
-                <Text style={styles.heading}>Name: {name}</Text>
-                <Text style={styles.content}>Contact Number: {contactNumber}</Text>
-                <Text style={styles.content}>Email: {email}</Text>
-
-                <Text style={styles.heading}>Projects</Text>
-                {projects.map((project, index) => (
-                  <View key={index}>
-                    <Text style={styles.content}>Project Name: {project.name}</Text>
-                    <Text style={styles.content}>Project Description: {project.description}</Text>
-                  </View>
-                ))}
-
-                <Text style={styles.heading}>Education</Text>
+            <Page size="A4" style={styles.rcontainer}>
+              <View style={styles.sectionl}>
+              <Image src={pf} style={styles.rimage} />
+                <Text style={styles.heading} > Contact </Text>
+                <Text style={styles.sheading}>phone </Text>
+                <Text style={styles.ltext}>8279847842</Text>
+                <Text style={styles.sheading}>E-mail </Text>
+                <Text style={styles.ltext}>hello@gmail.com</Text>
+                <Text style={styles.sheading}>Address </Text>
+                <Text style={styles.ltext1}>Sec-63, Noida, U.P.</Text>
+                <Text style={styles.heading} > Education </Text>
                 {education.map((edu, index) => (
                   <View key={index}>
-                    <Text style={styles.content}>School/College Name: {edu.school}</Text>
-                    <Text style={styles.content}>Course: {edu.course}</Text>
-                    <Text style={styles.content}>Year: {edu.year}</Text>
+                    <Text style={styles.ytext}>{edu.year}</Text>
+                    <Text style={styles.ltext}>{edu.course}</Text>
+                    <Text style={styles.ltext1}>{edu.school}</Text>
+                  </View>
+                ))}
+                </View>
+
+                <View style={styles.sectionr}>
+                <Text style={styles.nheading}>Jack <Text style={styles.nheading1}>Mishra</Text></Text>
+                <Text style={styles.profession}>Full Stack Developer</Text>
+                <Text style={styles.about}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam pharetra in lorem at laoreet. Donec hendrerit libero eget est tempor, quis tempus arcu elementum. In elementum elit at dui tristique feugiat. Mauris convallis, mi at mattis malesuada, neque nulla volutpat dolor, hendrerit faucibus eros nibh ut nunc. </Text>
+                <Text style={styles.pheading}>Projects</Text>
+                {projects.map((project, index) => (
+                  <View key={index}>
+                    <Text style={styles.ptext}>{project.name}</Text>
+                    <Text style={styles.ptext}>{project.description}</Text>
                   </View>
                 ))}
               </View>

@@ -21,8 +21,8 @@ function CourseList() {
   };
 
   return (
-    <div className="App min-h-[90vh] relative">
-      <h1>Free Courses</h1>
+    <div className="App min-h-[90vh] relative mb-10">
+      <h1 className='mt-10'>Free Courses</h1>
       {/* <div className='fixedme'> */}
       {/* <div className="course-container "> */}
       <div className="recent_recipes_posts">

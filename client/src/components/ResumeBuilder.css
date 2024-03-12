@@ -10,15 +10,16 @@
 
 .label {
   display: block;
-  font-size: 14px;
+  font-size: 1.25rem;
+  font-weight: 500;
   margin-bottom: 5px;
   color: #333;
 }
 
 .input-field {
-  width: 100%;
+  width: 90%;
   padding: 10px;
-  border: 1px solid #ccc;
+  border: 2px solid #ccc;
   border-radius: 5px;
   font-size: 16px;
   box-sizing: border-box;
@@ -27,7 +28,7 @@
 
 .input-field:focus {
   outline: none;
-  border-color: #007bff;
+  border-color: #3e77b5;
 }
 
 .textarea-field {
@@ -130,4 +131,30 @@
 
 .add-button:hover {
   background-color: #218838;
+}
+
+
+.p-container{
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+}
+
+.p-head{
+  font-size: 1.7rem;
+  font-weight: 500;
+  margin-right: 2rem;
+}
+
+.p-button{
+  /* width: 150px; */
+        border: none;
+        border-radius: 10px;
+        background: #416A9B;
+        color: #fff;
+        font-weight: 600;
+        margin: 10px 0;
+        padding: 10px;
+        text-transform: uppercase;
+        cursor: pointer;
 }
