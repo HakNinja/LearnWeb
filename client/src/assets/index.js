@@ -1,4 +1,4 @@
-import {default as Logo} from './Logo.png';
+import {default as logo} from './logo.png';
 import {default as about1} from './about1.jpeg'
 import {default as avatar} from './avatar.jpeg'
 import {default as banner} from './banner.png'
@@ -12,7 +12,7 @@ import { default as walking_man } from './walking-man.gif';
 import { default as walking } from './walk.gif';
 
 export {
-    Logo,
+    logo,
     about1,
     avatar,
     banner,
