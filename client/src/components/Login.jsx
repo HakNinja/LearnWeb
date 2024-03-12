@@ -83,7 +83,7 @@ const Login = () => {
                 localStorage.setItem("User", A)
                 setTimeout(() => {
 
-                    window.location.href = "http://localhost:3000/"
+                    window.location.href = "http://localhost:3000/:2"
                 }, 800);
             } else {
                 toast.error(response.message, {
@@ -123,7 +123,7 @@ const Login = () => {
                 localStorage.setItem("User", A)
                 setTimeout(() => {
 
-                    window.location.href = "http://localhost:3000/"
+                    window.location.href = "http://localhost:3000/:1"
                 }, 800);
             } else {
                 toast.error(response.message, {

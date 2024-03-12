@@ -5,7 +5,7 @@
     try {
     //  console.log(pinData)
      const A = req.query.pincode
-     console.log(A)
+    //  console.log(A)
     const B = pinData.filter((pin)=>{
        return pin.pincode==A
     })

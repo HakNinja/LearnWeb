@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import './Navbar.scss'
 import { Logo } from '../../assets';
 import { useState, useEffect } from 'react';
-import { NavLink } from 'react-router-dom'
+import { NavLink, useParams } from 'react-router-dom'
 import { Link } from "react-router-dom"
 import { useAuth0 } from "@auth0/auth0-react";
 
@@ -17,6 +17,11 @@ const Navbar = () => {
   const [toggle, setToggle] = useState(false)
   const [User, setUser] = useState()
   const [isOpen, setIsOpen] = useState(false);
+  console.log(user)
+
+  const params = useParams()
+  const { role } = params
+  // console.log(role)
 
   const handleMouseEnter = () => {
     setIsOpen(true);
@@ -60,49 +65,30 @@ const Navbar = () => {
           }
         </div>
         <div className="relative inline-block text-left" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-      <div>
-        <button
-          type="button"
-          className="flex items-center text-gray-600 focus:outline-none focus:text-gray-800"
-        >
-          <HiUserCircle className="w-14 h-14 mr-2 ml-4 fill-white" />
-          <span className="text-white text-lg">Jack Mishra</span>
-        </button>
-      </div>
-
-      {isOpen && (
-        <div className="origin-top-right absolute right-0 mt-0 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
-          <div
-            className="py-1"
-            role="menu"
-            aria-orientation="vertical"
-            aria-labelledby="options-menu"
-          >
-            <a
-              href="/"
-              className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-              role="menuitem"
+          <div>
+            <button
+              type="button"
+              className="flex items-center text-gray-600 focus:outline-none focus:text-gray-800"
             >
-              Profile
-            </a>
-            <a
-              href="/"
-              className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-              role="menuitem"
-            >
-              Settings
-            </a>
-            <a
-              href="/"
-              className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-              role="menuitem"
-            >
-              Sign out
-            </a>
+              <HiUserCircle className="w-14 h-14 mr-2 ml-4 fill-white" />
+              <span className="text-white text-lg">Jack Mishra</span>
+            </button>
           </div>
+
+          {isOpen && (
+            <div className="origin-top-right absolute right-0 mt-0 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
+              <div
+                className="py-1"
+                role="menu"
+                aria-orientation="vertical"
+                aria-labelledby="options-menu"
+              >
+                {user ? <button class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"><Link class="nav-link" to={`/dashboard/`}>Dashboard</Link></button> : User ? <button class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"><Link class="nav-link" to={`/dashboard`}>Dashboard</Link></button> : ''}
+                {user ? <button onClick={(e) => { logout() }} class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"><Link class="nav-link" to="/">Logout</Link></button> : User ? <button onClick={handleLogout} class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"><Link class="nav-link" to="/loginnew">Logout</Link></button> : ''}
+              </div>
+            </div>
+          )}
         </div>
-      )}
-    </div>
       </ul>
 
       <div className='navbar-menu'>

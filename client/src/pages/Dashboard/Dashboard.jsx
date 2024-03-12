@@ -39,7 +39,7 @@ const StudentDashboard = () => {
   return (
     <div className="student-dashboard">
 
-      <div className="student-dashboard__content">
+      <div className="student-dashboard__content min-h-svh">
         <div className="student-dashboard__nav">
           {['Overview', 'Profile', 'My Courses', 'Quizzes', 'Doubts', 'Certificates'].map((page) => (
             <div

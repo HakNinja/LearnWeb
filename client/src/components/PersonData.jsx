@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -12,6 +12,7 @@ const PersonData = () => {
     const [district, setDistrict] = useState('')
     const [stateName, setStateName] = useState('')
     const [instituteName, setInstituteName] = useState('')
+
 
     const handleChange = async (e) => {
 
