@@ -20,6 +20,8 @@ import Contact from './components/Contact Us/Contact';
 import Dashboard from './pages/Dashboard/Dashboard'
 import CV from './pages/CV';
 
+import ResumeBuilder from './components/ResumeBuilder'
+
 
 function App() {
   
@@ -44,6 +46,10 @@ function App() {
       <Route path="/courses" element={<CourseList />} />
       <Route path="/dashboard" element={<Dashboard />} />
       
+      <Route path="/resumebuilder" element={<ResumeBuilder />} />
+
+
+
       
       <Route path ='*' element={<Error/>}/>
      
