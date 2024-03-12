@@ -10,6 +10,8 @@ import {default as mobile} from './mobile.png'
 import {default as v} from './1.mp4'
 import { default as walking_man } from './walking-man.gif';
 import { default as walking } from './walk.gif';
+import {default as signin} from './signin.png'
+import {default as signup} from './signup.png'
 
 export {
     logo,
@@ -24,4 +26,6 @@ export {
     v,
     walking_man,
     walking,
+    signup,
+    signin
 }

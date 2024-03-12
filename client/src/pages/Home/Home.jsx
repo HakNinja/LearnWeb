@@ -5,7 +5,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 const Home = () => {
   const { user } = useAuth0()
   // onClick={(e) => loginWithRedirect()}
-  console.log(user)
+  // console.log(user)
   return (
     <>
       <div class="container col-xxl-8 px-4 pt-5" className='colorGradient'>
