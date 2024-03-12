@@ -20,12 +20,12 @@ function CourseList() {
 
   return (
     <div className="App min-h-[90vh] relative">
-      <h1>Free Courses</h1>
+      <h1>Courses Offers</h1>
       {/* <div className='fixedme'> */}
       <div className="course-container ">
         {coursesData.courses.map((course, index) => (
           <div className="course" key={index} onClick={() => handleCourseClick(course)}>
-            <p>{course.course_name}</p>
+            <h2>{course.course_name}</h2>
             <p>{course.description}</p>
           </div>
         ))}

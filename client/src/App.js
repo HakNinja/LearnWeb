@@ -46,7 +46,7 @@ function App() {
       <Route path="/courses" element={<CourseList />} />
       <Route path="/dashboard" element={<Dashboard />} />
       
-      <Route path="/resumebuilder" element={<ResumeBuilder />} />
+      <Route path="/resume" element={<ResumeBuilder />} />
 
 
 

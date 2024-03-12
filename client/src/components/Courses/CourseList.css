@@ -27,7 +27,7 @@
   min-width: 100vw;
   max-height: 90vh;
   overflow: scroll;
-  background-color: rgb(255, 255, 255);
+  background-color: #ffffff;
   border-radius: 5px;
   padding: 20px;
 }
@@ -55,7 +55,7 @@ body {
   content: '';
   position: absolute;
   width: 6px;
-  background-color: rgb(225, 73, 255);
+  background-color: #ffc2f2;
   top: 0;
   bottom: 0;
   left: 50%;
@@ -77,8 +77,8 @@ body {
   width: 25px;
   height: 25px;
   right: -17px;
-  background-color: rgb(228, 94, 255);
-  border: 4px solid #ff00bf;
+  background-color: #ffc2f2;
+  border: 4px solid #ffc2f2;
   top: 15px;
   border-radius: 50%;
   z-index: 1;

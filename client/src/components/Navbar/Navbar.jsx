@@ -53,7 +53,7 @@ const Navbar = () => {
         <Link to="/"><img src={logo} alt="logo" className='opacity-90' /></Link>
       </div>
       <ul className='navbar-links'>
-        {['Home', 'Courses', 'Roadmap', 'About us'].map((items) =>
+        {['Home', 'Courses', 'Resume', 'About us'].map((items) =>
           <li className='app__center' key={`link-${items}`}>
             <div />
             <NavLink to={`/${items}`} className={({ isActive }) =>
