@@ -8,6 +8,8 @@ import {default as LWLogo} from './LWLogo.png'
 import {default as mail} from './mail.png'
 import {default as mobile} from './mobile.png'
 import {default as v} from './1.mp4'
+import { default as walking_man } from './walking-man.gif';
+import { default as walking } from './walk.gif';
 
 export {
     Logo,
@@ -20,4 +22,6 @@ export {
     mail,
     mobile,
     v,
+    walking_man,
+    walking,
 }

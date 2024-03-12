@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import CourseInfo from '../components/CourseInfo';
 import VideoPlayer from '../components/VideoPlayer';
 import ProgressTracker from '../components/ProgressTracker';
+import VideoPlaylist from '../components/VideoPlaylist';
 
 const CV = () => {
 
@@ -12,14 +13,16 @@ const CV = () => {
   };
 
 
+
   return (
     <div className="container mx-auto p-4">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div>
-          <CourseInfo />
+        <VideoPlayer onProgressChange={handleProgressChange} />
+        <CourseInfo />
         </div>
         <div>
-          <VideoPlayer onProgressChange={handleProgressChange} />
+        <VideoPlaylist  />
         </div>
       </div>
       <div className="mt-8">

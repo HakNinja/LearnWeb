@@ -1,0 +1,66 @@
+.recent_recipes_posts{
+    width: 80%;
+    margin: auto;
+}
+
+.products-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 60px;
+    width: 100%;
+    margin: auto;
+    // border: 2px solid yellow;
+}
+.product-card{
+    cursor: pointer;
+     transform: scale(1, 1);
+     transition: transform 0.5s ease;
+    color: #324d67;
+    padding: 1rem;
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+    border-radius: 15px;
+   
+   }
+//    .product-card:hover{
+//      transform: scale(1.1,1.1)
+//    }
+   .product-image{
+     border-radius: 15px;
+    background-color: #ebebeb;
+     transform: scale(1, 1);
+     transition: transform 0.8s ease;
+
+     &:hover{
+        transform: scale(1.1,1.1)
+     }
+   }
+   
+   .product-name{
+     text-align: left;
+     margin-top: 1rem;
+     width: 300px;
+     color: #000000 !important;
+     font-size: 1.6rem;
+     font-family: 'Merriweather', serif;
+     text-decoration: none;
+
+     @media screen and (max-width: 320px) {
+        text-align: center;
+        font-size: 1.2rem;
+    }
+   }
+   .product-name1{
+     text-align: left;
+     margin-top: 1rem;
+     width: 300px;
+     color: #000000 !important;
+     font-size: 1rem;
+     font-family: 'Merriweather', serif;
+     text-decoration: none;
+
+     @media screen and (max-width: 320px) {
+        text-align: center;
+        font-size: .7rem;
+    }
+   }

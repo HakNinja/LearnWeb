@@ -8,7 +8,7 @@ import Login from './components/Login';
 import Signup from './components/Signup';
 import Footer from './components/Footer';
 import PersonData from './components/PersonData';
-import Error from './components/Error';
+// import Error from './components/Error';
 import LoginNew from './components/Login/LoginNew';
 import Roadmap from './components/Roadmap';
 
@@ -19,6 +19,7 @@ import Contact from './components/Contact Us/Contact';
 
 import Dashboard from './pages/Dashboard/Dashboard'
 import CV from './pages/CV';
+import Error from './pages/Error/Error';
 
 
 function App() {
@@ -45,7 +46,8 @@ function App() {
       <Route path="/dashboard" element={<Dashboard />} />
       
       
-      <Route path ='*' element={<Error/>}/>
+      {/* <Route path ='*' element={<Error/>}/> */}
+      <Route path='*' element={<Error/>}/>
      
      </Routes>
      <Footer/>

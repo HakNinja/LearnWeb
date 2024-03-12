@@ -1,0 +1,47 @@
+.background-image-conatiner {
+    overflow: hidden;
+}
+
+.background-image {
+    background: url(../../assets/newroad.jpeg) repeat-x;
+    background-size: contain;
+    height: calc(100vh - 110px);
+    width: 146760px;
+    animation: slide 10s linear;
+}
+
+@keyframes slide {
+    0% {
+        transform: translate(0px);
+    }
+
+    50%{
+        transform: translate(-100px);
+    }
+
+    100% {
+        transform: translate(-110px);
+
+    }
+}
+
+.walking-man {
+    height: 100%;
+    max-height: 225px;
+    position: absolute;
+    bottom: 0;
+    left: 10%;
+    animation: moveObject 20s forwards;
+
+    @media screen and (max-width: 640px) {
+        max-height: 175px
+    }
+}
+
+@keyframes moveObject {
+    to {
+    //   top: 150px; /* Final position */
+      left: 60%; /* Final position */
+      display: none;
+    }
+  }
