@@ -1,13 +1,54 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Chivo:wght@200&family=Merriweather&display=swap');
+
 .background-image-conatiner {
     overflow: hidden;
+
+    button{
+        position: absolute;
+        top: 55%;
+        left: 30%;
+
+        width: 150px;
+        // height: 50px;
+        border: none;
+        border-radius: 10px;
+        background: #416A9B;
+        color: #fff;
+        font-weight: 600;
+        margin: 10px 0;
+        padding: 10px;
+        text-transform: uppercase;
+        cursor: pointer;
+
+        :hover{
+            background: #c03cc0;
+        }
+    }
+
+    p{
+        position: absolute;
+        top: 30%;
+        left: 30%;
+        font-family: "Merriweather", serif;
+        font-size: 1.2rem;
+    }
+
+    .ele{
+        position: absolute;
+        top: 20%;
+        left: 60%;
+        width: 300px;
+    }
 }
 
 .background-image {
-    background: url(../../assets/newroad.jpeg) repeat-x;
+    background: url(../../assets/road.jpeg) repeat-x;
     background-size: contain;
     height: calc(100vh - 110px);
     width: 146760px;
-    animation: slide 10s linear;
+    animation: slide 2s linear;
+    opacity: 0.4;
 }
 
 @keyframes slide {
@@ -21,7 +62,6 @@
 
     100% {
         transform: translate(-110px);
-
     }
 }
 
@@ -31,7 +71,7 @@
     position: absolute;
     bottom: 0;
     left: 10%;
-    animation: moveObject 20s forwards;
+    animation: moveObject 2s forwards;
 
     @media screen and (max-width: 640px) {
         max-height: 175px
@@ -41,7 +81,12 @@
 @keyframes moveObject {
     to {
     //   top: 150px; /* Final position */
-      left: 60%; /* Final position */
+      left: 20%; /* Final position */
       display: none;
     }
   }
+
+
+    
+
+  
