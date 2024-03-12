@@ -351,7 +351,7 @@ const Signup = () => {
                                 />
                             </div>
 
-                            <div>
+                            <div className='relative'>
                                 <label htmlFor="password" className="sr-only">
                                     Password
                                 </label>
@@ -371,24 +371,24 @@ const Signup = () => {
                                 </span>
 
 
-<div className='compare showpasswd compareleft'>
-                                {messages.number && (
-                                    <p style={{ color: 'red' }}>Password should contain at least one number.</p>
-                                )}
-                                {messages.specialChar && (
-                                    <p style={{ color: 'red' }}>Password should contain at least one special character.</p>
-                                )}
-                                {messages.uppercase && (
-                                    <p style={{ color: 'red' }}>Password should contain at least one uppercase letter.</p>
-                                )}
-                                {messages.lowercase && (
-                                    <p style={{ color: 'red' }}>Password should contain at least one lowercase letter.</p>
-                                )}
-                                {messages.length && (
-                                    <p style={{ color: 'red' }}>Password should contain at least eight character.</p>
-                                )}
+                                <div className='compare showpasswd compareleft'>
+                                    {messages.number && (
+                                        <p style={{ color: 'red' }}>Password should contain at least one number.</p>
+                                    )}
+                                    {messages.specialChar && (
+                                        <p style={{ color: 'red' }}>Password should contain at least one special character.</p>
+                                    )}
+                                    {messages.uppercase && (
+                                        <p style={{ color: 'red' }}>Password should contain at least one uppercase letter.</p>
+                                    )}
+                                    {messages.lowercase && (
+                                        <p style={{ color: 'red' }}>Password should contain at least one lowercase letter.</p>
+                                    )}
+                                    {messages.length && (
+                                        <p style={{ color: 'red' }}>Password should contain at least eight character.</p>
+                                    )}
 
-</div>
+                                </div>
 
                             </div>
 

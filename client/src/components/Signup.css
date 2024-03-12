@@ -1,27 +1,30 @@
 .compareleft::before {
-    content: " ";
-    height: 0;
-    position: absolute;
-    top: 22px;
-    width: 0;
-    z-index: 1;
-    right: -10px;
-    border: medium solid white;
-    border-width: 10px 0 10px 10px;
-    border-color: transparent transparent transparent   pink;
-  }
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  right: -10px;
+  border: medium solid white;
+  border-width: 10px 0 10px 10px;
+  border-color: transparent transparent transparent pink;
+}
 
 
-  .showpasswd {
-    padding: 20px 30px;
-    background-color: rgb(255, 209, 209);
-    position: relative;
-    border-radius: 6px;
-  }
+.showpasswd {
+  padding: 20px 30px;
+  background-color: rgb(255, 209, 209);
+  position: relative;
+  border-radius: 6px;
+}
 
-  .compare{
-    
-    background-color: pink;
-    padding: 10px;
-    border-radius: 5px;
-  }
+.compare {
+
+  background-color: pink;
+  padding: 10px;
+  border-radius: 5px;
+  position: absolute;
+  left: -430px;
+  top: -10px;
+}
