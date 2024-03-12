@@ -71,99 +71,101 @@ const ResumeBuilder = () => {
   }, []);
 
   return (
-    <div>
-      <div className="input-container">
-        <label className="label">Name:</label>
-        <input
-          className="input-field"
-          type="text"
-          value={name}
-          onChange={(e) => {
-            setName(e.target.value);
-            setLoading();
-          }}
-        />
-      </div>
-      <div className="input-container">
-        <label className="label">Contact Number:</label>
-        <input
-          className="input-field"
-          type="text"
-          value={contactNumber}
-          onChange={(e) => {
-            setContactNumber(e.target.value);
-            setLoading();
-          }}
-        />
-      </div>
-      <div className="input-container">
-        <label className="label">Email:</label>
-        <input
-          className="input-field"
-          type="text"
-          value={email}
-          onChange={(e) => {
-            setEmail(e.target.value);
-            setLoading();
-          }}
-        />
-      </div>
+    <div className='flex'>
+      <div className='inputValueResume'>
+        <div className="input-container">
+          <label className="label">Name:</label>
+          <input
+            className="input-field"
+            type="text"
+            value={name}
+            onChange={(e) => {
+              setName(e.target.value);
+              setLoading();
+            }}
+          />
+        </div>
+        <div className="input-container">
+          <label className="label">Contact Number:</label>
+          <input
+            className="input-field"
+            type="text"
+            value={contactNumber}
+            onChange={(e) => {
+              setContactNumber(e.target.value);
+              setLoading();
+            }}
+          />
+        </div>
+        <div className="input-container">
+          <label className="label">Email:</label>
+          <input
+            className="input-field"
+            type="text"
+            value={email}
+            onChange={(e) => {
+              setEmail(e.target.value);
+              setLoading();
+            }}
+          />
+        </div>
 
-      <div>
-        <h2>Projects</h2>
-        {projects.map((project, index) => (
-          <div key={index}>
-            <input
-              type="text"
-              value={project.name}
-              onChange={(e) => {
-                handleProjectChange(index, 'name', e.target.value);
-              }}
-              placeholder="Project Name"
-            />
-            <textarea
-              value={project.description}
-              onChange={(e) => {
-                handleProjectChange(index, 'description', e.target.value);
-              }}
-              placeholder="Project Description"
-            />
-          </div>
-        ))}
-        <button onClick={handleAddProject}>Add Project</button>
-      </div>
+        <div>
+          <h2>Projects</h2>
+          {projects.map((project, index) => (
+            <div key={index}>
+              <input
+                type="text"
+                value={project.name}
+                onChange={(e) => {
+                  handleProjectChange(index, 'name', e.target.value);
+                }}
+                placeholder="Project Name"
+              />
+              <textarea
+                value={project.description}
+                onChange={(e) => {
+                  handleProjectChange(index, 'description', e.target.value);
+                }}
+                placeholder="Project Description"
+              />
+            </div>
+          ))}
+          <button onClick={handleAddProject}>Add Project</button>
+        </div>
 
-      <div>
-        <h2>Education</h2>
-        {education.map((edu, index) => (
-          <div key={index}>
-            <input
-              type="text"
-              value={edu.school}
-              onChange={(e) => {
-                handleEducationChange(index, 'school', e.target.value);
-              }}
-              placeholder="School/College Name"
-            />
-            <input
-              type="text"
-              value={edu.course}
-              onChange={(e) => {
-                handleEducationChange(index, 'course', e.target.value);
-              }}
-              placeholder="Course"
-            />
-            <input
-              type="text"
-              value={edu.year}
-              onChange={(e) => {
-                handleEducationChange(index, 'year', e.target.value);
-              }}
-              placeholder="Year"
-            />
-          </div>
-        ))}
-        <button onClick={handleAddEducation}>Add Education</button>
+        <div>
+          <h2>Education</h2>
+          {education.map((edu, index) => (
+            <div key={index}>
+              <input
+                type="text"
+                value={edu.school}
+                onChange={(e) => {
+                  handleEducationChange(index, 'school', e.target.value);
+                }}
+                placeholder="School/College Name"
+              />
+              <input
+                type="text"
+                value={edu.course}
+                onChange={(e) => {
+                  handleEducationChange(index, 'course', e.target.value);
+                }}
+                placeholder="Course"
+              />
+              <input
+                type="text"
+                value={edu.year}
+                onChange={(e) => {
+                  handleEducationChange(index, 'year', e.target.value);
+                }}
+                placeholder="Year"
+              />
+            </div>
+          ))}
+          <button onClick={handleAddEducation}>Add Education</button>
+        </div>
       </div>
 
       {isLoading ? ( // Render loader if loading

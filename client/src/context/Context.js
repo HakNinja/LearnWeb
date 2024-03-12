@@ -22,12 +22,12 @@ export const AuthProvider = ({ children }) => {
     //     sessionStorage.clear();
     // }
     useEffect(() => {
-        const storedrole = sessionStorage.getItem('role');
+        const storedrole = localStorage.getItem('role');
         // const storedIsGUser = sessionStorage.getItem('isGUser');
-        const userData = JSON.parse(sessionStorage.getItem('userData'));
+        const userData = JSON.parse(localStorage.getItem('userData'));
         // if (storedIsAuth === 'true') {
             // setIsGUser(storedIsGUser);
-            // setIsAuth(true);
+            setRole(storedrole);
             setUser(userData);
         // }
     }, [])

@@ -23,6 +23,8 @@ import CV from './pages/CV';
 import ResumeBuilder from './components/ResumeBuilder'
 
 
+import {AuthProvider} from './context/Context'
+
 function App() {
   
 
@@ -30,14 +32,15 @@ function App() {
   return (
    <>
      <BrowserRouter>
+     <AuthProvider>
      <ScrollToTop/>
      <Navbar />
      <Routes>
       <Route exact path='/' element={ <Home />} />
       <Route exact path='/Home' element={ <Home />} />
-      <Route exact path='/login/:role' element={ <Login />} />
-      <Route exact path='/signup/:role' element={ <Signup />} />
-      <Route exact path='/persondata/:role' element={ <PersonData />} />
+      <Route exact path='/login/' element={ <Login />} />
+      <Route exact path='/signup/' element={ <Signup />} />
+      <Route exact path='/persondata/' element={ <PersonData />} />
       <Route exact path='/loginnew' element={< LoginNew />}/>
       <Route exact path='/roadmap' element={< Roadmap />}/>
       <Route path='/contactus' element={<Contact/>} />
@@ -55,6 +58,7 @@ function App() {
      
      </Routes>
      <Footer/>
+     </AuthProvider>
      </BrowserRouter>
     </>
   );
