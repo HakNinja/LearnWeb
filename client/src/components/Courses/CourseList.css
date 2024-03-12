@@ -27,7 +27,7 @@
   min-width: 100vw;
   max-height: 90vh;
   overflow: scroll;
-  background-color: rgb(255, 223, 223);
+  background-color: rgb(255, 255, 255);
   border-radius: 5px;
   padding: 20px;
 }
@@ -63,7 +63,7 @@ body {
 }
 
 /* Container around content */
-.container {
+.CourseListcontainer {
   padding: 10px 40px;
   position: relative;
   background-color: inherit;
@@ -71,7 +71,7 @@ body {
 }
 
 /* The circles on the timeline */
-.container::after {
+.CourseListcontainer::after {
   content: '';
   position: absolute;
   width: 25px;
@@ -86,12 +86,12 @@ body {
 
 /* Place the container to the left */
 .left {
-  left: -25.4%;
+  left: -0.4%;
 }
 
 /* Place the container to the right */
 .right {
-  left: 25.3%;
+  left: 50.3%;
 }
 
 /* Add arrows to the left container (pointing right) */
@@ -105,7 +105,7 @@ body {
   right: 30px;
   border: medium solid white;
   border-width: 10px 0 10px 10px;
-  border-color: transparent transparent transparent white;
+  border-color: transparent transparent transparent  rgb(255, 209, 209);
 }
 
 /* Add arrows to the right container (pointing left) */
@@ -119,7 +119,7 @@ body {
   left: 30px;
   border: medium solid white;
   border-width: 10px 10px 10px 0;
-  border-color: transparent white transparent transparent;
+  border-color: transparent  rgb(255, 209, 209) transparent transparent;
 }
 
 /* Fix the circle for containers on the right side */
@@ -130,7 +130,7 @@ body {
 /* The actual content */
 .content {
   padding: 20px 30px;
-  background-color: white;
+  background-color: rgb(255, 209, 209);
   position: relative;
   border-radius: 6px;
 }
@@ -144,14 +144,14 @@ body {
   }
 
   /* Full-width containers */
-  .container {
+  .CourseListcontainer {
     width: 100%;
     padding-left: 70px;
     padding-right: 25px;
   }
 
   /* Make sure that all arrows are pointing leftwards */
-  .container::before {
+  .CourseListcontainer::before {
     left: 60px;
     border: medium solid white;
     border-width: 10px 10px 10px 0;

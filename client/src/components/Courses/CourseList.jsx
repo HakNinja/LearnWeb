@@ -34,10 +34,10 @@ function CourseList() {
       {selectedCourse &&
         <div className="course-roadmap " >
           <h2>{selectedCourse.course_name} Roadmap</h2>
-          <button onClick={handleCloseClick} className='absolute top-5 right-5  btn btn-light'> Close </button>
+          <button onClick={handleCloseClick} className='absolute top-5 right-5  btn text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2'> Close </button>
           <div className="timeline">
             {selectedCourse.steps.map((step, stepIndex) => (
-              <div className={stepIndex % 2 === 0 ? "container left" : "container right"} key={stepIndex}>
+              <div className={stepIndex % 2 === 0 ? "CourseListcontainer left" : "CourseListcontainer right"} key={stepIndex}>
                 <div className="content">
                   <h2>Chapter {stepIndex + 1}</h2>
                   <p>{step}</p>

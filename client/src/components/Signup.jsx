@@ -3,7 +3,7 @@ import { AiOutlineLock } from 'react-icons/ai';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Link, useNavigate, useParams } from "react-router-dom"
-
+import './Signup.css'
 
 
 import { Icon } from 'react-icons-kit';
@@ -371,7 +371,7 @@ const Signup = () => {
                                 </span>
 
 
-<div className='compare'>
+<div className='compare showpasswd compareleft'>
                                 {messages.number && (
                                     <p style={{ color: 'red' }}>Password should contain at least one number.</p>
                                 )}
