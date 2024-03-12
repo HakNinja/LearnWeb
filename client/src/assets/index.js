@@ -7,6 +7,7 @@ import {default as cover} from './cover.jpg'
 import {default as LWLogo} from './LWLogo.png'
 import {default as mail} from './mail.png'
 import {default as mobile} from './mobile.png'
+import {default as v} from './1.mp4'
 
 export {
     Logo,
@@ -18,4 +19,5 @@ export {
     LWLogo,
     mail,
     mobile,
+    v,
 }

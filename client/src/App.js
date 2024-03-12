@@ -17,7 +17,8 @@ import CourseList from './components/Courses/CourseList';
 import Contact from './components/Contact Us/Contact';
 // import CourseDetails from './components/Courses/CourseDetails';
 
-import StudentDashboard from './pages/Dashboard/Dashboard'
+import Dashboard from './pages/Dashboard/Dashboard'
+import CV from './pages/CV';
 
 
 function App() {
@@ -38,9 +39,10 @@ function App() {
       <Route exact path='/loginnew' element={< LoginNew />}/>
       <Route exact path='/roadmap' element={< Roadmap />}/>
       <Route path='/contactus' element={<Contact/>} />
+      <Route path='/test' element={<CV />} />
       
       <Route path="/courses" element={<CourseList />} />
-      <Route path="/dashboard" element={<StudentDashboard />} />
+      <Route path="/dashboard" element={<Dashboard />} />
       
       
       <Route path ='*' element={<Error/>}/>

@@ -1,45 +1,55 @@
-import React, { useState, useEffect } from 'react';
-import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
-import 'react-vertical-timeline-component/style.min.css';
-import courses from './courses.json';
-import './CourseList.css';
+import React, { useState } from 'react';
+import coursesData from './courses.json';
+import './CourseList.css'
+import Confetti from 'react-dom-confetti';
+// import CourseListRoadmap from './CourseListRoadmap'
 
-const CourseList = () => {
+function CourseList() {
   const [selectedCourse, setSelectedCourse] = useState(null);
-  const [isBoxVisible, setIsBoxVisible] = useState(false);
+  const [showRoadmap, setShowRoadmap] = useState(true);
 
-  const handleClick = (course) => {
+  const handleCourseClick = (course) => {
     setSelectedCourse(course);
-    setIsBoxVisible(true);
+    setShowRoadmap(true);
+  };
+
+  const handleCloseClick = () => {
+    setSelectedCourse(null);
+    setShowRoadmap(false);
   };
 
   return (
-    <div className='padding'>
-      <h1>Courses Available : </h1>
-      {/* <VerticalTimeline> */}
-        {courses.courses.map((course) => (
-          <VerticalTimelineElement
-            key={course.id}
-            date={course.date} // Add the date of the course here
-            iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }} // Customize icon style if needed
-            // contentStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }} // Customize content style if needed
-            // icon={<Icon />} // You can add custom icons if needed
-          >
-            <h3 className="vertical-timeline-element-title" onClick={() => handleClick(course)}>
-              {course.title}
-            </h3>
-            {selectedCourse === course && (
-              <ul>
-                {course.steps.map((step) => (
-                  <li className="coursesListli" key={step.id}>{step.title}</li>
-                ))}
-              </ul>
-            )}
-          </VerticalTimelineElement>
-        ))}
-      {/* </VerticalTimeline> */}
-    </div>
-  );
-};
+    <div className="App">
+      <h1>Free Courses</h1>
+      {/* <div className='fixedme'> */}
+        <div className="course-container">
+          {coursesData.courses.map((course, index) => (
+            <div className="course" key={index} onClick={() => handleCourseClick(course)}>
+              <p>{course.course_name}</p>
+              <p>{course.description}</p>
+            </div>
+          ))}
+        </div>
+
+        {selectedCourse &&
+          <div className="course-roadmap" >
+            <h2>{selectedCourse.course_name} Roadmap</h2>
+            <button onClick={handleCloseClick}> Close </button>
+            <div class="timeline">
+              {selectedCourse.steps.map((step, stepIndex) => (
+                <div className={stepIndex % 2 === 0 ? "container left" : "container right"} key={stepIndex}>
+                  <div className="content">
+                    <h2>Chapter {stepIndex + 1}</h2>
+                    <p>{step}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        }
+      </div>
+    // </div>
+  )
+}
 
 export default CourseList;

@@ -371,7 +371,7 @@ const Signup = () => {
                                 </span>
 
 
-
+<div className='compare'>
                                 {messages.number && (
                                     <p style={{ color: 'red' }}>Password should contain at least one number.</p>
                                 )}
@@ -387,6 +387,8 @@ const Signup = () => {
                                 {messages.length && (
                                     <p style={{ color: 'red' }}>Password should contain at least eight character.</p>
                                 )}
+
+</div>
 
                             </div>
 
