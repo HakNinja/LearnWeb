@@ -2,7 +2,7 @@ import React from 'react'
 import { HiMenuAlt4, HiX, HiUserCircle } from 'react-icons/hi';
 import { motion } from 'framer-motion';
 import './Navbar.scss'
-import { Logo } from '../../assets';
+import logo  from '../../assets/logo.png';
 import { useState, useEffect } from 'react';
 import { NavLink, useParams } from 'react-router-dom'
 import { Link } from "react-router-dom"
@@ -50,7 +50,7 @@ const Navbar = () => {
   return (
     <nav className='navbar colorGradient'>
       <div className='navbar-logo'>
-        <Link to="/"><img src={Logo} alt="logo" className='opacity-90' /></Link>
+        <Link to="/"><img src={logo} alt="logo" className='opacity-90' /></Link>
       </div>
       <ul className='navbar-links'>
         {['Home', 'Courses', 'Roadmap', 'About us'].map((items) =>
