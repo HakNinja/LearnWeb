@@ -26,6 +26,7 @@ import ResumeBuilder from './components/ResumeBuilder'
 
 import {AuthProvider} from './context/Context'
 import LoginSignup from './components/LogSign/LoginSignup';
+import ThemeSelect from './components/ThemeSelect';
 
 function App() {
   
@@ -53,6 +54,7 @@ function App() {
       
       <Route path="/resume" element={<ResumeBuilder />} />
       <Route path="/loginsignup" element={<LoginSignup />} />
+      <Route path="/themeselect" element={<ThemeSelect />} />
      
 
 
