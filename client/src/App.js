@@ -7,15 +7,12 @@ import Home from './pages/Home/Home';
 import Login from './components/Login';
 import Signup from './components/Signup';
 import Footer from './components/Footer';
-import PersonData from './components/PersonData';
-// import Error from './components/Error';
 import LoginNew from './components/Login/LoginNew';
 import Roadmap from './components/Roadmap';
 
 import React from 'react';
 import CourseList from './components/Courses/CourseList';
 import Contact from './components/Contact Us/Contact';
-// import CourseDetails from './components/Courses/CourseDetails';
 
 import Dashboard from './pages/Dashboard/Dashboard'
 import CV from './pages/CV';
@@ -43,7 +40,6 @@ function App() {
       <Route exact path='/Home' element={ <Home />} />
       <Route exact path='/login/' element={ <Login />} />
       <Route exact path='/signup/' element={ <Signup />} />
-      <Route exact path='/persondata/' element={ <PersonData />} />
       <Route exact path='/loginnew' element={< LoginNew />}/>
       <Route exact path='/roadmap' element={< Roadmap />}/>
       <Route path='/contactus' element={<Contact/>} />

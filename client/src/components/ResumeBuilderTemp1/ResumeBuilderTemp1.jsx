@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './ResumeBuilderTemp1.css';
 import { Document, Page, Text, View, StyleSheet, PDFViewer, Image } from '@react-pdf/renderer';
 import { pf } from '../../assets'
+import Certificates from '../../pages/Dashboard/Certificates';
 
 // Define loader component
 const Loader = () => <div>Loading...</div>;
@@ -195,7 +196,10 @@ const ResumeBuilderTemp1 = () => {
   const [name, setName] = useState('');
   const [contactNumber, setContactNumber] = useState('');
   const [email, setEmail] = useState('');
+  const [DOB, setDob] = useState('');
   const [projects, setProjects] = useState([]);
+  const [certificates, setcertificate] = useState([]);
+  const [exps, setexp] = useState([]);
   const [education, setEducation] = useState([]);
   const [isLoading, setIsLoading] = useState(false); // Loading state
   const [theme, setTheme] = useState(true);
@@ -205,12 +209,23 @@ const ResumeBuilderTemp1 = () => {
     setIsLoading(true);
     setTimeout(() => {
       setIsLoading(false);
-    }, 3000);
+    }, 1000);
   };
 
   const handleAddProject = () => {
     setLoading();
     setProjects([...projects, { name: '', description: '' }]);
+  };
+
+  const handleAddCertificate = () => {
+    setLoading();
+    setcertificate([...certificates, { name: '', description: '' }]);
+  };
+
+
+  const handleExp = () => {
+    setLoading();
+    setexp([...exps, { name: '', description: '' }]);
   };
 
   const handleProjectChange = (index, key, value) => {
@@ -290,9 +305,9 @@ const ResumeBuilderTemp1 = () => {
               className="input-field"
               type="text"
               placeholder='Your DOB in (day/month/year) format'
-              value={email}
+              value={DOB}
               onChange={(e) => {
-                setEmail(e.target.value);
+                setDob(e.target.value);
                 setLoading();
               }}
             />
@@ -367,67 +382,67 @@ const ResumeBuilderTemp1 = () => {
 
           <div className='p-container'>
             {/* <h2 className='p-head'>Projects</h2> */}
-            {projects.map((project, index) => (
+            {exps.map((exp, index) => (
               <div key={index} style={{ display: "flex", flexDirection: 'column', }}>
                 <input
                   type="text"
                   className='input-field'
                   style={{ marginBottom: "1.2rem" }}
-                  value={project.name}
+                  value={exp.name}
                   onChange={(e) => {
-                    handleProjectChange(index, 'name', e.target.value);
+                    handleExp(index, 'name', e.target.value);
                   }}
                   placeholder="Experience Period (month/year to month/year) Format"
                 />
                 <textarea
-                  value={project.description}
+                  value={exp.description}
                   className='input-field'
                   style={{ marginBottom: "1.2rem" }}
                   onChange={(e) => {
-                    handleProjectChange(index, 'description', e.target.value);
+                    handleExp(index, 'description', e.target.value);
                   }}
                   placeholder="Company Name"
                 />
                 <textarea
-                  value={project.description}
+                  value={exp.description}
                   className='input-field'
                   style={{ marginBottom: "1.2rem" }}
                   onChange={(e) => {
-                    handleProjectChange(index, 'description', e.target.value);
+                    handleExp(index, 'description', e.target.value);
                   }}
                   placeholder="Designation"
                 />
               </div>
             ))}
-            <button onClick={handleAddProject} className='p-button' style={{ marginBottom: "1.2rem" }}>Add Experience</button>
+            <button onClick={handleExp} className='p-button' style={{ marginBottom: "1.2rem" }}>Add Experience</button>
           </div>
 
           <div className='p-container'>
             {/* <h2 className='p-head'>Projects</h2> */}
-            {projects.map((project, index) => (
+            {certificates.map((certificate, index) => (
               <div key={index} style={{ display: "flex", flexDirection: 'column', }}>
                 <input
                   type="text"
                   className='input-field'
                   style={{ marginBottom: "1.2rem" }}
-                  value={project.name}
+                  value={certificate.name}
                   onChange={(e) => {
-                    handleProjectChange(index, 'name', e.target.value);
+                    handleAddCertificate(index, 'name', e.target.value);
                   }}
                   placeholder="Certificate Name"
                 />
                 <textarea
-                  value={project.description}
+                  value={certificate.description}
                   className='input-field'
                   style={{ marginBottom: "1.2rem" }}
                   onChange={(e) => {
-                    handleProjectChange(index, 'description', e.target.value);
+                    handleAddCertificate(index, 'description', e.target.value);
                   }}
                   placeholder="Certificate Provider"
                 />
               </div>
             ))}
-            <button onClick={handleAddProject} className='p-button' style={{ marginBottom: "1.2rem" }}>Add Certificates</button>
+            <button onClick={handleAddCertificate} className='p-button' style={{ marginBottom: "1.2rem" }}>Add Certificates</button>
           </div>
         </div>
 
@@ -435,7 +450,7 @@ const ResumeBuilderTemp1 = () => {
           <Loader />
         ) : (<>
           {theme &&
-            <PDFViewer width="1000" height="600" style={{ marginTop: "3rem", marginBottom: "2rem", borderRadius: "20px", marginRight: "3rem" }}>
+            <PDFViewer width="1000" height="800" style={{ marginTop: "3rem", marginBottom: "2rem", borderRadius: "20px", marginRight: "3rem" }}>
               <Document>
                 <Page size="A4" style={styles.rcontainer}>
                   <View style={styles.sectionl}>
@@ -460,7 +475,7 @@ const ResumeBuilderTemp1 = () => {
                   </View>
 
                   <View style={styles.sectionr}>
-                    <Text style={styles.nheading}>Jack <Text style={styles.nheading1}>Mishra</Text></Text>
+                    <Text style={styles.nheading}>{name}</Text>
                     <Text style={styles.profession}>Full Stack Developer</Text>
                     <Text style={styles.about}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam pharetra in lorem at laoreet. Donec hendrerit libero eget est tempor, quis tempus arcu elementum. In elementum elit at dui tristique feugiat. Mauris convallis, mi at mattis malesuada, neque nulla volutpat dolor, hendrerit faucibus eros nibh ut nunc. </Text>
                     <Text style={styles.pheading}>Experince</Text>
@@ -498,13 +513,13 @@ const ResumeBuilderTemp1 = () => {
                     <Image src={pf} style={styles.rimaget} />
                     <Text style={styles.headingt} > Contact </Text>
                     <Text style={styles.sheadingt}>phone </Text>
-                    <Text style={styles.ltextt}>8279847842</Text>
+                    <Text style={styles.ltextt}>{contactNumber}</Text>
                     <Text style={styles.sheadingt}>E-mail </Text>
-                    <Text style={styles.ltextt}>hello@gmail.com</Text>
+                    <Text style={styles.ltextt}>{email}</Text>
                     <Text style={styles.sheadingt}>Address </Text>
                     <Text style={styles.ltext1t}>Sec-63, Noida, U.P.</Text>
                     <Text style={styles.sheadingt}>Date of birth </Text>
-                    <Text style={styles.ltext1t}>10/03/2002</Text>
+                    <Text style={styles.ltext1t}>{DOB}</Text>
                     <Text style={styles.headingt} > Education </Text>
                     {education.map((edu, index) => (
                       <View key={index}>
@@ -516,10 +531,10 @@ const ResumeBuilderTemp1 = () => {
                   </View>
 
                   <View style={styles.sectionrt}>
-                    <Text style={styles.nheadingt}>Jack <Text style={styles.nheading1t}>Mishra</Text></Text>
+                    <Text style={styles.nheadingt}>{name}</Text>
                     <Text style={styles.professiont}>Full Stack Developer</Text>
                     <Text style={styles.aboutt}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam pharetra in lorem at laoreet. Donec hendrerit libero eget est tempor, quis tempus arcu elementum. In elementum elit at dui tristique feugiat. Mauris convallis, mi at mattis malesuada, neque nulla volutpat dolor, hendrerit faucibus eros nibh ut nunc. </Text>
-                    <Text style={styles.pheadingt}>Experince</Text>
+                    <Text style={styles.pheadingt}>Experience</Text>
                     {projects.map((project, index) => (
                       <View key={index}>
                         <Text style={styles.ptextt}>{project.name}</Text>
@@ -527,17 +542,17 @@ const ResumeBuilderTemp1 = () => {
                       </View>
                     ))}
                     <Text style={styles.pheadingt}>Project</Text>
-                    {projects.map((project, index) => (
+                    {exps.map((exp, index) => (
                       <View key={index}>
-                        <Text style={styles.ptextt}>{project.name}</Text>
-                        <Text style={styles.ptextt}>{project.description}</Text>
+                        <Text style={styles.ptextt}>{exp.name}</Text>
+                        <Text style={styles.ptextt}>{exp.description}</Text>
                       </View>
                     ))}
                     <Text style={styles.pheadingt}>Certificate</Text>
-                    {projects.map((project, index) => (
+                    {certificates.map((certificate, index) => (
                       <View key={index}>
-                        <Text style={styles.ptextt}>{project.name}</Text>
-                        <Text style={styles.ptextt}>{project.description}</Text>
+                        <Text style={styles.ptextt}>{certificate.name}</Text>
+                        <Text style={styles.ptextt}>{certificate.description}</Text>
                       </View>
                     ))}
                   </View>
