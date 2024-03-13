@@ -16,7 +16,8 @@ import { eye } from 'react-icons-kit/feather/eye'
 
 const Login = () => {
     const { loginWithRedirect } = useAuth0()
-    const { role } = useAuth()
+    const { role, logIn } = useAuth()
+    console.log(role)
     // console.log(user)
     const [email, setemail] = useState("")
     const [password, setpassword] = useState("")
@@ -57,7 +58,7 @@ const Login = () => {
     const handleSubmit = async (e) => {
         e.preventDefault()
         const data = { email, password }
-        if (role === '2') {
+        if (role === 2) {
             const res = await fetch("http://127.0.0.1:5001/user/login", {
                 method: 'POST',
                 headers: {
@@ -81,10 +82,9 @@ const Login = () => {
                 });
                 // console.log(response.user)
                 const A = JSON.stringify(response.user)
-                localStorage.setItem("User", A)
+                logIn(A, role)
                 setTimeout(() => {
-
-                    window.location.href = "http://localhost:3000/"
+                    navigate("/")
                 }, 800);
             } else {
                 toast.error(response.message, {
@@ -99,7 +99,7 @@ const Login = () => {
                 });
             }
         }
-        else if (role === '1') {
+        else if (role === 1) {
             const res = await fetch("http://127.0.0.1:5001/teacher/login", {
                 method: 'POST',
                 headers: {
@@ -121,10 +121,10 @@ const Login = () => {
                     theme: "light",
                 });
                 const A = JSON.stringify(response.user)
-                localStorage.setItem("User", A)
+                logIn(A, role)
                 setTimeout(() => {
 
-                    window.location.href = "http://localhost:3000/"
+                    navigate("/")
                 }, 800);
             } else {
                 toast.error(response.message, {
