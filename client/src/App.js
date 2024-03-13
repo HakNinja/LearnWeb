@@ -21,7 +21,7 @@ import Dashboard from './pages/Dashboard/Dashboard'
 import CV from './pages/CV';
 import Error from './pages/Error/Error';
 
-import ResumeBuilder from './components/ResumeBuilder'
+import ResumeBuilderTemp1 from './components/ResumeBuilderTemp1/ResumeBuilderTemp1'
 
 
 import {AuthProvider} from './context/Context'
@@ -52,9 +52,9 @@ function App() {
       <Route path="/courses" element={<CourseList />} />
       <Route path="/dashboard" element={<Dashboard />} />
       
-      <Route path="/resume" element={<ResumeBuilder />} />
+      <Route exact path="/Resume/ResumeBuilderTemp1" element={<ResumeBuilderTemp1 />} />
       <Route path="/loginsignup" element={<LoginSignup />} />
-      <Route path="/themeselect" element={<ThemeSelect />} />
+      <Route path="/Resume" element={<ThemeSelect />} />
      
 
 

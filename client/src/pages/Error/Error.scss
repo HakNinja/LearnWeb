@@ -1,10 +1,9 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Chivo:wght@200&family=Merriweather&display=swap');
 
 .background-image-conatiner {
     overflow: hidden;
 
-    button{
+    button {
         position: absolute;
         top: 55%;
         left: 30%;
@@ -21,12 +20,12 @@
         text-transform: uppercase;
         cursor: pointer;
 
-        :hover{
+        :hover {
             background: #c03cc0;
         }
     }
 
-    p{
+    p {
         position: absolute;
         top: 30%;
         left: 30%;
@@ -34,7 +33,7 @@
         font-size: 1.2rem;
     }
 
-    .ele{
+    .ele {
         position: absolute;
         top: 20%;
         left: 60%;
@@ -48,20 +47,33 @@
     height: calc(100vh - 110px);
     width: 146760px;
     animation: slide 2s linear;
-    opacity: 0.4;
+    opacity: .2;
 }
 
 @keyframes slide {
     0% {
         transform: translate(0px);
+        opacity: 1;
     }
 
-    50%{
-        transform: translate(-100px);
+    25% {
+        transform: translate(-30px);
+        opacity: 0.8;
+    }
+
+    50% {
+        transform: translate(-60px);
+        opacity: 0.6;
+    }
+
+    75% {
+        transform: translate(-90px);
+        opacity: 0.4;
     }
 
     100% {
         transform: translate(-110px);
+        opacity: 0.2;
     }
 }
 
@@ -80,13 +92,9 @@
 
 @keyframes moveObject {
     to {
-    //   top: 150px; /* Final position */
-      left: 20%; /* Final position */
-      display: none;
+        //   top: 150px; /* Final position */
+        left: 20%;
+        /* Final position */
+        display: none;
     }
-  }
-
-
-    
-
-  
+}
