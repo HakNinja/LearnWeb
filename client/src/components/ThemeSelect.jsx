@@ -1,5 +1,6 @@
 import React from 'react'
 import themeData from './Courses/theme.json'
+import { Link } from "react-router-dom"
 
 const ThemeSelect = () => {
     return (
@@ -8,11 +9,11 @@ const ThemeSelect = () => {
             <div className="recent_recipes_posts">
                 <div className="products-container">
                     {themeData.theme.map((theme, index) => (
-                    <article className="product-card" >
-                        <img src={theme.timage} alt={theme.tname} width={300} height={300} className='product-image' />
-                        <p className="product-name">{theme.tname}</p>
-                    </article>
-                    ))} 
+                        <Link to={theme.connector}> <article className="product-card" >
+                            <img src={theme.timage} alt={theme.tname} width={300} height={300} className='product-image' />
+                            <p className="product-name">{theme.tname}</p>
+                        </article></Link>
+                    ))}
                 </div>
             </div>
         </div>

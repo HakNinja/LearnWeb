@@ -28,6 +28,9 @@ const TeacherSchema = new mongoose.Schema(
   role:{
     type:String,
     default:1
+  },
+  image:{
+    type: String
   }
 },
 { timestamps: true }

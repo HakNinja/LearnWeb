@@ -1,10 +1,10 @@
 import React from 'react'
-import PersonData from "../../components/PersonData"
+import Biodata from '../../components/Biodata/Biodata'
 
 
 const Profile = () => {
   return (
-    <div><PersonData /></div>
+    <div><Biodata /></div>
   )
 }
 
