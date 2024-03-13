@@ -1,0 +1,138 @@
+.svideo {
+    position: relative;
+    width: 400px;
+    height: 90vh;
+    scroll-snap-align: start;
+    border-radius: 20px;
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  }
+  
+  .svideo__player {
+    object-fit: fill;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+  }
+  
+  .sshortsVideoTop {
+    position: absolute;
+    min-width: fit-content;
+    top: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .sshortsVideoTopIcon {
+    display: flex;
+  }
+  
+  .sshortsVideoTopIcon > .MuiSvgIcon-root {
+    font-size: 50px;
+    padding: 10px;
+  }
+  
+  .sshortsVideoSideIcons {
+    position: absolute;
+    right: 10px;
+    bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .sshortsVideoSideIcon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .sshortsVideoSideIcon > p {
+    color: white;
+  }
+  
+  .sshortsVideoSideIcon > .MuiSvgIcon-root {
+    padding: 10px;
+    font-size: 50px;
+  }
+  
+  .sshortsBottom {
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    bottom: 10px;
+  }
+  
+  .sshortsDesc {
+    display: flex;
+    padding: 10px;
+  }
+  
+  .sshortsDesc > p {
+    color: white;
+  }
+  
+  .MuiSvgIcon-root {
+    cursor: pointer;
+    color: white;
+  }
+  
+  .sshortDetails {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+  }
+  
+  .sshortDetails > p {
+    margin-left: 10px;
+    margin-right: 10px;
+    color: white;
+    font-weight: 500;
+  }
+  
+  .sshortDetails > button {
+    padding: 7px;
+    background-color: rgba(177, 177, 177, 0.609);
+    border: none;
+    outline: none;
+    color: white;
+    font-weight: bold;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  .sshortDetails > button:hover {
+    background-color: rgb(255, 0, 0);
+  }
+  
+  .sshortsVideoSideIcon > .MuiSvgIcon-root:hover {
+    color: blue;
+  }
+  
+  .sshortsDesc > .ticker {
+    height: fit-content;
+    width: 100%;
+    max-width: 250px;
+  }
+  
+  .sdescription {
+    color: white;
+  }
+  
+  .sshortsVideoSideIcon > .MuiSvgIcon-root:last-child {
+    animation: spinTheRecord infinite 5s linear;
+    bottom: 0;
+    right: 20px;
+    font-size: 32px;
+  }
+  
+  @keyframes spinTheRecord {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
