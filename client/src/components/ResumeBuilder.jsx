@@ -8,96 +8,96 @@ const Loader = () => <div>Loading...</div>;
 
 const styles = StyleSheet.create({
   rcontainer: {
-    display:"flex",
-    flexDirection:"row",
-    margin:"auto 0",
-    justifyContent:"center",
+    display: "flex",
+    flexDirection: "row",
+    margin: "auto 0",
+    justifyContent: "center",
   },
- sectionl: {
-  width: "40%",
-  display:"flex",
-  paddingTop:"30",
-  paddingLeft:"50",
-  flexDirection:"column",
-  justifyContent:"flex-start",
-  backgroundColor:"#323B4C",
-  color:"white"
- },
- rimage: {
-  width:"130px",
-  height:"130px",
-  borderRadius:"50%",
- },
- heading: {
-  marginTop:"25px",
-  marginBottom:"15px",
-  fontSize:"20px",
-  borderBottom:"2px solid white",
-  paddingBottom:"5px",
-  fontWeight:"bold",
-  textTransform:"uppercase"
- },
- sheading:{
-  marginTop:"15px",
-  fontSize:"16px",
-  textTransform:"capitalize"
- },
- ltext: {
-  fontSize:"12px",
-  textTransform:"capitalize"
- },
- ltext1: {
-  fontSize:"12px",
-  marginBottom:"10px",
-  textTransform:"capitalize"
- },
- ytext:{
-  fontSize:"12px",
-  fontWeight:"bold",
- },
- sectionr: {
-  width:"60%",
-  display:"flex",
-  paddingTop:"30",
-  paddingLeft:"20",
-  paddingRight:"20",
-  flexDirection:"column",
-  justifyContent:"flex-start",
- },
- nheading: {
-  fontSize:"50px",
-  color:"#323B4C",
- },
- nheading1: {
-  fontSize:"50px",
-  color:"#737373",
- },
- profession:{
-  fontSize:"20px",
-  color:"#1F3A68",
-  marginTop:"5px"
- },
- about: {
-  fontSize:"12px",
-  textAlign:"justify",
-  color:"#737373",
-  marginTop:"6px"
- },
- pheading:{
-  marginTop:"25px",
-  marginBottom:"15px",
-  fontSize:"20px",
-  borderBottom:"2px solid #1F3A68",
-  paddingBottom:"5px",
-  color:"#1F3A68",
-  fontWeight:"bold",
-  textTransform:"uppercase"
- },
- ptext:{
-  fontSize:"15px",
-  color:"#27384C",
-  marginTop:"3px",
- },
+  sectionl: {
+    width: "40%",
+    display: "flex",
+    paddingTop: "30",
+    paddingLeft: "50",
+    flexDirection: "column",
+    justifyContent: "flex-start",
+    backgroundColor: "#323B4C",
+    color: "white"
+  },
+  rimage: {
+    width: "130px",
+    height: "130px",
+    borderRadius: "50%",
+  },
+  heading: {
+    marginTop: "25px",
+    marginBottom: "15px",
+    fontSize: "20px",
+    borderBottom: "2px solid white",
+    paddingBottom: "5px",
+    fontWeight: "bold",
+    textTransform: "uppercase"
+  },
+  sheading: {
+    marginTop: "15px",
+    fontSize: "16px",
+    textTransform: "capitalize"
+  },
+  ltext: {
+    fontSize: "12px",
+    textTransform: "capitalize"
+  },
+  ltext1: {
+    fontSize: "12px",
+    marginBottom: "10px",
+    textTransform: "capitalize"
+  },
+  ytext: {
+    fontSize: "12px",
+    fontWeight: "bold",
+  },
+  sectionr: {
+    width: "60%",
+    display: "flex",
+    paddingTop: "30",
+    paddingLeft: "20",
+    paddingRight: "20",
+    flexDirection: "column",
+    justifyContent: "flex-start",
+  },
+  nheading: {
+    fontSize: "50px",
+    color: "#323B4C",
+  },
+  nheading1: {
+    fontSize: "50px",
+    color: "#737373",
+  },
+  profession: {
+    fontSize: "20px",
+    color: "#1F3A68",
+    marginTop: "5px"
+  },
+  about: {
+    fontSize: "12px",
+    textAlign: "justify",
+    color: "#737373",
+    marginTop: "6px"
+  },
+  pheading: {
+    marginTop: "25px",
+    marginBottom: "15px",
+    fontSize: "20px",
+    borderBottom: "2px solid #1F3A68",
+    paddingBottom: "5px",
+    color: "#1F3A68",
+    fontWeight: "bold",
+    textTransform: "uppercase"
+  },
+  ptext: {
+    fontSize: "15px",
+    color: "#27384C",
+    marginTop: "3px",
+  },
 });
 
 const ResumeBuilder = () => {
@@ -146,7 +146,7 @@ const ResumeBuilder = () => {
 
   return (
     <div className='flex'>
-      <div className='inputValueResume' style={{marginTop:"3rem"}}>
+      <div className='inputValueResume' style={{ marginTop: "3rem" }}>
         <div className="input-container">
           <label className="label">Name:</label>
           <input
@@ -245,11 +245,11 @@ const ResumeBuilder = () => {
       {isLoading ? ( // Render loader if loading
         <Loader />
       ) : (
-        <PDFViewer width="1000" height="600" style={{marginTop:"3rem"}}>
+        <PDFViewer width="1000" height="600" style={{ marginTop: "3rem" }}>
           <Document>
             <Page size="A4" style={styles.rcontainer}>
               <View style={styles.sectionl}>
-              <Image src={pf} style={styles.rimage} />
+                <Image src={pf} style={styles.rimage} />
                 <Text style={styles.heading} > Contact </Text>
                 <Text style={styles.sheading}>phone </Text>
                 <Text style={styles.ltext}>8279847842</Text>
@@ -265,10 +265,10 @@ const ResumeBuilder = () => {
                     <Text style={styles.ltext1}>{edu.school}</Text>
                   </View>
                 ))}
-                </View>
+              </View>
 
-                <View style={styles.sectionr}>
-                <Text style={styles.nheading}>Jack <Text style={styles.nheading1}>Mishra</Text></Text>
+              <View style={styles.sectionr}>
+                <Text style={styles.nheading}>{name} </Text>
                 <Text style={styles.profession}>Full Stack Developer</Text>
                 <Text style={styles.about}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam pharetra in lorem at laoreet. Donec hendrerit libero eget est tempor, quis tempus arcu elementum. In elementum elit at dui tristique feugiat. Mauris convallis, mi at mattis malesuada, neque nulla volutpat dolor, hendrerit faucibus eros nibh ut nunc. </Text>
                 <Text style={styles.pheading}>Projects</Text>

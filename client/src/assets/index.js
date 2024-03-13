@@ -11,13 +11,13 @@ import {default as mobile} from './mobile.png'
 import {default as v} from './1.mp4'
 import { default as walking_man } from './walking-man.gif';
 import { default as walking } from './walk.gif';
-<<<<<<< HEAD
+// <<<<<<< HEAD
 import {default as signin} from './signin.png'
 import {default as signup} from './signup.png'
-=======
+// =======
 import { default as ele } from './ele.gif';
 import { default as road } from './road.jpeg';
->>>>>>> b787f0be23613c1d62e8fa66797807edc25ef2db
+// >>>>>>> b787f0be23613c1d62e8fa66797807edc25ef2db
 
 export {
     logo,
@@ -34,10 +34,10 @@ export {
     v,
     walking_man,
     walking,
-<<<<<<< HEAD
+// <<<<<<< HEAD
     signup,
-    signin
-=======
+    signin,
+// =======
     road,
->>>>>>> b787f0be23613c1d62e8fa66797807edc25ef2db
+// >>>>>>> b787f0be23613c1d62e8fa66797807edc25ef2db
 }
