@@ -1,4 +1,4 @@
-.compareleft::before {
+/* .compareleft::before {
   content: " ";
   height: 0;
   position: absolute;
@@ -27,4 +27,6 @@
   position: absolute;
   left: -430px;
   top: -10px;
-}
+
+
+} */
