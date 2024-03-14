@@ -67,18 +67,18 @@
 
 .Testimonal-items{
   width: 300px;
-  /* height: ; */
+  height: 410px;
   margin: 5px;
 }
 
 .testimonal .Testimonal-items:hover {
-  background-color: #1eb2a6;
-  color: #fff;
+  background-color: #fac0ff;
+  color: #000000;
   cursor: pointer;
 }
 .testimonal .Testimonal-items:hover span,
 .testimonal .items:hover p {
-  color: #fff;
+  color: #5a5a5a;
 }
 .testimonal .Testimonal-items:hover i {
   background-color: #fff;
