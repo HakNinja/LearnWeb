@@ -101,44 +101,20 @@ const Biodata = () => {
 
     const handleUserSubmit = async (e) => {
         e.preventDefault();
-
-        // Create a FormData object to append all the form data
-        const formData = new FormData();
-        formData.append('image', image);
-        formData.append('name', name);
-        // formData.append('phoneNumber', phoneNumber);
-        // formData.append('email', email);
-        // formData.append('pincode', pincode);
-        // formData.append('address', address);
-        // formData.append('city', city);
-        // formData.append('district', district);
-        // formData.append('stateName', stateName);
-        // formData.append('country', country);
-        // formData.append('instituteName', instituteName);
-
-        let mydata = {}
-        for (var p of formData) {
-            // console.log(p)
-            mydata[p[0]] = p[1];
-
-            // console.log(name, value)
-        }
-        // console.log(typeof mydata)
-
+        const data = { name, email, phoneNumber, pincode, city, stateName, district, country, address, instituteName }
 
         if (role === 2) {
             // console.log(mydata.name)
             const res = await fetch("http://localhost:5001/user/updateUser", {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'multipart/form-data',
+                    'Content-Type': 'application/json',
                 },
-                body: JSON.stringify(mydata)
+                body: JSON.stringify(data)
             })
             if (!res.ok) {
                 console.log("error")
             }
-            console.log(mydata.name);
 
             // if (response.success) {
             //     toast.success('Your are successfully logged in', {
@@ -171,9 +147,9 @@ const Biodata = () => {
             const res = await fetch("http://127.0.0.1:5001/teacher/dataUpdate", {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'multipart/form-data',
+                    'Content-Type': 'application/json',
                 },
-                body: JSON.stringify(formData),
+                body: JSON.stringify(data),
             })
             let response = await res.json();
             if (response.success) {
