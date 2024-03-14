@@ -564,13 +564,13 @@ const ResumeBuilderTemp1 = () => {
                     {/* <Image src={userImage} style={styles.rimage} />  */}
                     <Text style={styles.heading} > Contact </Text>
                     <Text style={styles.sheading}>phone </Text>
-                    <Text style={styles.ltext}>8279847842</Text>
+                    <Text style={styles.ltext}>{contactNumber}</Text>
                     <Text style={styles.sheading}>E-mail </Text>
-                    <Text style={styles.ltext}>hello@gmail.com</Text>
+                    <Text style={styles.ltext}>{email}</Text>
                     <Text style={styles.sheading}>Address </Text>
                     <Text style={styles.ltext1}>{address}</Text>
                     <Text style={styles.sheading}>Date of birth </Text>
-                    <Text style={styles.ltext1}>10/03/2002</Text>
+                    <Text style={styles.ltext1}>{DOB}</Text>
                     <Text style={styles.heading} > Education </Text>
                     {education.map((edu, index) => (
                       <View key={index}>
