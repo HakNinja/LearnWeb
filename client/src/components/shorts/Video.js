@@ -41,14 +41,15 @@ function Video({id, location, name, description}) {
 
     return (
         <div className='svideo'>
-            {/* {console.log(location)} */}
+            {console.log(location)}
             <video
                 id={id}
                 className="svideo__player"
                 onClick={handleVideoPress}
                 loop
                 ref={videoRef}
-                src={require("../../assets/3.mp4")} type="video/mp4"/>
+                src={require('../../assets/2.mp4')} type="video/mp4"/>
+                {/* src={import(`../../assets/${location}`)} type="video/mp4"/> */}
             <div className='sshortscontainer'>
                 <div className="sshortsVideoTop">
                     <div className="sshortsVideoTopIcon">
