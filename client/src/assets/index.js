@@ -1,4 +1,4 @@
-import {default as Logo} from './Logo1.png';
+import {default as Logo} from './logo1.png';
 import {default as about1} from './about1.jpeg'
 import {default as avatar} from './avatar.jpeg'
 import {default as banner} from './banner.png'
