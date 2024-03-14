@@ -39,6 +39,9 @@ const Biodata = () => {
         else if (e.target.name === 'address') {
             setAddress(e.target.value)
         }
+        else if (e.target.name === 'email') {
+            setEmail(e.target.value)
+        }
         else if (e.target.name === 'city') {
             setCity(e.target.value)
         }
@@ -84,24 +87,49 @@ const Biodata = () => {
         }
     }
 
+
+    // const data = { name, email, city, phoneNumber, image, pincode, address, district, stateName, country, instituteName }
+    // console.log(data)
+
+
     const handleUserSubmit = async (e) => {
         e.preventDefault();
-        // const data = { name, email, city, phoneNumber, image, pincode, address, district, stateName, country, instituteName }
-        // console.log(data)
-        // const formData = new FormData();
-        // formData.append('image', image);
-        // formData.append("name", name)
-        // formData.append("email", email)
-        // formData.append("city", city)
-        // formData.append("phoneNumber", phoneNumber)
-        // formData.append("pincode", pincode)
-        // formData.append("address", address)
-        // formData.append("district", district)
-        // formData.append("stateName", stateName)
-        // formData.append("country", country)
-        // formData.append("instituteName", instituteName)
-        // console.log(formData.name)
+
+        // Create a FormData object to append all the form data
+        const formData = new FormData();
+        formData.append('name', name);
+        formData.append('image', image);
+        formData.append('email', email);
+        formData.append('phoneNumber', phoneNumber);
+        formData.append('pincode', pincode);
+        formData.append('address', address);
+        formData.append('city', city);
+        formData.append('district', district);
+        formData.append('stateName', stateName);
+        formData.append('country', country);
+        formData.append('instituteName', instituteName);
+
+
+        console.log(formData.entries());
     }
+    // try {
+    //     const response = await fetch('https://example.com/api/submit', {
+    //         method: 'POST',
+    //         body: formData,
+    //     });
+
+    //     if (response.ok) {
+    //         // If the response is successful, handle accordingly
+    //         console.log('Data submitted successfully');
+    //     } else {
+    //         // If there is an error in the response, handle accordingly
+    //         console.error('Failed to submit data');
+    //     }
+    // } catch (error) {
+    //     // Handle any network errors
+    //     console.error('Network error:', error);
+    // }
+
 
 
 
@@ -169,7 +197,7 @@ const Biodata = () => {
                     </div>
 
                     <div className="biodata_container2 ">
-                        <form className=" flex w-full" onSubmit={handleUserSubmit}>
+                        <div className=" flex w-full flex-col" >
                             <div className='flex w-full'>
                                 <div className="biodata_input-field w-1/2 ">
                                     <input type="text" placeholder="Name" id="name" name="name"
@@ -179,7 +207,8 @@ const Biodata = () => {
                                 <div className="biodata_input-field w-1/2">
                                     <input type="email" placeholder="Email"
                                         id="email" name="email"
-                                        readOnly={true}
+                                        // readOnly={true}
+                                        onChange={handleChange}
                                         value={email}
                                         className="biodata_a" />
                                 </div>
@@ -252,13 +281,13 @@ const Biodata = () => {
 
                             <div className="col-12">
                                 <div className="col-12">
-                                    <button type='submit' className="btn biodata_submit-btn btn btn-primary">
+                                    <button onClick={handleUserSubmit} className="btn biodata_submit-btn btn btn-primary">
                                         Submit
                                     </button>
                                 </div>
                                 {/* <button onClick={handleUserSubmit} className="btn biodata_submit-btn btn btn-primary">submit</button> */}
                             </div>
-                        </form>
+                        </div>
                     </div>
                 </div>
             </section>
