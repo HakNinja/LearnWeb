@@ -2,7 +2,7 @@ import React from 'react'
 import { HiMenuAlt4, HiX, HiUserCircle } from 'react-icons/hi';
 import { motion } from 'framer-motion';
 import './Navbar.scss'
-import Logo from '../../assets/Logo.png';
+import Logo from '../../assets/Logo1.png';
 import { useState } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom'
 import { Link } from "react-router-dom"
