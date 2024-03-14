@@ -2,6 +2,7 @@ import React from "react"
 import OnlineCourses from "../allcourses/OnlineCourses"
 // import Heading from "../common/heading/Heading"
 // import "../allcourses/courses.css"
+import myimage from '../../assets/ml.jpg'
 import "./HAbout.css"
 import video from '../../assets/1.mp4'// import { coursesCard } from "../../dummydata"
 
@@ -26,10 +27,11 @@ const HAbout = () => {
                     </h4>
                   </div>
                   <div class="card-body">
+                    <img src={myimage}/>
                     {/* <video controls> */}
-                    <video src={video} type="video/mp4">
+                    {/* <video src={video} type="video/mp4">
                       Your browser does not support the video tag
-                    </video>
+                    </video> */}
                     <button type="button" class="w-100 btn btn-lg btn-outline-dark">Sign up for free</button>
                   </div>
                 </div>
@@ -41,9 +43,10 @@ const HAbout = () => {
                     </h4>
                   </div>
                   <div class="card-body">
-                    <video src={video} type="video/mp4">
+                  <img src={myimage}/>
+                    {/* <video src={video} type="video/mp4">
                       Your browser does not support the video tag
-                    </video>
+                    </video> */}
                     <button type="button" class="w-100 btn btn-lg btn-outline-dark">0%Get started</button>
                   </div>
                 </div>
@@ -51,15 +54,16 @@ const HAbout = () => {
               <div class="col">
                 <div class="card mb-4 rounded-3 shadow-sm">
                   <div class="card-header py-3">
-                    <h4 class="my-0 fw-normal">Cyber Security-: Precautions Against Digital Dark Art
+                    <h4 class="my-0 fw-normal">Cyber Security : Precautions Against Digital Dark Art
                     </h4>
                   </div>
                   <div class="card-body">
+                  <img src={myimage}/>
                     {/* <video controls> */}
-                    <video src={video} type="video/mp4">
+                    {/* <video src={video} type="video/mp4">
                       Your browser does not support the video tag
-                    </video>
-                    <button type="button" class="w-100 btn btn-lg btn-outline-dark">$19</button>
+                    </video> */}
+                    <button type="button" class="w-100 btn btn-lg btn-outline-dark">₹ 499</button>
                   </div>
                 </div>
               </div>
