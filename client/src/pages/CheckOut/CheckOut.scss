@@ -14,40 +14,10 @@
     flex-direction: column;
     justify-content: center;
 
-    h2{
+    h2 {
         margin-bottom: 2rem;
     }
 
-    table{
-        box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-        border-radius: 15px;
-
-
-
-        thead{
-            background-color: aquamarine;
-            border-radius: 15px;
-            -moz-border-radius: 15px;
-            -webkit-border-radius: 15px;
-            tr{
-                
-                
-                th{
-                border: 2px solid black;
-
-                    padding: 1rem 5rem 1rem 5rem;
-                    font-size: 1.2rem;
-                }
-            }
-        }
-
-        tbody{
-            background-color: burlywood;
-            border-radius: 15px;
-            -moz-border-radius: 15px;
-            -webkit-border-radius: 15px;
-        }
-    }
 }
 
 .c-right {
@@ -55,3 +25,42 @@
 
 }
 
+
+.discount {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+
+    .dis-text {
+        margin-bottom: 2rem;
+        font-size: 1.7rem;
+        margin-bottom: 1rem;
+    }
+}
+
+.input-field1 {
+    padding: 5px 10px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-top: 0;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+.input-field1:focus {
+    outline: none;
+    border-color: #3e77b5;
+}
+
+.p-button1 {
+    border: none;
+    border-radius: 10px;
+    background: #416A9B;
+    color: #fff;
+    font-weight: 600;
+    margin: 10px 0;
+    padding: 8px 30px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
