@@ -27,6 +27,7 @@ import LoginSignup from './components/LogSign/LoginSignup';
 import ThemeSelect from './components/ThemeSelect';
 import Shorts from './pages/Shorts/Shorts';
 import CoursesDetails from './components/Courses/CoursesDetails';
+import CheckOut from './pages/CheckOut/CheckOut';
 
 function App() {
   
@@ -50,6 +51,7 @@ function App() {
       
       <Route path="/courses" element={<CourseList />} />
       <Route path="/coursesdetails/:slug" element={<CoursesDetails />} />
+      <Route path="/checkout/:slug" element={<CheckOut />} />
       <Route path="/dashboard" element={<Dashboard />} />
       
       <Route exact path="/Resume/ResumeBuilderTemp1" element={<ResumeBuilderTemp1 />} />
