@@ -19,6 +19,7 @@ const TeacherSchema = new mongoose.Schema(
   },
   city: String,
   state: String,
+  district: String,
   country: String,
   phoneNumber: String,
   instituteName:{

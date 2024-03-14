@@ -128,7 +128,7 @@ const LoginSignup = () => {
                 });
                 // console.log(response.user)
                 const A = JSON.stringify(response.user)
-                logIn(A, role)
+                logIn(A, role, email)
                 setTimeout(() => {
                     navigate("/")
                 }, 800);

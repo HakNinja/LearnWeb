@@ -119,7 +119,7 @@
 }
 
 .myimage::before{
-  content: 'Upload image';
+  /* content: 'Upload image'; */
 }
 
 .remove-button:hover {
