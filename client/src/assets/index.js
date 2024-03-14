@@ -1,4 +1,4 @@
-import {default as logo} from './logo.png';
+import {default as Logo} from './Logo.png';
 import {default as about1} from './about1.jpeg'
 import {default as avatar} from './avatar.jpeg'
 import {default as banner} from './banner.png'
@@ -17,13 +17,9 @@ import {default as signup} from './signup.png'
 import { default as ele } from './ele.gif';
 import { default as road } from './road.jpeg';
 
-import {default as signin} from './signin.png'
-import {default as signup} from './signup.png'
-import { default as ele } from './ele.gif';
-import { default as road } from './road.jpeg';
 
 export {
-    logo,
+    Logo,
     ele,
     pf,
     about1,
@@ -40,7 +36,5 @@ export {
     signup,
     signin,
     road,
-    signup,
-    signin,
-    road,
+   
 }
