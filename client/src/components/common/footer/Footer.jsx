@@ -20,80 +20,41 @@ const Footer = () => {
           </div>
         </div>
       </section>
-      {/* <footer>
-        <div className='container padding'>
-          <div className='box logo'>
-            <h1>ACADEMIA</h1>
-            <span>ONLINE EDUCATION & LEARNING</span>
-            <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+      < div style={{ display: "flex" }} className='colorGradient'>
+      <div className="col mb-3 text-center" style={{ marginTop: "3rem" }}>
+        <p className="text-body-secondary">© 2024 LearnWeb</p>
+        <i className="fa-brands fa-instagram"></i>
+        <i className="fa-brands fa-twitter"></i>
+        <i className="fa-brands fa-linkedin"></i>
+        <i className="fa-brands fa-youtube"></i>
+      </div>
 
-            <i className='fab fa-facebook-f icon'></i>
-            <i className='fab fa-twitter icon'></i>
-            <i className='fab fa-instagram icon'></i>
-          </div>
-          <div className='box link'>
-            <h3>Explore</h3>
-            <ul>
-              <li>About Us</li>
-              <li>Services</li>
-              <li>Courses</li>
-              <li>Blog</li>
-              <li>Contact us</li>
-            </ul>
-          </div>
-          <div className='box link'>
-            <h3>Quick Links</h3>
-            <ul>
-              <li>Contact Us</li>
-              <li>Pricing</li>
-              <li>Terms & Conditions</li>
-              <li>Privacy</li>
-              <li>Feedbacks</li>
-            </ul>
-          </div>
-          <div className='box'>
-            <h3>Recent Post</h3>
-            {blog.slice(0, 3).map((val) => (
-              <div className='items flexSB'>
-                <div className='img'>
-                  <img src={val.cover} alt='' />
-                </div>
-                <div className='text'>
-                  <span>
-                    <i className='fa fa-calendar-alt'></i>
-                    <label htmlFor=''>{val.date}</label>
-                  </span>
-                  <span>
-                    <i className='fa fa-user'></i>
-                    <label htmlFor=''>{val.type}</label>
-                  </span>
-                  <h4>{val.title.slice(0, 40)}...</h4>
-                </div>
-              </div>
-            ))}
-          </div>
-          <div className='box last'>
-            <h3>Have a Questions?</h3>
-            <ul>
-              <li>
-                <i className='fa fa-map'></i>
-                203 Fake St. Mountain View, San Francisco, California, USA
-              </li>
-              <li>
-                <i className='fa fa-phone-alt'></i>
-                +2 392 3929 210
-              </li>
-              <li>
-                <i className='fa fa-paper-plane'></i>
-                info@yourdomain.com
-              </li>
-            </ul>
-          </div>
-        </div>
-      </footer> */}
+
+      <div className="col mb-3 text-center" style={{ marginTop: "3rem" }}>
+        <h5>Features</h5>
+        <ul className="nav flex-column">
+          <li className="nav-item mb-2"><a href="/" className="nav-link p-0 text-body-secondary">LearWeb Business</a></li>
+          <li className="nav-item mb-2"><a href="/" className="nav-link p-0 text-body-secondary">Teach on LearnWed</a></li>
+          <li className="nav-item mb-2"><a href="/" className="nav-link p-0 text-body-secondary">About us</a></li>
+          <li className="nav-item mb-2"><a href="/" className="nav-link p-0 text-body-secondary">Contact us</a></li>
+          <li className="nav-item mb-2"><a href="/" className="nav-link p-0 text-body-secondary">Get the App</a></li>
+        </ul>
+      </div>
+
+      <div className="col mb-3 text-center" style={{ marginTop: "3rem" }}>
+        <h5>Careers</h5>
+        <ul className="nav flex-column">
+          <li className="nav-item mb-2"><a href="/" className="nav-link p-0 text-body-secondary">Blog</a></li>
+          <li className="nav-item mb-2"><a href="/" className="nav-link p-0 text-body-secondary">Help and Support</a></li>
+          <li className="nav-item mb-2"><a href="/" className="nav-link p-0 text-body-secondary">Affiliate</a></li>
+          <li className="nav-item mb-2"><a href="/" className="nav-link p-0 text-body-secondary">Investors</a></li>
+          <li className="nav-item mb-2"><a href="/" className="nav-link p-0 text-body-secondary">Sitemap</a></li>
+        </ul>
+      </div>
+    </ div>
       <div className='legal'>
         <p>
-          Copyright ©2024 All rights reserved | This website is made with by Phoenix
+          Copyright ©2024 All rights reserved | This website is made by Phoenix 
         </p>
       </div>
     </>

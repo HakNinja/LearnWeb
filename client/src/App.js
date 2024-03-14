@@ -7,7 +7,7 @@ import Home from './pages/Home/Home';
 import NewHome from './components/home/Home';
 import Login from './components/Login';
 import Signup from './components/Signup';
-import Footer from './components/Footer';
+import Footer from './components/common/footer/Footer';
 import LoginNew from './components/Login/LoginNew';
 import Roadmap from './components/Roadmap';
 
