@@ -4,13 +4,15 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useAuth } from '../../context/Context'
 import { useNavigate } from "react-router-dom"
+import { useEffect } from 'react';
+import { User } from '@auth0/auth0-react';
 
 
 const Biodata = () => {
-    const { role } = useAuth()
+    const { role, userD, setUserD, email } = useAuth()
     const [name, setName] = useState('')
     const [image, setImage] = useState('')
-    const [email, setEmail] = useState('')
+    // const [email, setEmail] = useState('')
     const [phoneNumber, setphoneNumber] = useState('')
     const [pincode, setPincode] = useState('')
     const [address, setAddress] = useState('')
@@ -20,6 +22,10 @@ const Biodata = () => {
     const [country, setCountry] = useState('')
     const [instituteName, setInstituteName] = useState('')
     const navigate = useNavigate()
+
+
+
+
 
 
     const handleChange = async (e) => {
@@ -42,9 +48,6 @@ const Biodata = () => {
         }
         else if (e.target.name === 'address') {
             setAddress(e.target.value)
-        }
-        else if (e.target.name === 'email') {
-            setEmail(e.target.value)
         }
         else if (e.target.name === 'city') {
             setCity(e.target.value)
@@ -101,56 +104,68 @@ const Biodata = () => {
 
         // Create a FormData object to append all the form data
         const formData = new FormData();
-        formData.append('name', name);
         formData.append('image', image);
-        formData.append('email', email);
-        formData.append('phoneNumber', phoneNumber);
-        formData.append('pincode', pincode);
-        formData.append('address', address);
-        formData.append('city', city);
-        formData.append('district', district);
-        formData.append('stateName', stateName);
-        formData.append('country', country);
-        formData.append('instituteName', instituteName);
+        formData.append('name', name);
+        // formData.append('phoneNumber', phoneNumber);
+        // formData.append('email', email);
+        // formData.append('pincode', pincode);
+        // formData.append('address', address);
+        // formData.append('city', city);
+        // formData.append('district', district);
+        // formData.append('stateName', stateName);
+        // formData.append('country', country);
+        // formData.append('instituteName', instituteName);
+
+        let mydata = {}
+        for (var p of formData) {
+            // console.log(p)
+            mydata[p[0]] = p[1];
+
+            // console.log(name, value)
+        }
+        // console.log(typeof mydata)
 
 
         if (role === 2) {
-
-            const res = await fetch("http://127.0.0.1:5001/user/dataUpdate", {
-                method: 'PUT',
+            // console.log(mydata.name)
+            const res = await fetch("http://localhost:5001/user/updateUser", {
+                method: 'POST',
                 headers: {
                     'Content-Type': 'multipart/form-data',
                 },
-                body: formData,
+                body: JSON.stringify(mydata)
             })
-            let response = await res.json();
-
-            if (response.success) {
-                toast.success('Your are successfully logged in', {
-                    position: "bottom-left",
-                    autoClose: 5000,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: true,
-                    draggable: true,
-                    progress: undefined,
-                    theme: "light",
-                });
-                // console.log(response.user)
-                const A = JSON.stringify(response.user)
-
-            } else {
-                toast.error(response.message, {
-                    position: "bottom-left",
-                    autoClose: 5000,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: true,
-                    draggable: true,
-                    progress: undefined,
-                    theme: "light",
-                });
+            if (!res.ok) {
+                console.log("error")
             }
+            console.log(mydata.name);
+
+            // if (response.success) {
+            //     toast.success('Your are successfully logged in', {
+            //         position: "bottom-left",
+            //         autoClose: 5000,
+            //         hideProgressBar: false,
+            //         closeOnClick: true,
+            //         pauseOnHover: true,
+            //         draggable: true,
+            //         progress: undefined,
+            //         theme: "light",
+            //     });
+            //     // console.log(response.user)
+            //     const A = JSON.stringify(response.user)
+
+            // } else {
+            //     toast.error(response.message, {
+            //         position: "bottom-left",
+            //         autoClose: 5000,
+            //         hideProgressBar: false,
+            //         closeOnClick: true,
+            //         pauseOnHover: true,
+            //         draggable: true,
+            //         progress: undefined,
+            //         theme: "light",
+            //     });
+            // }
         }
         else if (role === 1) {
             const res = await fetch("http://127.0.0.1:5001/teacher/dataUpdate", {
@@ -281,7 +296,7 @@ const Biodata = () => {
                                 <div className="biodata_input-field w-1/2">
                                     <input type="email" placeholder="Email"
                                         id="email" name="email"
-                                        // readOnly={true}
+                                        readOnly={true}
                                         onChange={handleChange}
                                         value={email}
                                         className="biodata_a" />
