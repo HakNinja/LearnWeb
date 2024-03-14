@@ -2,8 +2,11 @@
   "courses": [
     {
       "course_name": "Introduction to Python Programming",
+      "tutor_name":"Ram Priy Bhakt singh",
       "c_image": "https://media.licdn.com/dms/image/D5612AQF7GSp3l4pztQ/article-cover_image-shrink_720_1280/0/1686548640655?e=2147483647&v=beta&t=OM9KysTUVtwR6R_8MgIUiZE4VXr1tHGUyaJW3vPicpk",
       "description": "This course provides a comprehensive introduction to Python programming language.",
+      "detailed_description":"This course provides a comprehensive introduction to Python programming for individuals with little to no prior coding experience. Through a series of interactive lessons and practical exercises, students will learn the basics of Python syntax, data types, control structures, and functions. As they progress, they will explore more advanced topics such as file handling, exception handling, and object-oriented programming principles. The course emphasizes hands-on learning, with exercises and projects designed to reinforce concepts and develop problem-solving skills. By the end of the course, students will have a solid foundation in Python programming and the confidence to pursue further study or apply their skills in real-world projects.",
+      "language":"English",
       "steps": [
         "Install Python on your computer",
         "Learn about Python data types: integers, floats, strings, booleans",
@@ -28,12 +31,15 @@
         "Learn about database interaction with Python using SQLAlchemy",
         "Practice building projects and applications in Python",
         "Review and reinforce concepts through coding exercises and quizzes"
-      ]
+      ],
+      "price":"699",
+      "rating":"4"
     },
     {
       "course_name": "Introduction to Machine Learning",
       "c_image": "https://www.freecodecamp.org/news/content/images/size/w2000/2022/01/machine-learning-banner-2.png",
       "description": "This course provides an introduction to the fundamentals of machine learning.",
+      "tutor_name":"Ram Priy Bhakt singh",
       "steps": [
         "Understand the basics of machine learning and its applications",
         "Learn about supervised learning and unsupervised learning",
@@ -59,6 +65,7 @@
     },
     {
       "course_name": "Web Development with JavaScript",
+      "tutor_name":"Ram Priy Bhakt singh",
       "c_image": "https://bairesdev.mo.cloudinary.net/blog/2023/08/What-Is-JavaScript-Used-For.jpg",
       "description": "This course teaches the fundamentals of web development using JavaScript.",
       "steps": [
@@ -90,6 +97,7 @@
     },
     {
       "course_name": "Data Science Fundamentals",
+      "tutor_name":"Ram Priy Bhakt singh",
       "c_image": "https://d1m75rqqgidzqn.cloudfront.net/wp-data/2019/09/11134058/What-is-data-science-2.jpg",
       "description": "This course covers the foundational concepts and techniques of data science.",
       "steps": [
@@ -120,6 +128,7 @@
     },
     {
       "course_name": "Cybersecurity Essentials",
+      "tutor_name":"Ram Priy Bhakt singh",
       "c_image": "https://www.freecodecamp.org/news/content/images/size/w2000/2022/01/machine-learning-banner-2.png",
       "description": "This course provides an introduction to the fundamentals of cybersecurity.",
       "steps": [
@@ -152,6 +161,7 @@
     },
     {
       "course_name": "Financial Literacy",
+      "tutor_name":"Ram Priy Bhakt singh",
       "c_image": "https://www.kreditbee.in/blog/content/images/2023/12/shutterstock_2195605515-min.jpg",
       "description": "This course aims to educate individuals on financial management and planning.",
       "steps": [

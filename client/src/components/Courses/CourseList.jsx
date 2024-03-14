@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import coursesData from './courses.json';
 import './CourseList.css'
 import Confetti from 'react-dom-confetti';
-import { mail } from '../../assets';
 import './CourseList.scss'
+import {Link} from 'react-router-dom'
 // import CourseListRoadmap from './CourseListRoadmap'
 
 function CourseList() {
@@ -25,13 +25,17 @@ function CourseList() {
       <h1 className='mt-10'>Free Courses</h1>
       {/* <div className='fixedme'> */}
       {/* <div className="course-container "> */}
-      <div className="recent_recipes_posts">
+      <div className="recent_recipes_posts" >
       <div className="products-container">
         {coursesData.courses.map((course, index) => (
-          <article className="product-card" key={index} onClick={() => handleCourseClick(course)}>
+          <article className="product-card" key={index} >
                 <img src={course.c_image} alt={course.course_name} width={300} height={300} className='product-image'/>
             <p className="product-name">{course.course_name}</p>
             <p className="product-name1">{course.description}</p>
+            <div style={{display:"flex",alignItems:"center", justifyContent:"space-between"}}>
+              <button className='roadmap-btn' onClick={() => handleCourseClick(course)}>Roadmap</button>
+              <Link to={`/coursesdetails/${index}`}><button className='details-btn'>Details</button> </Link>
+            </div>
           </article>
         ))}
       </div>

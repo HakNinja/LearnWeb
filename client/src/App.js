@@ -26,6 +26,7 @@ import {AuthProvider} from './context/Context'
 import LoginSignup from './components/LogSign/LoginSignup';
 import ThemeSelect from './components/ThemeSelect';
 import Shorts from './pages/Shorts/Shorts';
+import CoursesDetails from './components/Courses/CoursesDetails';
 
 function App() {
   
@@ -48,6 +49,7 @@ function App() {
       <Route path='/test' element={<CV />} />
       
       <Route path="/courses" element={<CourseList />} />
+      <Route path="/coursesdetails/:slug" element={<CoursesDetails />} />
       <Route path="/dashboard" element={<Dashboard />} />
       
       <Route exact path="/Resume/ResumeBuilderTemp1" element={<ResumeBuilderTemp1 />} />

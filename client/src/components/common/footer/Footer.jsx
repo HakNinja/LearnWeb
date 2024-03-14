@@ -54,7 +54,7 @@ const Footer = () => {
     </ div>
       <div className='legal'>
         <p>
-          Copyright ©2024 All rights reserved | This website is made by Phoenix 
+        ©2024 LearnWeb. All rights reserved | Your Happy Learning space created by Team Phoenix
         </p>
       </div>
     </>
