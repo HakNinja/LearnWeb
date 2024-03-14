@@ -22,12 +22,7 @@ export const addUser = async (req, res) => {
 
  // Accessing the data sent in the request body
         console.log(req.body);
-      // const {name}=req.fields
-        // const {image} = req.files
-        
-        // console.log(req)
-    //  const B = await User.create(A)
-    //  await B.save()
+      // const
       res.status(200).json({ "success": "hi" });
     } catch (error) {
       res.status(404).json({ message: error.message });
