@@ -196,7 +196,7 @@ const styles = StyleSheet.create({
 
 const ResumeBuilderTemp1 = () => {
 
-  const [userImage, setUserImage] = useState();
+  const [userImage, setUserImage] = useState(pf);
 
   const [name, setName] = useState('');
   const [contactNumber, setContactNumber] = useState('');
@@ -272,6 +272,27 @@ const ResumeBuilderTemp1 = () => {
     setcertificate(updatedCertificates);
   };
 
+  const handleFileInputChange = (event) => {
+    const file = event.target.files[0];
+    // Do something with the selected file
+    
+    // console.log(image)
+    // console.log(file)
+    const reader = new FileReader();
+
+    reader.onload = function (event) {
+        const img = document.createElement('img');
+        img.src = event.target.result;
+        setUserImage(event.target.result)
+
+        // const avatarContainer = document.querySelector('.avatar-container');
+        // avatarContainer.innerHTML = '';
+        // avatarContainer.appendChild(img);
+    };
+
+    reader.readAsDataURL(file);
+};
+
 
   useEffect(() => {
     setLoading(); // Set loading on initial render
@@ -287,41 +308,16 @@ const ResumeBuilderTemp1 = () => {
       <div className='flex'>
         <div className='inputValueResume' style={{ marginTop: "3rem" }}>
 
-{/*
+{/* {/* */}
           <div className="input-container">
             <div className="myimage">
               <input type="file" id="file-input" name="ImageStyle"
-                value={userImage}
-                onChange={(e) => {
-                  // e.target.value
-                  // setUserImage("no image");
-                  // setLoading();
-
-
-                  const file = e.target.files[0];
-                  // Do something with the selected file
-                  setUserImage(e.target.files[0])
-                  // console.log(image)
-                  // console.log(file)
-                  const reader = new FileReader();
-
-                  reader.onload = function (event) {
-                    const img = document.createElement('img');
-                    img.src = event.target.result;
-
-                    const avatarContainer = document.querySelector('.avatar-container');
-                    avatarContainer.innerHTML = '';
-                    avatarContainer.appendChild(img);
-                  };
-
-                  reader.readAsDataURL(file);
-
-                }}
-              />
+               onChange={handleFileInputChange}
+              /> 
             </div>
           </div>
 
-              */}
+              {/* */} 
 
           <div className="input-container">
             {/* <label className="label">Name:</label> */}
@@ -561,7 +557,7 @@ const ResumeBuilderTemp1 = () => {
               <Document>
                 <Page size="A4" style={styles.rcontainer}>
                   <View style={styles.sectionl}>
-                    {/* <Image src={userImage} style={styles.rimage} />  */}
+                    <Image src={userImage} style={styles.rimage} id='avatar-container'/> 
                     <Text style={styles.heading} > Contact </Text>
                     <Text style={styles.sheading}>phone </Text>
                     <Text style={styles.ltext}>{contactNumber}</Text>
