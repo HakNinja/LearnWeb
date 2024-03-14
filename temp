@@ -1,211 +1,193 @@
-{
-  "courses": [
-    {
-      "id": 1,
-      "title": "Introduction to Programming",
-      "steps": [
-        {
-          "id": 1,
-          "title": "Understanding Basic Concepts",
-          "description": "Introduction to variables, data types, and basic operations."
-        },
-        {
-          "id": 2,
-          "title": "Control Structures",
-          "description": "Learn about conditionals and loops."
-        },
-        {
-          "id": 3,
-          "title": "Functions and Modular Programming",
-          "description": "Introduction to functions and modular programming."
-        },
-        {
-          "id": 4,
-          "title": "Object-Oriented Programming",
-          "description": "Understanding classes, objects, and inheritance."
-        }
-      ]
-    },
-    {
-      "id": 2,
-      "title": "Web Development Fundamentals",
-      "steps": [
-        {
-          "id": 1,
-          "title": "HTML and CSS Basics",
-          "description": "Learn the basics of HTML and CSS."
-        },
-        {
-          "id": 2,
-          "title": "Introduction to JavaScript",
-          "description": "Basic introduction to JavaScript programming."
-        },
-        {
-          "id": 3,
-          "title": "Responsive Design",
-          "description": "Learn about responsive web design."
-        },
-        {
-          "id": 4,
-          "title": "AJAX and JSON",
-          "description": "Working with asynchronous JavaScript and JSON."
-        },
-        {
-          "id": 5,
-          "title": "Frameworks and Libraries",
-          "description": "Exploring popular web development frameworks and libraries."
-        }
-      ]
-    },
-    {
-      "id": 3,
-      "title": "Introduction to Criminal Law",
-      "steps": [
-        {
-          "id": 1,
-          "title": "Foundations of Criminal Law",
-          "description": "Introduction to basic principles and concepts of criminal law."
-        },
-        {
-          "id": 2,
-          "title": "Elements of a Crime",
-          "description": "Understanding the essential elements required to constitute a crime."
-        }
-      ]
-    },
-    {
-      "id": 4,
-      "title": "Music Theory Fundamentals",
-      "steps": [
-        {
-          "id": 1,
-          "title": "Notes and Scales",
-          "description": "Introduction to musical notes and scales."
-        },
-        {
-          "id": 2,
-          "title": "Chords and Harmony",
-          "description": "Understanding chords and harmonic progressions."
-        },
-        {
-          "id": 3,
-          "title": "Rhythm and Meter",
-          "description": "Exploring rhythm patterns and meter in music."
-        },
-        {
-          "id": 4,
-          "title": "Melody and Counterpoint",
-          "description": "Understanding melody construction and counterpoint techniques."
-        },
-        {
-          "id": 5,
-          "title": "Composition Techniques",
-          "description": "Techniques for composing music and creating arrangements."
-        }
-      ]
-    },
-    {
-      "id": 5,
-      "title": "Data Structures and Algorithms",
-      "steps": [
-        {
-          "id": 1,
-          "title": "Basic Data Structures",
-          "description": "Introduction to arrays, linked lists, and stacks."
-        },
-        {
-          "id": 2,
-          "title": "Sorting and Searching",
-          "description": "Algorithms for sorting and searching data."
-        },
-        {
-          "id": 3,
-          "title": "Graphs and Trees",
-          "description": "Understanding graph and tree data structures."
-        },
-        {
-          "id": 4,
-          "title": "Dynamic Programming",
-          "description": "Techniques for solving optimization problems efficiently."
-        },
-        {
-          "id": 5,
-          "title": "Hashing and Hash Tables",
-          "description": "Understanding hash functions and hash table data structures."
-        },
-        {
-          "id": 6,
-          "title": "Algorithm Analysis",
-          "description": "Analyzing the time and space complexity of algorithms."
-        }
-      ]
-    },
-    {
-      "id": 6,
-      "title": "Introduction to Digital Audio",
-      "steps": [
-        {
-          "id": 1,
-          "title": "Sound Basics",
-          "description": "Introduction to sound waves and digital audio."
-        },
-        {
-          "id": 2,
-          "title": "Recording and Editing",
-          "description": "Techniques for recording and editing digital audio."
-        },
-        {
-          "id": 3,
-          "title": "Sound Processing",
-          "description": "Exploring digital signal processing techniques for sound."
-        },
-        {
-          "id": 4,
-          "title": "Synthesis Techniques",
-          "description": "Methods for synthesizing sound using software and hardware."
-        }
-      ]
-    },
-    {
-      "id": 7,
-      "title": "Computer Networks",
-      "steps": [
-        {
-          "id": 1,
-          "title": "Network Fundamentals",
-          "description": "Introduction to computer networks and network models."
-        },
-        {
-          "id": 2,
-          "title": "Network Protocols",
-          "description": "Common network protocols and their functionalities."
-        },
-        {
-          "id": 3,
-          "title": "Network Security",
-          "description": "Introduction to network security principles and techniques."
-        },
-        {
-          "id": 4,
-          "title": "Wireless Networks",
-          "description": "Understanding wireless communication technologies and protocols."
-        },
-        {
-          "id": 5,
-          "title": "Network Administration",
-          "description": "Managing and configuring network infrastructure and services."
-        },
-        {
-          "id": 6,
-          "title": "Cloud Networking",
-          "description": "Understanding networking in cloud computing environments."
-        },
-        {
-          "id": 7,
-          "title": "Software-Defined Networking",
-          "description": "Introduction to software-defined networking concepts and technologies."
-        }
-      ]
-    }
-  ]
-}
+<div>
+<div style={{ display: "flex", justifyContent: "center", alignItems: "center", margin: "2rem auto" }}>
+  <div style={{ fontSize: "1.3rem", fontWeight: "500" }}>Select Theme: </div>
+  <button style={{ padding: "8px 10px", fontSize: "1.3rem", fontWeight: "600", marginLeft: "1rem", width: "150px", borderRadius: "10px" }} className='b-button' onClick={(e) => setTheme(true)}>Subtle</button>
+  <button style={{ padding: "8px 10px", fontSize: "1.3rem", fontWeight: "600", marginLeft: "1rem", width: "150px", borderRadius: "10px" }} className='r-button' onClick={(e) => setTheme(false)}> Crimson</button>
+</div>
+<div className='flex'>
+  <div className='inputValueResume' style={{ marginTop: "3rem" }}>
+    <div className="input-container">
+      {/* <label className="label">Name:</label> */}
+      <input
+        className="input-field"
+        type="text"
+        value={name}
+        placeholder='Your Name'
+        onChange={(e) => {
+          setName(e.target.value);
+          setLoading();
+        }}
+      />
+    </div>
+    <div className="input-container">
+      {/* <label className="label">Contact Number:</label> */}
+      <input
+        className="input-field"
+        type="text"
+        placeholder='Your Phone Number'
+        value={contactNumber}
+        onChange={(e) => {
+          setContactNumber(e.target.value);
+          setLoading();
+        }}
+      />
+    </div>
+    <div className="input-container">
+      {/* <label className="label">Email:</label> */}
+      <input
+        className="input-field"
+        type="text"
+        placeholder='Your E-mail Address'
+        value={email}
+        onChange={(e) => {
+          setEmail(e.target.value);
+          setLoading();
+        }}
+      />
+    </div>
+    <div className="input-container">
+      {/* <label className="label">Email:</label> */}
+      <input
+        className="input-field"
+        type="text"
+        placeholder='Your DOB in (day/month/year) format'
+        value={DOB}
+        onChange={(e) => {
+          setDob(e.target.value);
+          setLoading();
+        }}
+      />
+    </div>
+
+    <div className='p-container'>
+      {/* <h2 className='p-head'>Education</h2> */}
+      {education.map((edu, index) => (
+        <div key={index} style={{ display: "flex", flexDirection: 'column', }}>
+          <input
+            type="text"
+            className='input-field'
+            style={{ marginBottom: "1.2rem" }}
+            value={edu.school}
+            onChange={(e) => {
+              handleEducationChange(index, 'school', e.target.value);
+            }}
+            placeholder="School/College Name"
+          />
+          <input
+            type="text"
+            className='input-field'
+            style={{ marginBottom: "1.2rem" }}
+            value={edu.course}
+            onChange={(e) => {
+              handleEducationChange(index, 'course', e.target.value);
+            }}
+            placeholder="Course"
+          />
+          <input
+            type="text"
+            className='input-field'
+            style={{ marginBottom: "1.2rem" }}
+            value={edu.year}
+            onChange={(e) => {
+              handleEducationChange(index, 'year', e.target.value);
+            }}
+            placeholder="Year"
+          />
+        </div>
+      ))}
+      <button onClick={handleAddEducation} className='p-button' style={{ marginBottom: "1.2rem" }}>Add Education</button>
+    </div>
+
+    <div className='p-container'>
+      {/* <h2 className='p-head'>Projects</h2> */}
+      {projects.map((project, index) => (
+        <div key={index} style={{ display: "flex", flexDirection: 'column', }}>
+          <input
+            type="text"
+            className='input-field'
+            style={{ marginBottom: "1.2rem" }}
+            value={project.name}
+            onChange={(e) => {
+              handleProjectChange(index, 'name', e.target.value);
+            }}
+            placeholder="Project Name"
+          />
+          <textarea
+            value={project.description}
+            className='input-field'
+            style={{ marginBottom: "1.2rem" }}
+            onChange={(e) => {
+              handleProjectChange(index, 'description', e.target.value);
+            }}
+            placeholder="Project Description"
+          />
+        </div>
+      ))}
+      <button onClick={handleAddProject} className='p-button' style={{ marginBottom: "1.2rem" }}>Add Project</button>
+    </div>
+
+    <div className='p-container'>
+      {/* <h2 className='p-head'>Projects</h2> */}
+      {exps.map((exp, index) => (
+        <div key={index} style={{ display: "flex", flexDirection: 'column', }}>
+          <input
+            type="text"
+            className='input-field'
+            style={{ marginBottom: "1.2rem" }}
+            value={exp.name}
+            onChange={(e) => {
+              handleExp(index, 'name', e.target.value);
+            }}
+            placeholder="Experience Period (month/year to month/year) Format"
+          />
+          <textarea
+            value={exp.description}
+            className='input-field'
+            style={{ marginBottom: "1.2rem" }}
+            onChange={(e) => {
+              handleExp(index, 'description', e.target.value);
+            }}
+            placeholder="Company Name"
+          />
+          <textarea
+            value={exp.description}
+            className='input-field'
+            style={{ marginBottom: "1.2rem" }}
+            onChange={(e) => {
+              handleExp(index, 'description', e.target.value);
+            }}
+            placeholder="Designation"
+          />
+        </div>
+      ))}
+      <button onClick={handleExp} className='p-button' style={{ marginBottom: "1.2rem" }}>Add Experience</button>
+    </div>
+
+    <div className='p-container'>
+      {/* <h2 className='p-head'>Projects</h2> */}
+      {certificates.map((certificate, index) => (
+        <div key={index} style={{ display: "flex", flexDirection: 'column', }}>
+          <input
+            type="text"
+            className='input-field'
+            style={{ marginBottom: "1.2rem" }}
+            value={certificate.name}
+            onChange={(e) => {
+              handleAddCertificate(index, 'name', e.target.value);
+            }}
+            placeholder="Certificate Name"
+          />
+          <textarea
+            value={certificate.description}
+            className='input-field'
+            style={{ marginBottom: "1.2rem" }}
+            onChange={(e) => {
+              handleAddCertificate(index, 'description', e.target.value);
+            }}
+            placeholder="Certificate Provider"
+          />
+        </div>
+      ))}
+      <button onClick={handleAddCertificate} className='p-button' style={{ marginBottom: "1.2rem" }}>Add Certificates</button>
+    </div>
+  </div>

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './ResumeBuilderTemp1.css';
 import { Document, Page, Text, View, StyleSheet, PDFViewer, Image } from '@react-pdf/renderer';
 import { pf } from '../../assets'
-import Certificates from '../../pages/Dashboard/Certificates';
+// import Certificates from '../../pages/Dashboard/Certificates';
 
 // Define loader component
 const Loader = () => <div>Loading...</div>;
@@ -76,7 +76,8 @@ const styles = StyleSheet.create({
   profession: {
     fontSize: "20px",
     color: "#1F3A68",
-    marginTop: "5px"
+    marginTop: "5px",
+    textTransform: "capitalize",
   },
   about: {
     fontSize: "12px",
@@ -167,7 +168,8 @@ const styles = StyleSheet.create({
   professiont: {
     fontSize: "20px",
     color: "#8D4B55",
-    marginTop: "5px"
+    marginTop: "5px",
+    textTransform: "capitalize",
   },
   aboutt: {
     fontSize: "12px",
@@ -193,9 +195,16 @@ const styles = StyleSheet.create({
 });
 
 const ResumeBuilderTemp1 = () => {
+
+  const [userImage, setUserImage] = useState();
+
   const [name, setName] = useState('');
   const [contactNumber, setContactNumber] = useState('');
+  const [address, setAddress] = useState('');
   const [email, setEmail] = useState('');
+
+  const [profession, setProfession] = useState('');
+  const [about, setAbout] = useState('');
   const [DOB, setDob] = useState('');
   const [projects, setProjects] = useState([]);
   const [certificates, setcertificate] = useState([]);
@@ -225,7 +234,7 @@ const ResumeBuilderTemp1 = () => {
 
   const handleExp = () => {
     setLoading();
-    setexp([...exps, { name: '', description: '' }]);
+    setexp([...exps, { year: '', name: '', description: '' }]);
   };
 
   const handleProjectChange = (index, key, value) => {
@@ -247,6 +256,23 @@ const ResumeBuilderTemp1 = () => {
     setEducation(updatedEducation);
   };
 
+  const handleExpChange = (index, key, value) => {
+    setLoading();
+    const updatedExp = [...exps];
+    updatedExp[index][key] = value;
+    setexp(updatedExp);
+  };
+
+
+
+  const handleChangeCertificate = (index, key, value) => {
+    setLoading();
+    const updatedCertificates = [...certificates];
+    updatedCertificates[index][key] = value;
+    setcertificate(updatedCertificates);
+  };
+
+
   useEffect(() => {
     setLoading(); // Set loading on initial render
   }, []);
@@ -260,6 +286,43 @@ const ResumeBuilderTemp1 = () => {
       </div>
       <div className='flex'>
         <div className='inputValueResume' style={{ marginTop: "3rem" }}>
+
+{/*
+          <div className="input-container">
+            <div className="myimage">
+              <input type="file" id="file-input" name="ImageStyle"
+                value={userImage}
+                onChange={(e) => {
+                  // e.target.value
+                  // setUserImage("no image");
+                  // setLoading();
+
+
+                  const file = e.target.files[0];
+                  // Do something with the selected file
+                  setUserImage(e.target.files[0])
+                  // console.log(image)
+                  // console.log(file)
+                  const reader = new FileReader();
+
+                  reader.onload = function (event) {
+                    const img = document.createElement('img');
+                    img.src = event.target.result;
+
+                    const avatarContainer = document.querySelector('.avatar-container');
+                    avatarContainer.innerHTML = '';
+                    avatarContainer.appendChild(img);
+                  };
+
+                  reader.readAsDataURL(file);
+
+                }}
+              />
+            </div>
+          </div>
+
+              */}
+
           <div className="input-container">
             {/* <label className="label">Name:</label> */}
             <input
@@ -299,6 +362,25 @@ const ResumeBuilderTemp1 = () => {
               }}
             />
           </div>
+
+
+          {/* <div className='inputValueResume' style={{ marginTop: "3rem" }}> */}
+          <div className="input-container">
+            {/* <label className="label">Name:</label> */}
+            <input
+              className="input-field"
+              type="text"
+              value={address}
+              placeholder='Your Address'
+              onChange={(e) => {
+                setAddress(e.target.value);
+                setLoading();
+              }}
+            />
+          </div>
+          {/* </div> */}
+
+
           <div className="input-container">
             {/* <label className="label">Email:</label> */}
             <input
@@ -310,6 +392,32 @@ const ResumeBuilderTemp1 = () => {
                 setDob(e.target.value);
                 setLoading();
               }}
+            />
+          </div>
+
+          <div className="input-container">
+            {/* <label className="label">Email:</label> */}
+            <input
+              className="input-field"
+              type="text"
+              placeholder='Your Current Profession'
+              value={profession}
+              onChange={(e) => {
+                setProfession(e.target.value);
+                setLoading();
+              }}
+            />
+          </div>
+
+          <div className="input-container">
+            <textarea
+              value={about}
+              className='input-field'
+              style={{ marginBottom: "1.2rem" }}
+              onChange={(e) => {
+                setAbout(e.target.value)
+              }}
+              placeholder="About Yourself"
             />
           </div>
 
@@ -354,52 +462,24 @@ const ResumeBuilderTemp1 = () => {
 
           <div className='p-container'>
             {/* <h2 className='p-head'>Projects</h2> */}
-            {projects.map((project, index) => (
-              <div key={index} style={{ display: "flex", flexDirection: 'column', }}>
-                <input
-                  type="text"
-                  className='input-field'
-                  style={{ marginBottom: "1.2rem" }}
-                  value={project.name}
-                  onChange={(e) => {
-                    handleProjectChange(index, 'name', e.target.value);
-                  }}
-                  placeholder="Project Name"
-                />
-                <textarea
-                  value={project.description}
-                  className='input-field'
-                  style={{ marginBottom: "1.2rem" }}
-                  onChange={(e) => {
-                    handleProjectChange(index, 'description', e.target.value);
-                  }}
-                  placeholder="Project Description"
-                />
-              </div>
-            ))}
-            <button onClick={handleAddProject} className='p-button' style={{ marginBottom: "1.2rem" }}>Add Project</button>
-          </div>
-
-          <div className='p-container'>
-            {/* <h2 className='p-head'>Projects</h2> */}
             {exps.map((exp, index) => (
               <div key={index} style={{ display: "flex", flexDirection: 'column', }}>
                 <input
                   type="text"
                   className='input-field'
                   style={{ marginBottom: "1.2rem" }}
-                  value={exp.name}
+                  value={exp.year}
                   onChange={(e) => {
-                    handleExp(index, 'name', e.target.value);
+                    handleExpChange(index, 'year', e.target.value);
                   }}
                   placeholder="Experience Period (month/year to month/year) Format"
                 />
                 <textarea
-                  value={exp.description}
+                  value={exp.name}
                   className='input-field'
                   style={{ marginBottom: "1.2rem" }}
                   onChange={(e) => {
-                    handleExp(index, 'description', e.target.value);
+                    handleExpChange(index, 'name', e.target.value);
                   }}
                   placeholder="Company Name"
                 />
@@ -408,13 +488,40 @@ const ResumeBuilderTemp1 = () => {
                   className='input-field'
                   style={{ marginBottom: "1.2rem" }}
                   onChange={(e) => {
-                    handleExp(index, 'description', e.target.value);
+                    handleExpChange(index, 'description', e.target.value);
                   }}
                   placeholder="Designation"
                 />
               </div>
             ))}
             <button onClick={handleExp} className='p-button' style={{ marginBottom: "1.2rem" }}>Add Experience</button>
+          </div>
+
+          <div className='p-container'>
+            {/* <h2 className='p-head'>Projects</h2> */}
+            {projects.map((exp, index) => (
+              <div key={index} style={{ display: "flex", flexDirection: 'column', }}>
+                <textarea
+                  value={exp.name}
+                  className='input-field'
+                  style={{ marginBottom: "1.2rem" }}
+                  onChange={(e) => {
+                    handleProjectChange(index, 'name', e.target.value);
+                  }}
+                  placeholder="Name"
+                />
+                <textarea
+                  value={exp.description}
+                  className='input-field'
+                  style={{ marginBottom: "1.2rem" }}
+                  onChange={(e) => {
+                    handleProjectChange(index, 'description', e.target.value);
+                  }}
+                  placeholder="Designation"
+                />
+              </div>
+            ))}
+            <button onClick={handleAddProject} className='p-button' style={{ marginBottom: "1.2rem" }}>Add Projects</button>
           </div>
 
           <div className='p-container'>
@@ -427,7 +534,7 @@ const ResumeBuilderTemp1 = () => {
                   style={{ marginBottom: "1.2rem" }}
                   value={certificate.name}
                   onChange={(e) => {
-                    handleAddCertificate(index, 'name', e.target.value);
+                    handleChangeCertificate(index, 'name', e.target.value);
                   }}
                   placeholder="Certificate Name"
                 />
@@ -436,7 +543,7 @@ const ResumeBuilderTemp1 = () => {
                   className='input-field'
                   style={{ marginBottom: "1.2rem" }}
                   onChange={(e) => {
-                    handleAddCertificate(index, 'description', e.target.value);
+                    handleChangeCertificate(index, 'description', e.target.value);
                   }}
                   placeholder="Certificate Provider"
                 />
@@ -454,14 +561,14 @@ const ResumeBuilderTemp1 = () => {
               <Document>
                 <Page size="A4" style={styles.rcontainer}>
                   <View style={styles.sectionl}>
-                    <Image src={pf} style={styles.rimage} />
+                    {/* <Image src={userImage} style={styles.rimage} />  */}
                     <Text style={styles.heading} > Contact </Text>
                     <Text style={styles.sheading}>phone </Text>
                     <Text style={styles.ltext}>8279847842</Text>
                     <Text style={styles.sheading}>E-mail </Text>
                     <Text style={styles.ltext}>hello@gmail.com</Text>
                     <Text style={styles.sheading}>Address </Text>
-                    <Text style={styles.ltext1}>Sec-63, Noida, U.P.</Text>
+                    <Text style={styles.ltext1}>{address}</Text>
                     <Text style={styles.sheading}>Date of birth </Text>
                     <Text style={styles.ltext1}>10/03/2002</Text>
                     <Text style={styles.heading} > Education </Text>
@@ -476,13 +583,14 @@ const ResumeBuilderTemp1 = () => {
 
                   <View style={styles.sectionr}>
                     <Text style={styles.nheading}>{name}</Text>
-                    <Text style={styles.profession}>Full Stack Developer</Text>
-                    <Text style={styles.about}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam pharetra in lorem at laoreet. Donec hendrerit libero eget est tempor, quis tempus arcu elementum. In elementum elit at dui tristique feugiat. Mauris convallis, mi at mattis malesuada, neque nulla volutpat dolor, hendrerit faucibus eros nibh ut nunc. </Text>
-                    <Text style={styles.pheading}>Experince</Text>
-                    {projects.map((project, index) => (
+                    <Text style={styles.profession}>{profession}</Text>
+                    <Text style={styles.about}>{about}</Text>
+                    <Text style={styles.pheading}>Experience</Text>
+                    {exps.map((exp, index) => (
                       <View key={index}>
-                        <Text style={styles.ptext}>{project.name}</Text>
-                        <Text style={styles.ptext}>{project.description}</Text>
+                        <Text style={styles.ptext}>{exp.year}</Text>
+                        <Text style={styles.ptext}>{exp.name}</Text>
+                        <Text style={styles.ptext}>{exp.description}</Text>
                       </View>
                     ))}
                     <Text style={styles.pheading}>Project</Text>
@@ -493,10 +601,10 @@ const ResumeBuilderTemp1 = () => {
                       </View>
                     ))}
                     <Text style={styles.pheading}>Certificate</Text>
-                    {projects.map((project, index) => (
+                    {certificates.map((certificate, index) => (
                       <View key={index}>
-                        <Text style={styles.ptext}>{project.name}</Text>
-                        <Text style={styles.ptext}>{project.description}</Text>
+                        <Text style={styles.ptext}>{certificate.name}</Text>
+                        <Text style={styles.ptext}>{certificate.description}</Text>
                       </View>
                     ))}
                   </View>
@@ -506,18 +614,18 @@ const ResumeBuilderTemp1 = () => {
           }
 
           {!theme &&
-            <PDFViewer width="1000" height="600" style={{ marginTop: "3rem", marginBottom: "2rem", borderRadius: "20px", marginRight: "3rem" }}>
+            <PDFViewer width="1000" height="800" style={{ marginTop: "3rem", marginBottom: "2rem", borderRadius: "20px", marginRight: "3rem" }}>
               <Document>
                 <Page size="A4" style={styles.rcontainert}>
                   <View style={styles.sectionlt}>
-                    <Image src={pf} style={styles.rimaget} />
+                    {/* <Image src={userImage} style={styles.rimaget} /> */}
                     <Text style={styles.headingt} > Contact </Text>
                     <Text style={styles.sheadingt}>phone </Text>
                     <Text style={styles.ltextt}>{contactNumber}</Text>
                     <Text style={styles.sheadingt}>E-mail </Text>
                     <Text style={styles.ltextt}>{email}</Text>
                     <Text style={styles.sheadingt}>Address </Text>
-                    <Text style={styles.ltext1t}>Sec-63, Noida, U.P.</Text>
+                    <Text style={styles.ltext1t}>{address}</Text>
                     <Text style={styles.sheadingt}>Date of birth </Text>
                     <Text style={styles.ltext1t}>{DOB}</Text>
                     <Text style={styles.headingt} > Education </Text>
@@ -532,20 +640,21 @@ const ResumeBuilderTemp1 = () => {
 
                   <View style={styles.sectionrt}>
                     <Text style={styles.nheadingt}>{name}</Text>
-                    <Text style={styles.professiont}>Full Stack Developer</Text>
-                    <Text style={styles.aboutt}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam pharetra in lorem at laoreet. Donec hendrerit libero eget est tempor, quis tempus arcu elementum. In elementum elit at dui tristique feugiat. Mauris convallis, mi at mattis malesuada, neque nulla volutpat dolor, hendrerit faucibus eros nibh ut nunc. </Text>
+                    <Text style={styles.professiont}>{profession}</Text>
+                    <Text style={styles.aboutt}>{about}</Text>
                     <Text style={styles.pheadingt}>Experience</Text>
+                    {exps.map((exp, index) => (
+                      <View key={index}>
+                        <Text style={styles.ptextt}>{exp.year}</Text>
+                        <Text style={styles.ptextt}>{exp.name}</Text>
+                        <Text style={styles.ptextt}>{exp.description}</Text>
+                      </View>
+                    ))}
+                    <Text style={styles.pheadingt}>Project</Text>
                     {projects.map((project, index) => (
                       <View key={index}>
                         <Text style={styles.ptextt}>{project.name}</Text>
                         <Text style={styles.ptextt}>{project.description}</Text>
-                      </View>
-                    ))}
-                    <Text style={styles.pheadingt}>Project</Text>
-                    {exps.map((exp, index) => (
-                      <View key={index}>
-                        <Text style={styles.ptextt}>{exp.name}</Text>
-                        <Text style={styles.ptextt}>{exp.description}</Text>
                       </View>
                     ))}
                     <Text style={styles.pheadingt}>Certificate</Text>
