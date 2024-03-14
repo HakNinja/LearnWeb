@@ -38,8 +38,8 @@ function App() {
      <ScrollToTop/>
      <Navbar />
      <Routes>
-      <Route exact path='/' element={ <Home />} />
-      <Route exact path='/Home' element={ <Home />} />
+      <Route exact path='/' element={ <NewHome />} />
+      {/* <Route exact path='/Home' element={ <Home />} /> */}
       <Route exact path='/login/' element={ <Login />} />
       <Route exact path='/signup/' element={ <Signup />} />
       <Route exact path='/loginnew' element={< LoginNew />}/>
@@ -58,7 +58,7 @@ function App() {
      
 
 
-      <Route exact path="/newHome" element={<NewHome />} />
+      <Route exact path="/Home" element={<NewHome />} />
 
       
       {/* <Route path ='*' element={<Error/>}/> */}

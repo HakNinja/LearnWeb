@@ -5,7 +5,7 @@ import React, { useState, useEffect } from 'react'
 import { AiOutlineLock } from 'react-icons/ai';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { Link, useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import { useAuth0 } from "@auth0/auth0-react";
 import { FaGoogle } from "react-icons/fa";
 import { useAuth } from '../../context/Context'
@@ -18,7 +18,7 @@ import { eye } from 'react-icons-kit/feather/eye'
 
 
 import './LoginSignup.css'
-import { singin, signup } from '../../assets'
+// import { singin, signup } from '../../assets'
 
 const LoginSignup = () => {
     const [name, setname] = useState('');
@@ -102,7 +102,7 @@ const LoginSignup = () => {
         e.preventDefault();
         // Handle sign in form submission
         const data = { email, password }
-        console.log(data)
+        // console.log(data)
         if (role === 2) {
             console.log(data, role)
             const res = await fetch("http://127.0.0.1:5001/user/login", {

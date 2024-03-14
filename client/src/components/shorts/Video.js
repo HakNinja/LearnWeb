@@ -1,18 +1,16 @@
 import React, { useRef, useState } from "react";
 
-// import ArrowBackIcon from "@material-ui/icons/ArrowBack";
-import { FaArrowLeft, FaRegStar } from "react-icons/fa";
+import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 
-// import MoreVertIcon from "@material-ui/icons/MoreVert";
+import MoreVertIcon from "@material-ui/icons/MoreVert";
 
-import { CiCircleMore } from "react-icons/ci";
 
-// import StarIcon from '@material-ui/icons/Star';
+import StarIcon from '@material-ui/icons/Star';
 
 
 import './Video.css'
 // import { v } from '../../assets';
-// import { Avatar } from "@material-ui/core";
+import { Avatar } from "@material-ui/core";
 // import Ticker from "react-ticker";
 
 function Video({id, location, name, description}) {
@@ -43,7 +41,7 @@ function Video({id, location, name, description}) {
 
     return (
         <div className='svideo'>
-            {console.log(location)}
+            {/* {console.log(location)} */}
             <video
                 id={id}
                 className="svideo__player"
@@ -54,25 +52,20 @@ function Video({id, location, name, description}) {
             <div className='sshortscontainer'>
                 <div className="sshortsVideoTop">
                     <div className="sshortsVideoTopIcon">
-                        {/* <ArrowBackIcon /> */}
-                        <FaArrowLeft />
+                        <ArrowBackIcon />
                     </div>
                     <div className="sshortsVideoTopIcon">
-                        {/* <MoreVertIcon /> */}
-                        <CiCircleMore />
+                        <MoreVertIcon />
                     </div>
                 </div>
             </div>
             <div className="sshortsVideoSideIcons">
                 <div className="sshortsVideoSideIcon">
-                    {/* <StarIcon style={{
+                     <StarIcon style={{
                             fill: liked ? "yellow" : "white",
                         }}
-                        onClick={handleLiked} /> */}
-                        <FaRegStar style={{
-                            fill: liked ? "yellow" : "white",
-                        }}
-                        onClick={handleLiked}/>
+                        onClick={handleLiked} /> 
+                     
                     <p>Star </p>
                 </div>
                 {/* <div className="sshortsVideoSideIcon">
@@ -92,11 +85,11 @@ function Video({id, location, name, description}) {
             </Ticker> */}
                 </div>
                 <div className="sshortDetails">
-                    {/* <Avatar
+                    <Avatar
                         src={
                             "https://lh3.googleusercontent.com/ogw/ADGmqu8BCzU8GejYorGqXeu98A1kfEFYKFT85I3_9KJBzfw=s32-c-mo"
                         }
-                    /> */}
+                    />
                     <p>{name}</p>
                     <button
                         style={{

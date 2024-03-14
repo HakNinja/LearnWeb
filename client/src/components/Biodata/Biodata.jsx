@@ -2,9 +2,12 @@ import React, { useRef, useState } from 'react';
 import './Biodata.css'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { useAuth } from '../../context/Context'
+import { useNavigate } from "react-router-dom"
+
 
 const Biodata = () => {
-
+    const { role } = useAuth()
     const [name, setName] = useState('')
     const [image, setImage] = useState('')
     const [email, setEmail] = useState('')
@@ -16,6 +19,7 @@ const Biodata = () => {
     const [stateName, setStateName] = useState('')
     const [country, setCountry] = useState('')
     const [instituteName, setInstituteName] = useState('')
+    const navigate = useNavigate()
 
 
     const handleChange = async (e) => {
@@ -110,25 +114,95 @@ const Biodata = () => {
         formData.append('instituteName', instituteName);
 
 
-        console.log(formData.entries());
-    }
-    // try {
-    //     const response = await fetch('https://example.com/api/submit', {
-    //         method: 'POST',
-    //         body: formData,
-    //     });
+        if (role === 2) {
 
-    //     if (response.ok) {
-    //         // If the response is successful, handle accordingly
-    //         console.log('Data submitted successfully');
-    //     } else {
-    //         // If there is an error in the response, handle accordingly
-    //         console.error('Failed to submit data');
-    //     }
-    // } catch (error) {
-    //     // Handle any network errors
-    //     console.error('Network error:', error);
-    // }
+            const res = await fetch("http://127.0.0.1:5001/user/dataUpdate", {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'multipart/form-data',
+                },
+                body: formData,
+            })
+            let response = await res.json();
+
+            if (response.success) {
+                toast.success('Your are successfully logged in', {
+                    position: "bottom-left",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                });
+                // console.log(response.user)
+                const A = JSON.stringify(response.user)
+
+            } else {
+                toast.error(response.message, {
+                    position: "bottom-left",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                });
+            }
+        }
+        else if (role === 1) {
+            const res = await fetch("http://127.0.0.1:5001/teacher/dataUpdate", {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'multipart/form-data',
+                },
+                body: JSON.stringify(formData),
+            })
+            let response = await res.json();
+            if (response.success) {
+                toast.success('Your are successfully logged in', {
+                    position: "bottom-left",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                });
+                const A = JSON.stringify(response.user)
+
+            } else {
+                toast.error(response.message, {
+                    position: "bottom-left",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                });
+            }
+        } else {
+            toast.error("invalid login", {
+                position: "bottom-left",
+                autoClose: 799,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+            });
+            setTimeout(() => {
+                navigate(`/loginnew`)
+            }, 800);
+        }
+    }
+
 
 
 
