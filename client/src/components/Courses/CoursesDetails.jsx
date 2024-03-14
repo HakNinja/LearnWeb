@@ -31,7 +31,7 @@ const CoursesDetails = () => {
                 </div>
                 <div className='pricings'>
                     <div className='prices'> ₹{details.price} </div>
-                    <button>Buy Now</button>
+                    <Link to={`/checkout/${slug}`}> <button>Buy Now</button> </Link>
                 </div>
             </div>
         </div>
