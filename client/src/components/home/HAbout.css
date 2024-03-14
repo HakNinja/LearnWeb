@@ -1,0 +1,12 @@
+
+.HAbout-container #heading {
+    text-align: center;
+    padding: 40px 0;
+    color: rgb(172, 0, 172);
+}
+
+.HAbout-container #heading h1 {
+    font-size: 45px;
+    margin: 20px 0;
+    text-transform: capitalize;
+}

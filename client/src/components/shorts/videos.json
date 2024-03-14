@@ -1,0 +1,35 @@
+
+{
+    "videos": [
+        {
+            "index":"2",
+            "name":"Billionare programmer",
+            "location":"../../assets/2.mp4",
+            "description":"This is what a billionare has to say"
+        },
+        {
+            "index":"3",
+            "name":"Programming in movies",
+            "location":"../../assets/3.mp4",
+            "description":"Movies vs Reality"
+        },
+        {
+            "index":"4",
+            "name":"Aerosmith",
+            "location":"../../assets/4.mp4",
+            "description":"Dream On"
+        },
+        {
+            "index":"5",
+            "name":"Legendary slashes",
+            "location":"../../assets/5.mp4",
+            "description":"Sound Hashira vs Upper Moon 6"
+        },
+        {
+            "index":"5",
+            "name":"Legendary slashes",
+            "location":"../../assets/5.mp4",
+            "description":"Sound Hashira vs Upper Moon 6"
+        }
+    ]
+}

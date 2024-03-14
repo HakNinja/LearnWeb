@@ -4,6 +4,7 @@ import ScrollToTop from './components/ScrollToTop.ScrollToTop';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import Navbar from './components/Navbar/Navbar';
 import Home from './pages/Home/Home';
+import NewHome from './components/home/Home';
 import Login from './components/Login';
 import Signup from './components/Signup';
 import Footer from './components/Footer';
@@ -24,6 +25,7 @@ import ResumeBuilderTemp1 from './components/ResumeBuilderTemp1/ResumeBuilderTem
 import {AuthProvider} from './context/Context'
 import LoginSignup from './components/LogSign/LoginSignup';
 import ThemeSelect from './components/ThemeSelect';
+import Shorts from './pages/Shorts/Shorts';
 
 function App() {
   
@@ -50,9 +52,13 @@ function App() {
       
       <Route exact path="/Resume/ResumeBuilderTemp1" element={<ResumeBuilderTemp1 />} />
       <Route path="/loginsignup" element={<LoginSignup />} />
+      <Route path="/themeselect" element={<ThemeSelect />} />
+      <Route path="/shorts" element={<Shorts/>} />
       <Route path="/Resume" element={<ThemeSelect />} />
      
 
+
+      <Route exact path="/newHome" element={<NewHome />} />
 
       
       {/* <Route path ='*' element={<Error/>}/> */}
