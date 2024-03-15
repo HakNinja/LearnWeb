@@ -29,6 +29,7 @@ import Shorts from './pages/Shorts/Shorts';
 import CoursesDetails from './components/Courses/CoursesDetails';
 import CheckOut from './pages/CheckOut/CheckOut';
 import About from './pages/About/About';
+import LandingPage from './pages/Landing/LandingPage';
 
 function App() {
   
@@ -41,7 +42,8 @@ function App() {
      <ScrollToTop/>
      <Navbar />
      <Routes>
-      <Route exact path='/' element={ <NewHome />} />
+      <Route exact path='/' element={ <LandingPage/>} />
+      <Route exact path='/home' element={ <NewHome />} />
       <Route path='/about us' element={<About/>} />
       {/* <Route exact path='/Home' element={ <Home />} /> */}
       <Route exact path='/login/' element={ <Login />} />
