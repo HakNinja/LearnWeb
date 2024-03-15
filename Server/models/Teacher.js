@@ -22,6 +22,8 @@ const TeacherSchema = new mongoose.Schema(
   district: String,
   country: String,
   phoneNumber: String,
+  pincode:String,
+  address:String,
   instituteName:{
     type: String,
     min: 2

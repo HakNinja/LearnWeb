@@ -18,14 +18,35 @@ export const addUser = async (req, res) => {
 
   export const updateUser = async (req, res) => {
     try {
-// console.log(req)
+      const {name, email, phoneNumber, pincode, city, stateName, district, country, address, instituteName} = req.body
+      // console.log(image)
+      const filter = { email: email };
+      const update = {name:name,phoneNumber: phoneNumber, pincode: pincode, city: city, stateName: stateName, district: district, country: country, address: address, instituteName: instituteName };
+      
 
- // Accessing the data sent in the request body
-        console.log(req.body);
-      // const
-      res.status(200).json({ "success": "hi" });
+      const doc = await User.findOneAndUpdate(filter, update, {
+        new: true
+      });
+   
+      res.status(200).json({  "success": true, "user": doc});
     } catch (error) {
       res.status(404).json({ message: error.message });
+    }
+  }
+
+  export const getUser = async (req, res) => {
+    try {
+      
+     const {email, role} = req.body
+     const B = await User.findOne({"email": email})
+    //  console.log(B)
+  
+   
+      res.status(200).json({ "success": true, "user":B});
+     
+   
+    } catch (error) {
+      res.status(404).json({ message: 'User name or password not match' });
     }
   }
 

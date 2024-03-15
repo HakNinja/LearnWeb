@@ -12,6 +12,8 @@ const Biodata = () => {
     const { role, userD, setUserD, email } = useAuth()
     const [name, setName] = useState('')
     const [image, setImage] = useState('')
+    const [dataimg, setDataimg] = useState('')
+    const [uEmail, setUemail] = useState(email)
     // const [email, setEmail] = useState('')
     const [phoneNumber, setphoneNumber] = useState('')
     const [pincode, setPincode] = useState('')
@@ -23,7 +25,7 @@ const Biodata = () => {
     const [instituteName, setInstituteName] = useState('')
     const navigate = useNavigate()
 
-
+    // console.log(email)
 
 
 
@@ -94,57 +96,118 @@ const Biodata = () => {
         }
     }
 
+    const fetchData = async () => {
+        const data = { email, name }
+        if (role === 2) {
+            const res = await fetch(`http://127.0.0.1:5001/user/getUser`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
+            })
+            const response = await res.json();
+            // console.log(data)
+            // let response = { "success": true }
 
+            if (response.success) {
+                setName(response.user.name)
+                setPincode(response.user.pincode)
+                setphoneNumber(response.user.phoneNumber)
+                setAddress(response.user.address)
+                setCity(response.user.city)
+                setDistrict(response.user.district)
+                setStateName(response.user.state)
+                setInstituteName(response.user.instituteName)
+                setCountry(response.user.country)
+            }
+        }
+        else if (role === 1) {
+            const res = await fetch(`http://127.0.0.1:5001/teacher/getTeacher`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
+            })
+            let response = await res.json();
+            // console.log(data)
+            // let response = { "success": true }
+
+            if (response.success) {
+                setName(response.user.name)
+                setPincode(response.user.pincode)
+                setphoneNumber(response.user.phoneNumber)
+                setAddress(response.user.address)
+                setCity(response.user.city)
+                setDistrict(response.user.district)
+                setStateName(response.user.state)
+                setInstituteName(response.user.instituteName)
+                setCountry(response.user.country)
+            }
+        }
+    }
     // const data = { name, email, city, phoneNumber, image, pincode, address, district, stateName, country, instituteName }
     // console.log(data)
+
+    useEffect(() => {
+        fetchData()
+    }, [])
 
 
     const handleUserSubmit = async (e) => {
         e.preventDefault();
         const data = { name, email, phoneNumber, pincode, city, stateName, district, country, address, instituteName }
-
+        console.log(data)
         if (role === 2) {
             // console.log(mydata.name)
             const res = await fetch("http://localhost:5001/user/updateUser", {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
+                    "Access-Control-Allow-Orign": "*"
                 },
                 body: JSON.stringify(data)
             })
-            if (!res.ok) {
-                console.log("error")
+            const response = await res.json()
+
+            if (response.success) {
+                setName(response.user.name)
+                setPincode(response.user.pincode)
+                setphoneNumber(response.user.phoneNumber)
+                setAddress(response.user.address)
+                setCity(response.user.city)
+                setDistrict(response.user.district)
+                setStateName(response.user.state)
+                setInstituteName(response.user.instituteName)
+                setCountry(response.user.country)
+                toast.success('Your records are  successfully added/updated', {
+                    position: "bottom-left",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                });
+
+
+            } else {
+                toast.error(response.message, {
+                    position: "bottom-left",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                });
             }
-
-            // if (response.success) {
-            //     toast.success('Your are successfully logged in', {
-            //         position: "bottom-left",
-            //         autoClose: 5000,
-            //         hideProgressBar: false,
-            //         closeOnClick: true,
-            //         pauseOnHover: true,
-            //         draggable: true,
-            //         progress: undefined,
-            //         theme: "light",
-            //     });
-            //     // console.log(response.user)
-            //     const A = JSON.stringify(response.user)
-
-            // } else {
-            //     toast.error(response.message, {
-            //         position: "bottom-left",
-            //         autoClose: 5000,
-            //         hideProgressBar: false,
-            //         closeOnClick: true,
-            //         pauseOnHover: true,
-            //         draggable: true,
-            //         progress: undefined,
-            //         theme: "light",
-            //     });
-            // }
         }
         else if (role === 1) {
-            const res = await fetch("http://127.0.0.1:5001/teacher/dataUpdate", {
+            const res = await fetch("http://127.0.0.1:5001/teacher/updateTeacher", {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -153,6 +216,15 @@ const Biodata = () => {
             })
             let response = await res.json();
             if (response.success) {
+                setName(response.user.name)
+                setPincode(response.user.pincode)
+                setphoneNumber(response.user.phoneNumber)
+                setAddress(response.user.address)
+                setCity(response.user.city)
+                setDistrict(response.user.district)
+                setStateName(response.user.state)
+                setInstituteName(response.user.instituteName)
+                setCountry(response.user.country)
                 toast.success('Your are successfully logged in', {
                     position: "bottom-left",
                     autoClose: 5000,
@@ -163,7 +235,7 @@ const Biodata = () => {
                     progress: undefined,
                     theme: "light",
                 });
-                const A = JSON.stringify(response.user)
+
 
             } else {
                 toast.error(response.message, {
@@ -197,7 +269,6 @@ const Biodata = () => {
 
 
 
-
     const fileInputRef = useRef(null);
 
     const handleFileInputChange = (event) => {
@@ -211,13 +282,14 @@ const Biodata = () => {
         reader.onload = function (event) {
             const img = document.createElement('img');
             img.src = event.target.result;
-
+            setImage(event.target.result)
             const avatarContainer = document.querySelector('.avatar-container');
             avatarContainer.innerHTML = '';
             avatarContainer.appendChild(img);
         };
 
         reader.readAsDataURL(file);
+
     };
 
 
@@ -274,7 +346,7 @@ const Biodata = () => {
                                         id="email" name="email"
                                         readOnly={true}
                                         onChange={handleChange}
-                                        value={email}
+                                        value={uEmail}
                                         className="biodata_a" />
                                 </div>
                             </div>
