@@ -104,7 +104,7 @@ const LoginSignup = () => {
         const data = { email, password }
         // console.log(data)
         if (role === 2) {
-            console.log(data, role)
+            // console.log(data, role)
             const res = await fetch("http://127.0.0.1:5001/user/login", {
                 method: 'POST',
                 headers: {
@@ -167,7 +167,7 @@ const LoginSignup = () => {
                     theme: "light",
                 });
                 const A = JSON.stringify(response.user)
-                logIn(A, role)
+                logIn(A, role, email)
                 setTimeout(() => {
 
                     navigate("/")
@@ -282,7 +282,7 @@ const LoginSignup = () => {
         }
 
         else {
-            if (role === '2') {
+            if (role === 2) {
                 const res = await fetch(`http://127.0.0.1:5001/user/adduser`, {
                     method: 'POST',
                     headers: {
@@ -326,7 +326,7 @@ const LoginSignup = () => {
                     });
                 }
             }
-            else if (role === '1') {
+            else if (role === 1) {
                 const res = await fetch(`http://127.0.0.1:5001/teacher/addteacher`, {
                     method: 'POST',
                     headers: {
@@ -354,7 +354,7 @@ const LoginSignup = () => {
                     setPassword("")
                     setcpassword("")
                     setTimeout(() => {
-                        navigate(`/login/${role}`)
+                        toggleMode()
                     }, 800);
 
                 } else {
