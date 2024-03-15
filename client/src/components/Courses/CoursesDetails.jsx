@@ -9,6 +9,8 @@ const CoursesDetails = () => {
     const { slug } = useParams();
     const [details, setDetails] = useState([]);
 
+
+
     useEffect(() => {
         setDetails(courses.courses[slug]);
         console.log(details)

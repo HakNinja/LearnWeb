@@ -9,6 +9,9 @@ import userRoutes from './routes/user.js'
 import teacherRoutes from "./routes/teacher.js"
 import userData from './routes/data.js'
 
+import paymentRoute from './routes/stripe.js'
+
+
 dotenv.config()
 const app = express()
 app.use(express.json())
@@ -22,6 +25,7 @@ app.use(cors())
 app.use('/user',userRoutes)
 app.use('/teacher',teacherRoutes)
 app.use('/data',userData)
+app.use('/payment',paymentRoute)
 
 const PORT=process.env.PORT || 9000
 mongoose.connect(process.env.MONGO_URL,{
