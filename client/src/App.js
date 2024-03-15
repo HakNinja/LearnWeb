@@ -28,6 +28,7 @@ import ThemeSelect from './components/ThemeSelect';
 import Shorts from './pages/Shorts/Shorts';
 import CoursesDetails from './components/Courses/CoursesDetails';
 import CheckOut from './pages/CheckOut/CheckOut';
+import About from './pages/About/About';
 
 function App() {
   
@@ -41,6 +42,7 @@ function App() {
      <Navbar />
      <Routes>
       <Route exact path='/' element={ <NewHome />} />
+      <Route path='/about us' element={<About/>} />
       {/* <Route exact path='/Home' element={ <Home />} /> */}
       <Route exact path='/login/' element={ <Login />} />
       <Route exact path='/signup/' element={ <Signup />} />
