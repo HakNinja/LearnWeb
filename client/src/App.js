@@ -57,7 +57,7 @@ function App() {
       <Route exact path="/Resume/ResumeBuilderTemp1" element={<ResumeBuilderTemp1 />} />
       <Route path="/loginsignup" element={<LoginSignup />} />
       <Route path="/themeselect" element={<ThemeSelect />} />
-      <Route path="/shorts" element={<Shorts/>} />
+      <Route path="/feeds" element={<Shorts/>} />
       <Route path="/Resume" element={<ThemeSelect />} />
      
 

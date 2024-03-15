@@ -62,11 +62,11 @@ const Navbar = () => {
         <Link to="/"><img src={Logo} alt="logo" className='opacity-90' /></Link>
       </div>
       <ul className='navbar-links'>
-        {['Home', 'Courses', 'Resume', 'About us'].map((items) =>
+        {['Home', 'Courses', 'Feeds', 'Resume', 'About us'].map((items) =>
           <li className='app__center' key={`link-${items}`}>
             <div />
             <NavLink to={`/${items}`} className={({ isActive }) =>
-              isActive ? ' font-bold border-b-4 border-red-500' : ''} > {items} </NavLink>
+              isActive ? ' font-bold border-b-4 border-pink-400' : ''} > {items} </NavLink>
           </li>
         )}
         <div class="d-grid gap-2 d-md-flex justify-content-md-start" style={{ marginLeft: "10rem", marginBottom: "0rem" }}>
@@ -122,7 +122,7 @@ const Navbar = () => {
                 </div>
               )}
             </div>
-          </> : <button class=" btn btn-light"><Link class="nav-link" to="/loginnew">Login</Link></button>
+          </> : <button class=" btn btn-light" style={{marginLeft:"-7rem", padding:"8px 25px"}}><Link class="nav-link" to="/loginnew">Login</Link></button>
           }
         </div>
 
