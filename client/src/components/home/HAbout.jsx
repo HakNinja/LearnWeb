@@ -10,7 +10,7 @@ const HAbout = () => {
   return (
     <>
       <section className='homeAbout'>
-        <div className='HAbout-container'>
+        <div className='HAbout-container' style={{backgroundColor:"#F0F0F0"}}>
           {/* <Heading subtitle='our courses' title='explore our popular online courses' /> */}
 
           <div class="container" style={{}}>
