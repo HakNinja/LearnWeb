@@ -1,5 +1,5 @@
 import {default as Logo} from './logo1.png';
-import {default as about1} from './about1.jpeg'
+import {default as about} from './Aboutlw.jpg'
 import {default as avatar} from './avatar.jpeg'
 import {default as banner} from './banner.png'
 import {default as error} from './error.jpeg'
@@ -22,7 +22,7 @@ export {
     Logo,
     ele,
     pf,
-    about1,
+    about,
     avatar,
     banner,
     error,

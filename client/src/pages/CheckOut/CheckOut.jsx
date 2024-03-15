@@ -22,7 +22,7 @@ const CheckOut = () => {
             setCoupon(0)
         }
         setTotal(Number(details.price - Number(coupon)));
-        console.log(total)
+        console.log("yee"+total)
     }
 
     const handlePayment = async () => {
