@@ -3,7 +3,6 @@ import './App.css';
 import ScrollToTop from './components/ScrollToTop.ScrollToTop';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import Navbar from './components/Navbar/Navbar';
-import Home from './pages/Home/Home';
 import NewHome from './components/home/Home';
 import Login from './components/Login';
 import Signup from './components/Signup';
