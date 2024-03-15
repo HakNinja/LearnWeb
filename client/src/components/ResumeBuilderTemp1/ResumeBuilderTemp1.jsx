@@ -381,7 +381,7 @@ const ResumeBuilderTemp1 = () => {
             {/* <label className="label">Email:</label> */}
             <input
               className="input-field"
-              type="text"
+              type="date"
               placeholder='Your DOB in (day/month/year) format'
               value={DOB}
               onChange={(e) => {
@@ -614,7 +614,7 @@ const ResumeBuilderTemp1 = () => {
               <Document>
                 <Page size="A4" style={styles.rcontainert}>
                   <View style={styles.sectionlt}>
-                    {/* <Image src={userImage} style={styles.rimaget} /> */}
+                    <Image src={userImage} style={styles.rimaget} />
                     <Text style={styles.headingt} > Contact </Text>
                     <Text style={styles.sheadingt}>phone </Text>
                     <Text style={styles.ltextt}>{contactNumber}</Text>

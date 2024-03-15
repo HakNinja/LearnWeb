@@ -2,14 +2,14 @@ import React, { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import {loadStripe} from '@stripe/stripe-js'
 import courses from '../../components/Courses/courses.json'
-
 import './CheckOut.scss'
 
 const CheckOut = () => {
     const { slug } = useParams();
     const [details, setDetails] = useState([]);
-    const[coupon, setCoupon] = useState();
-    const [total, setTotal] = useState();
+    const[coupon, setCoupon] = useState(0);
+    const[newcoupon, setNewcoupon] = useState(0);
+    const [total, setTotal] = useState(details.price);
 
     useEffect(() => {
         setDetails(courses.courses[slug]);
@@ -18,17 +18,48 @@ const CheckOut = () => {
 
     const handleDiscount = (e) => {
         e.preventDefault();
-        if(coupon === undefined){
-            setCoupon(0)
+
+        setNewcoupon(coupon)
+
+        if(coupon ){
+            setTotal(Number(details.price - Number(coupon)));
+            console.log(total)
         }
-        setTotal(Number(details.price - Number(coupon)));
-        console.log("yee"+total)
+// <<<<<<< HEAD
+//         setTotal(Number(details.price - Number(coupon)));
+//         console.log("yee"+total)
+// =======
+// >>>>>>> 8371968 (add payment)
     }
 
-    const handlePayment = async () => {
-        const stripe = await loadStripe("pk_test_51OuIToSES1HNnUGOwgrNe4Nrx46TZoWotvV4jIpCb1Fw6YjUtZCtVrheGnikfrUmwNVi4sITxvk5qM0zgs6WW7BE0080KwStvP")
-    }
+    const makePayment = async ()=>{
 
+        const stripe = await loadStripe("pk_test_51N7hl3SHBE45jscNJjyppjKEql4Q4sNTM1qiN2nqlxWHYBJN5MUy0vvf0H0V3YfgiuMIqvsfeKZReSqMn74f0bmi00hL39P2ji")
+    
+        const header = {
+            "Content-type" : "application/json"
+        }
+    
+        const body = {
+            product : details
+        } 
+
+        body.product.price = total
+        // console.log("aaara data")
+        const response = await fetch('http://127.0.0.1:5001/payment/create-checkout-session',{
+            // const response = await fetch(`${apiURL}/create-checkout-session`,{
+            method:"POST",
+            headers: header,
+            body:JSON.stringify(body)
+        })
+    
+        const session = await response.json()
+    
+    
+        const result = stripe.redirectToCheckout({
+            sessionId: session.id
+        })
+    }
 
     return (
         <div className='checkout'>
@@ -95,7 +126,7 @@ const CheckOut = () => {
                             <td class="px-6 py-4 text-l rounded-lg text-gray-900">
                                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
                                     <div className='w-2/3'> Discount </div>
-                                    <div className='font-bold'> ₹ {coupon}</div>
+                                    <div className='font-bold'> ₹ {newcoupon}</div>
                                 </div>
                             </td>
                         </tr>
@@ -110,7 +141,7 @@ const CheckOut = () => {
 
                     </tbody>
                 </table>
-                <button className='w-full text-white text-lg uppercase rounded-lg buy-btn' onClick={handlePayment}> Make Payment</button>
+                <button className='w-full text-white text-lg uppercase rounded-lg buy-btn' onClick={makePayment}> Make Payment</button>
                 <br /> <br /> <br />
             </div>
         </div>
