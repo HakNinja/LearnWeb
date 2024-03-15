@@ -22,12 +22,13 @@ import { default as nilesh } from './nilesh.jpg';
 import { default as akansha } from './akansha.jpg';
 import { default as Maitri } from './Maitri.jpeg';
 import { default as Yogesh } from './Yogesh.jpeg';
-
+import { default as integrated } from './integrated.jpg';
 
 
 export {
     Logo,
     anshul,
+    integrated,
     akansha,
     Deepak,
     nilesh,

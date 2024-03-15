@@ -44,13 +44,12 @@ function App() {
       <Route exact path='/' element={ <LandingPage/>} />
       <Route exact path='/home' element={ <NewHome />} />
       <Route path='/about us' element={<About/>} />
-      {/* <Route exact path='/Home' element={ <Home />} /> */}
       <Route exact path='/login/' element={ <Login />} />
       <Route exact path='/signup/' element={ <Signup />} />
       <Route exact path='/loginnew' element={< LoginNew />}/>
       <Route exact path='/roadmap' element={< Roadmap />}/>
       <Route path='/contactus' element={<Contact/>} />
-      <Route path='/test' element={<CV />} />
+      {/* <Route path='/test' element={<CV />} /> */}
       
       <Route path="/courses" element={<CourseList />} />
       <Route path="/coursesdetails/:slug" element={<CoursesDetails />} />
@@ -62,16 +61,16 @@ function App() {
       <Route path="/themeselect" element={<ThemeSelect />} />
       <Route path="/feeds" element={<Shorts/>} />
       <Route path="/Resume" element={<ThemeSelect />} />
-     
 
 
-      <Route exact path="/Home" element={<NewHome />} />
+      {/* <Route exact path="/Home" element={<NewHome />} /> */}
 
       
       {/* <Route path ='*' element={<Error/>}/> */}
       <Route path='*' element={<Error/>}/>
      
      </Routes>
+
      <Footer/>
      </AuthProvider>
      </BrowserRouter>

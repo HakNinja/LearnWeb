@@ -6,6 +6,7 @@ import Hero from "./hero/Hero"
 // import Hprice from "./Hprice"
 import Testimonal from "./testimonal/Testimonal"
 // import Footer from '../../components/common/footer/Footer'
+import Slider from '../../components/Slider/Slider'
 
 const Home = () => {
   return (
@@ -13,6 +14,7 @@ const Home = () => {
       <Hero />
       <AboutCard />
       <HAbout />
+      <Slider/>
       <Testimonal />
       {/* <Footer/> */}
       {/* <Hblog /> */}
