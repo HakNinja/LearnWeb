@@ -7,7 +7,7 @@ import { IoMdSend } from "react-icons/io";
 const Footer = () => {
   return (
     <>
-      <section className='newletter'>
+      {/* <section className='newletter'>
         <div className='Footer-container flexSB'>
           <div className='Footer-left Footer-row'>
             <h1>Newsletter - Stay tune and get the latest update</h1>
@@ -17,9 +17,10 @@ const Footer = () => {
             <input type='text' placeholder='Enter email address' />
             <IoMdSend className="svg"/>
             {/* <i className='fa fa-paper-plane'></i> */}
-          </div>
+          {/* </div>
         </div>
-      </section>
+      </section> */} 
+
       < div style={{ display: "flex" }} className='colorGradient'>
       <div className="col mb-3 text-center" style={{ marginTop: "3rem" }}>
         <p className="text-body-secondary">© 2024 LearnWeb</p>
