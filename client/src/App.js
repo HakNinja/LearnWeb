@@ -3,7 +3,6 @@ import './App.css';
 import ScrollToTop from './components/ScrollToTop.ScrollToTop';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import Navbar from './components/Navbar/Navbar';
-import Home from './pages/Home/Home';
 import NewHome from './components/home/Home';
 import Login from './components/Login';
 import Signup from './components/Signup';
@@ -29,6 +28,7 @@ import Shorts from './pages/Shorts/Shorts';
 import CoursesDetails from './components/Courses/CoursesDetails';
 import CheckOut from './pages/CheckOut/CheckOut';
 import About from './pages/About/About';
+import LandingPage from './pages/Landing/LandingPage';
 
 function App() {
   
@@ -41,15 +41,15 @@ function App() {
      <ScrollToTop/>
      <Navbar />
      <Routes>
-      <Route exact path='/' element={ <NewHome />} />
+      <Route exact path='/' element={ <LandingPage/>} />
+      <Route exact path='/home' element={ <NewHome />} />
       <Route path='/about us' element={<About/>} />
-      {/* <Route exact path='/Home' element={ <Home />} /> */}
       <Route exact path='/login/' element={ <Login />} />
       <Route exact path='/signup/' element={ <Signup />} />
       <Route exact path='/loginnew' element={< LoginNew />}/>
       <Route exact path='/roadmap' element={< Roadmap />}/>
       <Route path='/contactus' element={<Contact/>} />
-      <Route path='/test' element={<CV />} />
+      {/* <Route path='/test' element={<CV />} /> */}
       
       <Route path="/courses" element={<CourseList />} />
       <Route path="/coursesdetails/:slug" element={<CoursesDetails />} />
@@ -61,16 +61,16 @@ function App() {
       <Route path="/themeselect" element={<ThemeSelect />} />
       <Route path="/feeds" element={<Shorts/>} />
       <Route path="/Resume" element={<ThemeSelect />} />
-     
 
 
-      <Route exact path="/Home" element={<NewHome />} />
+      {/* <Route exact path="/Home" element={<NewHome />} /> */}
 
       
       {/* <Route path ='*' element={<Error/>}/> */}
       <Route path='*' element={<Error/>}/>
      
      </Routes>
+
      <Footer/>
      </AuthProvider>
      </BrowserRouter>

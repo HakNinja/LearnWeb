@@ -46,7 +46,7 @@
     h3{
         margin-top: 2rem;
         margin-bottom: 3rem;
-        color: #1489b0;
+        color: black;
         font-size: 2rem
     }
 }
@@ -109,7 +109,7 @@
   width: 150px;
   padding: 5px;
   border-radius: 50%;
-  background: #1489b0;
+  background: black;
 }
 .wrapper .back-face .info{
   text-align: center;
@@ -131,11 +131,11 @@
   line-height: 38px;
   border: 2px solid transparent;
   border-radius: 50%;
-  background: #1489b0;
+  background: black;
   transition: all 0.5s ease;
 }
 .back-face ul a:hover{
-  color: #1489b0;
-  border-color: #1489b0;
+  color: black;
+  border-color: black;
   background: linear-gradient(375deg, transparent, transparent);
 }

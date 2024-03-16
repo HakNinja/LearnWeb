@@ -16,10 +16,24 @@ import {default as signin} from './signin.png'
 import {default as signup} from './signup.png'
 import { default as ele } from './ele.gif';
 import { default as road } from './road.jpeg';
+import { default as anshul } from './Anshul.jpg';
+import { default as Deepak } from './Deepak.jpg';
+import { default as nilesh } from './nilesh.jpg';
+import { default as akansha } from './akansha.jpg';
+import { default as Maitri } from './Maitri.jpeg';
+import { default as Yogesh } from './Yogesh.jpeg';
+import { default as integrated } from './integrated.jpg';
 
 
 export {
     Logo,
+    anshul,
+    integrated,
+    akansha,
+    Deepak,
+    nilesh,
+    Maitri,
+    Yogesh,
     ele,
     pf,
     about,
