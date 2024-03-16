@@ -60,6 +60,8 @@ export const addUser = async (req, res) => {
       res.status(200).json({ message: "User not exist" });
      }
     else if(password===B.password){
+      console.log("hii")
+      res.cookie('userID', B.id, { httpOnly: true });
       res.status(200).json({ "success": true, "user":B });
      }
      else{

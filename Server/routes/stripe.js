@@ -30,8 +30,9 @@ router.post('/create-checkout-session', async (req, res) => {
         payment_method_types: ['card'],
         line_items: lineItems,
         mode: 'payment',
-        success_url: 'https://www.npmjs.com/package/stripe', // Redirect URL after successful payment
-        cancel_url: 'https://androidknowledge.com/onboarding-walkthrough-screen-android-studio/', // Redirect URL if the payment is canceled
+        // success_url: `http://127.0.0.1:3000/paymentDone/${lineItems}`, // Redirect URL after successful payment
+        success_url: `http://127.0.0.1:3000/home`, // Redirect URL after successful payment
+        cancel_url: 'http://127.0.0.1:3000/dashboard', // Redirect URL if the payment is canceled
     });
 
     res.json({ id: session.id });
