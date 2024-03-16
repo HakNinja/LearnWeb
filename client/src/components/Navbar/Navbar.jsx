@@ -57,7 +57,7 @@ const Navbar = () => {
 
 
   return (
-    <nav className='navbar colorGradient'>
+    <nav className='navbar colorGradient z-10'>
       <div className='navbar-logo'>
         <Link to="/"><img src={Logo} alt="logo" className='opacity-90' /></Link>
       </div>
@@ -83,7 +83,7 @@ const Navbar = () => {
               </div>
 
               {isOpen && (
-                <div className="origin-top-right absolute right-0 mt-0 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
+                <div className="origin-top-right absolute right-0 mt-0 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 ">
                   <div
                     className="py-1"
                     role="menu"
@@ -122,7 +122,7 @@ const Navbar = () => {
                 </div>
               )}
             </div>
-          </> : <button class=" btn btn-light" style={{marginLeft:"-7rem", padding:"8px 25px"}}><Link class="nav-link" to="/loginnew">Login</Link></button>
+          </> : <button class=" btn btn-light" style={{ marginLeft: "-7rem", padding: "8px 25px" }}><Link class="nav-link" to="/loginnew">Login</Link></button>
           }
         </div>
 
