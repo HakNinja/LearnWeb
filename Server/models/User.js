@@ -5,7 +5,7 @@ const UserSchema = new mongoose.Schema(
     type: String,
     required: true,
     min: 2,
-    max: 100,
+    max: 30,
   },
   email: {
     type: String,
@@ -15,17 +15,25 @@ const UserSchema = new mongoose.Schema(
   },
   password: {
     type: String,
-    required: true,
     min: 5,
   },
   city: String,
   state: String,
+  district: String,
   country: String,
   phoneNumber: String,
+  pincode:String,
+  address:String,
   instituteName:{
     type: String,
-    required: true,
     min: 2
+  },
+  role:{
+    type:String,
+    default:2
+  },
+  image:{
+    type: String
   }
 },
 { timestamps: true }

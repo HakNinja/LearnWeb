@@ -1,0 +1,123 @@
+.AboutCard-aboutHome {
+  background-color: #fff ;
+  margin-top: 450px;
+  margin-left: -4px;
+  height: auto;
+  margin-bottom: 5px;
+  display: flex;
+}
+.AboutCard-aboutHome #heading {
+  text-align: left;
+  padding: 0;
+}
+.AboutCard-aboutHome .AboutCard-left img {
+  width: 100%;
+  height: 113.5%;
+  object-fit: cover;
+  margin-top: -16vh;
+}
+.AboutCard-aboutHome .AboutCard-right {
+  /* background-color: #fff ; */
+  /* margin-top: -16vh; */
+  padding: 20px 50px;
+  /* padding-bottom: 5px; */
+}
+.AboutCard-aboutHome AboutCard-items {
+  margin-top: 50px;
+}
+.AboutCard-aboutHome AboutCard-items {
+  background-color: #fff;
+  margin-top: 30px;
+  padding: 20px;
+  transition: 0.5s;
+}
+.AboutCard-aboutHome .img {
+  width: 200px;
+}
+.AboutCard-aboutHome .img {
+  width: 70px;
+  height: 70px;
+  margin-right: 20px;
+}
+
+.AboutCard-item{
+  margin: 2px;
+  padding: 12px;
+  transition: 0.3s;
+}
+
+.AboutCard-aboutHome .AboutCard-items h2 {
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+.AboutCard-aboutHome .AboutCard-items p {
+  color: #999999;
+}
+.AboutCard-aboutHome .AboutCard-item:hover {
+  background: #fac0ff;
+  color: #000;
+/* margin: 10px; */
+  cursor: pointer;
+  box-shadow: 0 5px 25px -2px rgb(0 0 0 / 6%);
+  
+}
+.AboutCard-aboutHome .AboutCard-item:hover p {
+  color: #000;
+}
+
+
+.flexSB {
+  display: flex;
+  /* justify-content: space-between; */
+}
+
+.aboutHome{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+
+/*----------awrapper------------*/
+.awrapper {
+  background-image: url("../../../public/images/awrapper.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 30vh;
+  color: #fff;
+}
+.awrapper .box {
+  padding: 70px 0;
+}
+.awrapper img {
+  margin-right: 30px;
+}
+.awrapper h1 {
+  font-size: 50px;
+}
+.awrapper h3 {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+
+.AboutCard-container{
+      max-width: 85%;
+    margin: auto;
+}
+
+
+/*----------awrapper------------*/
+@media screen and (max-width: 768px) {
+  .AboutCard-aboutHome .AboutCard-container {
+    flex-direction: column-reverse;
+  }
+  .AboutCard-aboutHome .AboutCard-row {
+    width: 100%;
+  }
+  .awrapper {
+    height: 50vh;
+  }
+}

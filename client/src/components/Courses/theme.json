@@ -1,0 +1,29 @@
+{
+    "theme": [
+        {
+            "tname": "Mariana Anderson",
+            "timage": "https://marketplace.canva.com/EAFRuCp3DcY/1/0/1131w/canva-black-white-minimalist-cv-resume-f5JNR-K5jjw.jpg",
+            "connector": "/Resume/ResumeBuilderTemp1"
+        },
+        {
+            "tname": "Olivia Wilson",
+            "timage": "https://marketplace.canva.com/EAFBL8KRmSA/1/0/1131w/canva-white-simple-student-cv-resume-NXs7xSf0K8I.jpg",
+            "connector": "/Resume/ResumeBuilderTemp1"
+        },
+        {
+            "tname": "Koriana Villanueva",
+            "timage": "https://marketplace.canva.com/EAFHY-XMRBE/3/0/1131w/canva-black-white-minimalist-cv-resume-tquca-RfHEI.jpg",
+            "connector": "/Resume/ResumeBuilderTemp1"
+        },
+        {
+            "tname": "Salma Matthews",
+            "timage": "https://piktochart.com/wp-content/uploads/2023/02/large-9-600x848.jpg",
+            "connector": "/Resume/ResumeBuilderTemp1"
+        },
+        {
+            "tname": "Eric Jackson",
+            "timage": "https://techguruplus.com/wp-content/uploads/2022/12/Resume-CV-Templates-Word-doc-026.jpg",
+            "connector": "/Resume/ResumeBuilderTemp1"
+        }
+    ]
+}

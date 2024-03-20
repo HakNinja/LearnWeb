@@ -1,0 +1,186 @@
+.input-container {
+  margin-bottom: 20px;
+}
+
+.inputValueResume {
+  /* width: 600px; */
+  margin: 0 2rem 2rem 2rem;
+  padding: 2rem;
+  box-shadow: 0px -10px 100px 20px rgba(48, 46, 46, 0.25);
+  border-radius: 20px;
+}
+
+.label {
+  display: block;
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+.input-field:focus {
+  outline: none;
+  border-color: #3e77b5;
+}
+
+.textarea-field {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+.textarea-field:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+.button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #0056b3;
+}
+
+
+/* styles.css */
+
+.project-container,
+.education-container {
+  margin-bottom: 20px;
+}
+
+.section-heading {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.project-item,
+.education-item {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 15px;
+  margin-bottom: 15px;
+}
+
+.project-item input,
+.project-item textarea,
+.education-item input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+.project-item input:focus,
+.project-item textarea:focus,
+.education-item input:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+.project-item textarea {
+  height: 100px;
+}
+
+.remove-button {
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.myimage::before{
+  /* content: 'Upload image'; */
+}
+
+.remove-button:hover {
+  background-color: #c82333;
+}
+
+.add-button {
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.add-button:hover {
+  background-color: #218838;
+}
+
+
+.p-container{
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+}
+
+.p-head{
+  font-size: 1.7rem;
+  font-weight: 500;
+  margin-right: 2rem;
+}
+
+.p-button{
+  /* width: 150px; */
+        border: none;
+        border-radius: 10px;
+        background: #416A9B;
+        color: #fff;
+        font-weight: 600;
+        margin: 10px 0;
+        padding: 10px;
+        text-transform: uppercase;
+        cursor: pointer;
+}
+
+
+.b-button{
+  background-color: #323B4C;
+  color: white;
+  border: 2px solid #323B4C;
+}
+ .b-button:hover{
+  background-color: white;
+  color: #323B4C;
+ }
+.r-button{
+  background-color: #8D4B55;
+  color: white;
+  border: 2px solid #8D4B55;
+}
+ .r-button:hover{
+  background-color: white;
+  color: #8D4B55;
+ }

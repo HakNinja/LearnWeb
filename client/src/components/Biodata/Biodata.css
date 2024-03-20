@@ -1,0 +1,285 @@
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    border: 0;
+}
+
+.file-label {
+    cursor: pointer;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.file-label:hover {
+    background-color: #0056b3;
+}
+
+
+
+
+.biodata {
+    /* max-width: 800px; */
+    max-width: 900px;
+    margin: 10px;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 1);
+    padding: 30px;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 15px;
+    animation: fadeIn 3s ease forwards;
+    background: linear-gradient(315deg, #eeaeca, #94bbe9);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.biodata_title {
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 3px;
+    font-size: 3em;
+    line-height: 48px;
+    padding-bottom: 10px;
+    color: #5543ca;
+    margin-bottom: 20px;
+    background: linear-gradient(to right, #f4524d 0%, #5543ca 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+}
+
+
+.biodata_body {
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* margin: 0;
+    padding: 0;
+    line-height: 1.5;
+    font-weight: 400;
+    color: black; */
+
+    /* background-image: linear-gradient(315deg, #eeaeca, #94bbe9); */
+}
+
+.biodata_container {
+    display: flex;
+    flex-direction: column;
+}
+
+.input_text {
+    width: 100%;
+    height: 50px;
+    background: #f0f0f0;
+    margin: 10px 0;
+    border: 2px solid #df4adf;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+}
+
+.form-check-input {
+    flex: 5;
+    background: none;
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 18px;
+    font-weight: 600;
+    color: #444;
+}
+
+
+.input_text:focus {
+    outline: none;
+}
+
+
+.biodata_submit-btn {
+    display: inline-block;
+    background-image: linear-gradient(125deg, #a72879, #94bbe9);
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 50px;
+    width: 150px;
+    height: 50px;
+    border-radius: 50px;
+    background: #df4adf;
+    color: #fff;
+    font-weight: 600;
+    margin: 10px 0;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.biodata_submit-btn:hover {
+    background: #c03cc0;
+}
+
+
+.biodata_input-field {
+    width: 100%;
+    height: 50px;
+    background: #f0f0f0;
+    margin: 5px;
+    border: 2px solid #df4adf;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.biodata_a {
+    padding-left: 10px;
+}
+
+.biodata_input-field i {
+    flex: 1;
+    text-align: center;
+    color: #666;
+    font-size: 18px;
+}
+
+.biodata_input-field input {
+    flex: 5;
+    background: none;
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 18px;
+    font-weight: 600;
+    color: #444;
+}
+
+/* .input-field.focus-input label {
+   
+    color: #007bff;
+  }
+   */
+
+.biodata_input-field input:focus {
+    border-color: #df4adf;
+    transition: border-color 0.3s ease;
+    transform: translateY(-5px);
+    width: 200px;
+    /* Adjust width as needed */
+    height: 30px;
+    top: -10px;
+    font-size: 12px;
+    /* Adjust height as needed */
+}
+
+.input-container .placeholder {
+    position: absolute;
+    top: 5px;
+    /* Adjust the initial position */
+    left: 5px;
+    /* Adjust the horizontal position */
+    color: #999;
+    /* Adjust the color */
+    transition: top 0.3s ease;
+    /* Add transition for smooth movement */
+}
+
+.input-container.active .placeholder {
+    top: -20px;
+    /* Adjust the position above the input field */
+}
+
+.form-check-input:checked {
+    animation: bounce 3s;
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-100px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.avatar-section {
+    margin-bottom: 10px;
+}
+
+.avatar-container {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 10px;
+    border: 2px solid #df4adf;
+
+
+}
+
+.avatar-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.avatar_btn {
+    display: inline-block;
+    background-image: linear-gradient(125deg, #a72879, #94bbe9);
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 50px;
+    width: 150px;
+    height: 50px;
+    border-radius: 50px;
+    background: #df4adf;
+    color: #fff;
+    font-weight: 600;
+    margin: 10px 0;
+    cursor: pointer;
+}
+
+.avatar_btn:hover {
+    background: #c03cc0;
+}
+
+.avatar_head {
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 4px;
+    font-size: 1em;
+    line-height: 30px;
+    padding-bottom: 20px;
+    color: #5543ca;
+    margin-bottom: 10px;
+    background: linear-gradient(to right, #f4524d 0%, #5543ca 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+}
+
+.biodata_container2 {}
